@@ -1,0 +1,7 @@
+*.log
+*.iml
+*.ipr
+*.iws
+target/
+build/
+table
