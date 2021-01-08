@@ -4,6 +4,8 @@ import com.seleniumeasy.inputforms.SelectDropdownListPage;
 import org.junit.Test;
 import utils.SettingsSeleniumEasy;
 
+import static com.seleniumeasy.enums.InputForms.SELECT_DROPDOWN_LIST;
+
 public class DropdownListTest extends SettingsSeleniumEasy {
     private final String DAY_SELECTED = "Friday";
 
@@ -12,8 +14,7 @@ public class DropdownListTest extends SettingsSeleniumEasy {
     @Test
     public void selectValueFromDropdown() {
         selectDropdownListPage
-                .clickInputFormsDropdown1()
-                .openSelectDropdownList()
+                .openInputForms(SELECT_DROPDOWN_LIST, SelectDropdownListPage.class)
                 .clickPleaseSelect()
                 .selectValue()
                 .validateSelectedValue(DAY_SELECTED);

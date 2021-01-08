@@ -14,7 +14,7 @@ public class AjaxFormSubmitTest extends SettingsSeleniumEasy {
     @Test
     public void testAjaxFormSubmit() {
         ajaxFormSubmitPage
-                .clickInputFormsDropdown2()
+                .clickInputFormsDropdown()
                 .openAjaxFormSubmit()
                 .enterName(NAME)
                 .enterComment(COMMENT)

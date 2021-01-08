@@ -4,6 +4,8 @@ import com.seleniumeasy.inputforms.CheckboxDemoPage;
 import org.junit.Test;
 import utils.SettingsSeleniumEasy;
 
+import static com.seleniumeasy.enums.InputForms.CHECKBOX_DEMO;
+
 public class CheckboxTests extends SettingsSeleniumEasy {
     private final String NAME_OF_THE_BUTTON_BEFORE = "Check All",
             NAME_OF_THE_BUTTON_AFTER = "Uncheck All";
@@ -15,8 +17,7 @@ public class CheckboxTests extends SettingsSeleniumEasy {
     @Test
     public void severalCheckboxes() {
         checkboxDemoPage
-                .clickInputFormsDropdown1()
-                .openCheckboxDemo()
+                .openInputForms(CHECKBOX_DEMO, CheckboxDemoPage.class)
                 .checkSeveralCheckboxes()
                 .verifyValueOfTheButton(VALUE_OF_THE_BUTTON_BEFORE)
                 .validateNameOfTheButton(NAME_OF_THE_BUTTON_BEFORE);
@@ -25,8 +26,7 @@ public class CheckboxTests extends SettingsSeleniumEasy {
     @Test
     public void allCheckboxes() {
         checkboxDemoPage
-                .clickInputFormsDropdown1()
-                .openCheckboxDemo()
+                .openInputForms(CHECKBOX_DEMO, CheckboxDemoPage.class)
                 .checkAllCheckboxes()
                 .verifyValueOfTheButton(VALUE_OF_THE_BUTTON_AFTER)
                 .validateNameOfTheButton(NAME_OF_THE_BUTTON_AFTER);

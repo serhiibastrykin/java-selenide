@@ -4,6 +4,8 @@ import com.seleniumeasy.inputforms.SimpleFormDemoPage;
 import utils.SettingsSeleniumEasy;
 import org.junit.Test;
 
+import static com.seleniumeasy.enums.InputForms.SIMPLE_FORM_DEMO;
+
 public class UsernameTest extends SettingsSeleniumEasy {
     private final String MESSAGE = "Serhii Bastrykin";
 
@@ -12,8 +14,7 @@ public class UsernameTest extends SettingsSeleniumEasy {
     @Test
     public void enterMessage() {
         simpleFormDemoPage
-                .clickInputFormsDropdown1()
-                .openSimpleFormDemo1()
+                .openInputForms(SIMPLE_FORM_DEMO, SimpleFormDemoPage.class)
                 .enterYourMessage(MESSAGE)
                 .clickShowMessageButton()
                 .validateDisplayedMessage(MESSAGE);

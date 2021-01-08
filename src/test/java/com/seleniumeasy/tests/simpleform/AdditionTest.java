@@ -14,7 +14,7 @@ public class AdditionTest extends SettingsSeleniumEasy {
     public void addTwoNumbersTest() {
         simpleFormDemoPage
                 .clickStartPractisingButton()
-                .openSimpleFormDemo2()
+                .openSimpleFormDemo()
                 .enterFirstNumber(FIRST_NUMBER)
                 .enterSecondNumber(SECOND_NUMBER)
                 .clickGetTotalButton()

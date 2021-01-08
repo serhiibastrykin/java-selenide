@@ -8,7 +8,7 @@ import org.junit.BeforeClass;
 
 import java.io.File;
 
-import static com.seleniumeasy.DemoHomePage.buttonClosePopup;
+import static com.seleniumeasy.DemoHomePage.BUTTON_CLOSE_POPUP;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 
@@ -25,7 +25,7 @@ public class SettingsSeleniumEasy {
     @Before
     public void openWebsite() {
         open(BASE_URL);
-        buttonClosePopup.click();
+        BUTTON_CLOSE_POPUP.click();
     }
 
     @After
