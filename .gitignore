@@ -4,5 +4,3 @@
 *.iws
 target/
 build/
-TablePaginationPage.class
-TablePaginationTest.class

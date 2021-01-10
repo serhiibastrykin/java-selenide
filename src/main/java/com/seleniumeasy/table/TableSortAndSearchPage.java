@@ -21,9 +21,9 @@ public class TableSortAndSearchPage extends DemoHomePage {
         return this;
     }
 
-    public TableSortAndSearchPage clickColumn(String colText) {
+    public TableSortAndSearchPage clickColumn(String colName) {
         sleep(200);
-        TABLE_HEADER.$$("th").find(exactText(colText)).click();
+        TABLE_HEADER.$$("th").find(exactText(colName)).click();
         return this;
     }
 
