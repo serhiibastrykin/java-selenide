@@ -4,5 +4,3 @@
 *.iws
 target/
 build/
-TableDataSearchPage.java
-TableDataSearchTest.java

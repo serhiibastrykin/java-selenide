@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class TableSortAndSearchPage extends DemoHomePage {
     private final SelenideElement TABLE_HEADER = $(".thead-inverse"),
             TABLE_BODY = $("tbody"),
-            INPUT_SEARCH = $("input[type='search']");
+            INPUT_SEARCH = $("input[type=search]");
 
     public TableSortAndSearchPage clickColumn(int colIndex) {
         sleep(200);
