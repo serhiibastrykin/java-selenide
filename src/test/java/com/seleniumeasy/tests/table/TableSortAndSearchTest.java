@@ -9,18 +9,19 @@ import static com.codeborne.selenide.Condition.text;
 import static com.seleniumeasy.enums.Table.TABLE_SORT_AND_SEARCH;
 
 public class TableSortAndSearchTest extends SettingsSeleniumEasy {
-    private final String SEARCH_TEXT = "Chief",
+    private final String POSITION = "Chief",
+            AGE = "22",
             CELL_TEXT_ASC = "Fri 9th Oct 09",
             CELL_TEXT_DESC = "Development Lead";
 
     TableSortAndSearchPage tableSortAndSearchPage = new TableSortAndSearchPage();
 
     @Test
-    public void testSearchInTheTable() {
+    public void testSearchInTheTableByPosition() {
         tableSortAndSearchPage
                 .openTable(TABLE_SORT_AND_SEARCH, TableSortAndSearchPage.class)
-                .enterSearchText(SEARCH_TEXT)
-                .verifyFoundValues("Position", text(SEARCH_TEXT));
+                .enterSearchText(POSITION)
+                .verifyFoundValues("Position", text(POSITION));
     }
 
     @Test
@@ -36,5 +37,14 @@ public class TableSortAndSearchTest extends SettingsSeleniumEasy {
                 .openTable(TABLE_SORT_AND_SEARCH, TableSortAndSearchPage.class)
                 .clickColumn(1)
                 .verifyColumnValue(8, 1, exactText(CELL_TEXT_DESC));
+    }
+
+    @Test
+    public void testSearchAndSortContentByAge() {
+        tableSortAndSearchPage
+                .openTable(TABLE_SORT_AND_SEARCH, TableSortAndSearchPage.class)
+                .enterSearchText(AGE)
+                .clickColumn("Age")
+                .verifyColumnValue(1, "Age", exactText(AGE));
     }
 }
