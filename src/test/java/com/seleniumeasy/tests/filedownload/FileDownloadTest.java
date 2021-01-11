@@ -5,10 +5,10 @@ import org.junit.After;
 import org.junit.Test;
 import utils.SettingsSeleniumEasy;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -26,22 +26,7 @@ public class FileDownloadTest extends SettingsSeleniumEasy {
                 .enterYourMessage(INPUT_MESSAGE)
                 .clickGenerateFile()
                 .downloadGeneratedFile();
-        assertThat(getContentOfTheFile()).isEqualTo(INPUT_MESSAGE);
-    }
-
-    private String getContentOfTheFile() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(DOWNLOAD_DIR +
-                File.separator + FILE));
-        try {
-            ArrayList<String> content = new ArrayList<>();
-            String strCurrentLine;
-            while ((strCurrentLine = reader.readLine()) != null) {
-                content.add(strCurrentLine);
-            }
-            return String.join("\n", content);
-        } finally {
-            reader.close();
-        }
+        assertThat(fileDownloadPage.getContentOfTheFile(FILE)).isEqualTo(INPUT_MESSAGE);
     }
 
     @After
