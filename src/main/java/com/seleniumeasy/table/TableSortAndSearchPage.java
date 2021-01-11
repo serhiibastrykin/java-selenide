@@ -6,14 +6,14 @@ import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 
 import static com.codeborne.selenide.Condition.exactText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TableSortAndSearchPage extends DemoHomePage {
     private final SelenideElement TABLE_HEADER = $(".thead-inverse"),
             TABLE_BODY = $("tbody"),
             INPUT_SEARCH = $("input[type=search]");
+    private final ElementsCollection PAGINATION = $$("#example_paginate .paginate_button");
 
     public TableSortAndSearchPage clickColumn(int colIndex) {
         sleep(200);
@@ -47,6 +47,16 @@ public class TableSortAndSearchPage extends DemoHomePage {
         for (int i = 0; i < rowCount; i++) {
             verifyColumnValue(i, colName, c);
         }
+    }
+
+    public TableSortAndSearchPage clickPage(int pageIndex) {
+        sleep(200);
+        PAGINATION.get(pageIndex).click();
+        return this;
+    }
+
+    public void verifyClickedPageIsOpen(int colIndex, Condition c) {
+        getTableRow(0).$$("td").get(colIndex).should(c);
     }
 
     private int getColumnIndex(String colName) {

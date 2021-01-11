@@ -10,9 +10,10 @@ import static com.seleniumeasy.enums.Table.TABLE_SORT_AND_SEARCH;
 
 public class TableSortAndSearchTest extends SettingsSeleniumEasy {
     private final String POSITION = "Chief",
-            AGE = "22",
             CELL_TEXT_ASC = "Fri 9th Oct 09",
-            CELL_TEXT_DESC = "Development Lead";
+            CELL_TEXT_DESC = "Development Lead",
+            AGE = "22",
+            CELL_TEXT = "D. Rios";
 
     TableSortAndSearchPage tableSortAndSearchPage = new TableSortAndSearchPage();
 
@@ -46,5 +47,13 @@ public class TableSortAndSearchTest extends SettingsSeleniumEasy {
                 .enterSearchText(AGE)
                 .clickColumn("Age")
                 .verifyColumnValue(1, "Age", exactText(AGE));
+    }
+
+    @Test
+    public void testTablePagination() {
+        tableSortAndSearchPage
+                .openTable(TABLE_SORT_AND_SEARCH, TableSortAndSearchPage.class)
+                .clickPage(2)
+                .verifyClickedPageIsOpen(0, exactText(CELL_TEXT));
     }
 }
