@@ -8,12 +8,14 @@ import com.seleniumeasy.DemoHomePage;
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class TableFilterPage extends DemoHomePage {
     private final ElementsCollection FILTERS = $$(".btn-group button"),
             ROWS = $$("tbody tr");
 
     public TableFilterPage clickColumn(int colIndex) {
+        sleep(200);
         FILTERS.get(colIndex).click();
         return this;
     }

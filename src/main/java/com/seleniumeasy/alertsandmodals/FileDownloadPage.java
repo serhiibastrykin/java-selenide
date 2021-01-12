@@ -33,7 +33,7 @@ public class FileDownloadPage extends DemoHomePage {
         sleep(1000);
     }
 
-    public String getContentOfTheFile(String filename) throws IOException {
+    public static String getContentOfTheFile(String filename) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(DOWNLOAD_DIR +
                 File.separator + filename))) {
             ArrayList<String> content = new ArrayList<>();

@@ -3,7 +3,7 @@ package com.seleniumeasy.inputforms;
 import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class SimpleFormDemoPage extends DemoHomePage {
@@ -37,6 +37,13 @@ public class SimpleFormDemoPage extends DemoHomePage {
     public SimpleFormDemoPage enterSecondNumber(String yourSecondNumber) {
         SECOND_NUMBER_FIELD.setValue(yourSecondNumber);
         return this;
+    }
+
+    public static String addTwoNumbers(String firstNum, String secondNum) {
+        int num1 = Integer.parseInt(firstNum);
+        int num2 = Integer.parseInt(secondNum);
+        int sum = num1 + num2;
+        return String.valueOf(sum);
     }
 
     public SimpleFormDemoPage clickGetTotalButton() {

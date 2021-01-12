@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static com.seleniumeasy.alertsandmodals.FileDownloadPage.getContentOfTheFile;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class FileDownloadTest extends SettingsSeleniumEasy {
@@ -26,7 +27,7 @@ public class FileDownloadTest extends SettingsSeleniumEasy {
                 .enterYourMessage(INPUT_MESSAGE)
                 .clickGenerateFile()
                 .downloadGeneratedFile();
-        assertThat(fileDownloadPage.getContentOfTheFile(FILE)).isEqualTo(INPUT_MESSAGE);
+        assertThat(getContentOfTheFile(FILE)).isEqualTo(INPUT_MESSAGE);
     }
 
     @After
