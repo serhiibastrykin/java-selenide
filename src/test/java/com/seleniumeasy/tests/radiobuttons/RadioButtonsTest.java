@@ -7,8 +7,8 @@ import utils.SettingsSeleniumEasy;
 import static com.seleniumeasy.enums.InputForms.RADIO_BUTTONS_DEMO;
 
 public class RadioButtonsTest extends SettingsSeleniumEasy {
-    private final String SELECTED_GENDER = "Male",
-            SELECTED_AGE_GROUP = "15 - 50";
+    private final String selectedGender = "Male",
+            selectedAgeGroup = "15 - 50";
 
     RadioButtonsDemoPage radioButtonsDemoPage = new RadioButtonsDemoPage();
 
@@ -19,6 +19,6 @@ public class RadioButtonsTest extends SettingsSeleniumEasy {
                 .selectGender()
                 .selectAgeGroup()
                 .clickGetValues()
-                .validateDisplayedInformation(SELECTED_GENDER, SELECTED_AGE_GROUP);
+                .validateDisplayedInformation(selectedGender, selectedAgeGroup);
     }
 }

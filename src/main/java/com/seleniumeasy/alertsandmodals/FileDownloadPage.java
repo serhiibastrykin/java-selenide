@@ -14,22 +14,22 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
 
 public class FileDownloadPage extends DemoHomePage {
-    private final SelenideElement FIELD_ENTER_DATA = $("#textbox"),
-            BUTTON_GENERATE_FILE = $("#create"),
-            BUTTON_DOWNLOAD = $("#link-to-download");
+    private final SelenideElement fieldEnterData = $("#textbox"),
+            buttonGenerateFile = $("#create"),
+            buttonDownload = $("#link-to-download");
 
     public FileDownloadPage enterYourMessage(String yourMessage) {
-        FIELD_ENTER_DATA.sendKeys(yourMessage);
+        fieldEnterData.sendKeys(yourMessage);
         return this;
     }
 
     public FileDownloadPage clickGenerateFile() {
-        BUTTON_GENERATE_FILE.click();
+        buttonGenerateFile.click();
         return this;
     }
 
     public void downloadGeneratedFile() {
-        BUTTON_DOWNLOAD.click();
+        buttonDownload.click();
         sleep(1000);
     }
 

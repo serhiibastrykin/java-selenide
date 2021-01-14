@@ -13,8 +13,8 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 
 public class SettingsSeleniumEasy {
-    private final String BASE_URL = "https://www.seleniumeasy.com/test/";
     public final static String DOWNLOAD_DIR = System.getProperty("user.dir") + File.separator + "target";
+    private final String baseUrl = "https://www.seleniumeasy.com/test/";
 
     @BeforeClass
     public static void setUp() {
@@ -24,7 +24,7 @@ public class SettingsSeleniumEasy {
 
     @Before
     public void openWebsite() {
-        open(BASE_URL);
+        open(baseUrl);
         BUTTON_CLOSE_POPUP.click();
     }
 

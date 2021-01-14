@@ -7,7 +7,7 @@ import utils.SettingsSeleniumEasy;
 import static com.seleniumeasy.enums.InputForms.SELECT_DROPDOWN_LIST;
 
 public class DropdownListTest extends SettingsSeleniumEasy {
-    private final String DAY_SELECTED = "Friday";
+    private final String daySelected = "Friday";
 
     SelectDropdownListPage selectDropdownListPage = new SelectDropdownListPage();
 
@@ -17,6 +17,6 @@ public class DropdownListTest extends SettingsSeleniumEasy {
                 .openInputForms(SELECT_DROPDOWN_LIST, SelectDropdownListPage.class)
                 .clickPleaseSelect()
                 .selectValue()
-                .validateSelectedValue(DAY_SELECTED);
+                .validateSelectedValue(daySelected);
     }
 }

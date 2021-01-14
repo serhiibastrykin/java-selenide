@@ -7,21 +7,21 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class SelectDropdownListPage extends DemoHomePage {
-    private final SelenideElement DROPDOWN_PLEASE_SELECT = $("#select-demo"),
-            VALUE = $("#select-demo option[value=\"Friday\"]"),
-            SELECTED_VALUE = $(".selected-value");
+    private final SelenideElement dropdownPleaseSelect = $("#select-demo"),
+            value = $("#select-demo option[value=\"Friday\"]"),
+            selectedValue = $(".selected-value");
 
     public SelectDropdownListPage clickPleaseSelect() {
-        DROPDOWN_PLEASE_SELECT.click();
+        dropdownPleaseSelect.click();
         return this;
     }
 
     public SelectDropdownListPage selectValue() {
-        VALUE.setSelected(true);
+        value.setSelected(true);
         return this;
     }
 
     public void validateSelectedValue(String day) {
-        SELECTED_VALUE.shouldHave(text(day));
+        selectedValue.shouldHave(text(day));
     }
 }

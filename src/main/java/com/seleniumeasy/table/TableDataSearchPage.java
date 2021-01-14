@@ -11,37 +11,37 @@ import static com.codeborne.selenide.Selenide.sleep;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TableDataSearchPage extends DemoHomePage {
-    private final SelenideElement BUTTON_FILTER = $(".btn-filter");
-    private final ElementsCollection COLUMNS = $$(".filterable .table thead th input"),
-            ROWS = $$(".filterable .table tbody tr");
+    private final SelenideElement buttonFilter = $(".btn-filter");
+    private final ElementsCollection columns = $$(".filterable .table thead th input"),
+            rows = $$(".filterable .table tbody tr");
 
     public TableDataSearchPage clickFilterButton() {
         sleep(500);
-        BUTTON_FILTER.click();
+        buttonFilter.click();
         return this;
     }
 
     public TableDataSearchPage enterSearchText(int colIndex, String text) {
-        COLUMNS.get(colIndex).sendKeys(text);
+        columns.get(colIndex).sendKeys(text);
         return this;
     }
 
     public TableDataSearchPage enterSearchText(String colName, String text) {
         int colIndex = getColumnIndex(colName);
-        COLUMNS.get(colIndex).sendKeys(text);
+        columns.get(colIndex).sendKeys(text);
         return this;
     }
 
     public void verifyFoundValues(int colIndex, Condition c) {
-        for (int i = 0; i < ROWS.size(); i++) {
-            if (ROWS.get(i).isDisplayed())
+        for (int i = 0; i < rows.size(); i++) {
+            if (rows.get(i).isDisplayed())
                 verifyColumnValue(i, colIndex, c);
         }
     }
 
     public void verifyFoundValues(String colName, Condition c) {
-        for (int i = 0; i < ROWS.size(); i++) {
-            if (ROWS.get(i).isDisplayed())
+        for (int i = 0; i < rows.size(); i++) {
+            if (rows.get(i).isDisplayed())
                 verifyColumnValue(i, colName, c);
         }
     }
@@ -57,8 +57,8 @@ public class TableDataSearchPage extends DemoHomePage {
 
     private int getColumnIndex(String colName) {
         int colIndex = -1;
-        for (int i = 0; i < COLUMNS.size(); i++) {
-            String columnText = COLUMNS.get(i).getAttribute("placeholder");
+        for (int i = 0; i < columns.size(); i++) {
+            String columnText = columns.get(i).getAttribute("placeholder");
             if (columnText != null && columnText.equals(colName)) {
                 colIndex = i;
                 break;
@@ -69,6 +69,6 @@ public class TableDataSearchPage extends DemoHomePage {
     }
 
     private SelenideElement getCellText(int rowIndex, int colIndex) {
-        return ROWS.get(rowIndex).$$("td").get(colIndex);
+        return rows.get(rowIndex).$$("td").get(colIndex);
     }
 }

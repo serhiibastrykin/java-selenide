@@ -5,9 +5,9 @@ import org.junit.Test;
 import utils.SettingsSeleniumEasy;
 
 public class AjaxFormSubmitTest extends SettingsSeleniumEasy {
-    private final String NAME = "Serhii",
-            COMMENT = "This is my comment.",
-            MESSAGE = "Form submited Successfully!";
+    private final String name = "Serhii",
+            comment = "This is my comment.",
+            message = "Form submited Successfully!";
 
     AjaxFormSubmitPage ajaxFormSubmitPage = new AjaxFormSubmitPage();
 
@@ -16,9 +16,9 @@ public class AjaxFormSubmitTest extends SettingsSeleniumEasy {
         ajaxFormSubmitPage
                 .clickInputFormsDropdown()
                 .openAjaxFormSubmit()
-                .enterName(NAME)
-                .enterComment(COMMENT)
+                .enterName(name)
+                .enterComment(comment)
                 .clickSubmitButton()
-                .verifyDisplayedMessage(MESSAGE);
+                .verifyDisplayedMessage(message);
     }
 }

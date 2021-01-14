@@ -10,29 +10,29 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class UploadFilePage {
-    private final SelenideElement BUTTON_CHOOSE_FILE = $("#js-file-input"),
-            DISPLAYED_MESSAGE = $("div .heading"),
-            BUTTON_DOWNLOAD = $(".button-primary"),
-            DISPLAYED_TEXT = $("html body pre");
+    private final SelenideElement buttonChooseFile = $("#js-file-input"),
+            displayedMessage = $("div .heading"),
+            buttonDownload = $(".button-primary"),
+            displayedText = $("html body pre");
 
     public UploadFilePage uploadFile(File uploadedFile) {
-        BUTTON_CHOOSE_FILE.uploadFile(uploadedFile);
+        buttonChooseFile.uploadFile(uploadedFile);
         return this;
     }
 
     public UploadFilePage verifyUploadingIsSuccessful(String message) {
-        DISPLAYED_MESSAGE.shouldHave(text(message));
+        displayedMessage.shouldHave(text(message));
         return this;
     }
 
     public UploadFilePage clickDownloadButton() {
-        BUTTON_DOWNLOAD.click();
+        buttonDownload.click();
         return this;
     }
 
     public void validateDisplayedText(String content) {
         ArrayList<String> tabs = new ArrayList<>(getWebDriver().getWindowHandles());
         getWebDriver().switchTo().window(tabs.get(1));
-        DISPLAYED_TEXT.shouldHave(text(content));
+        displayedText.shouldHave(text(content));
     }
 }

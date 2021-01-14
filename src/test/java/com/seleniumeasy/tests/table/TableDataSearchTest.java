@@ -8,8 +8,8 @@ import static com.codeborne.selenide.Condition.exactText;
 import static com.seleniumeasy.enums.Table.TABLE_DATA_SEARCH;
 
 public class TableDataSearchTest extends SettingsSeleniumEasy {
-    private final String FIRST_NAME = "Byron",
-            ROW_NUMBER = "2";
+    private final String firstName = "Byron",
+            rowNumber = "2";
 
     TableDataSearchPage tableDataSearchPage = new TableDataSearchPage();
 
@@ -18,8 +18,8 @@ public class TableDataSearchTest extends SettingsSeleniumEasy {
         tableDataSearchPage
                 .openTable(TABLE_DATA_SEARCH, TableDataSearchPage.class)
                 .clickFilterButton()
-                .enterSearchText("First Name", FIRST_NAME)
-                .verifyFoundValues("First Name", exactText(FIRST_NAME));
+                .enterSearchText("First Name", firstName)
+                .verifyFoundValues("First Name", exactText(firstName));
     }
 
     @Test
@@ -27,7 +27,7 @@ public class TableDataSearchTest extends SettingsSeleniumEasy {
         tableDataSearchPage
                 .openTable(TABLE_DATA_SEARCH, TableDataSearchPage.class)
                 .clickFilterButton()
-                .enterSearchText(0, ROW_NUMBER)
-                .verifyFoundValues(0, exactText(ROW_NUMBER));
+                .enterSearchText(0, rowNumber)
+                .verifyFoundValues(0, exactText(rowNumber));
     }
 }

@@ -7,7 +7,7 @@ import org.junit.Test;
 import static com.seleniumeasy.enums.InputForms.SIMPLE_FORM_DEMO;
 
 public class UsernameTest extends SettingsSeleniumEasy {
-    private final String MESSAGE = "Serhii Bastrykin";
+    private final String message = "Serhii Bastrykin";
 
     SimpleFormDemoPage simpleFormDemoPage = new SimpleFormDemoPage();
 
@@ -15,8 +15,8 @@ public class UsernameTest extends SettingsSeleniumEasy {
     public void enterMessage() {
         simpleFormDemoPage
                 .openInputForms(SIMPLE_FORM_DEMO, SimpleFormDemoPage.class)
-                .enterYourMessage(MESSAGE)
+                .enterYourMessage(message)
                 .clickShowMessageButton()
-                .validateDisplayedMessage(MESSAGE);
+                .validateDisplayedMessage(message);
     }
 }

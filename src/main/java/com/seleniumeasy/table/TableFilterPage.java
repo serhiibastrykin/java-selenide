@@ -11,38 +11,38 @@ import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class TableFilterPage extends DemoHomePage {
-    private final ElementsCollection FILTERS = $$(".btn-group button"),
-            ROWS = $$("tbody tr");
+    private final ElementsCollection filters = $$(".btn-group button"),
+            rows = $$("tbody tr");
 
     public TableFilterPage clickColumn(int colIndex) {
         sleep(200);
-        FILTERS.get(colIndex).click();
+        filters.get(colIndex).click();
         return this;
     }
 
     public TableFilterPage clickColumn(String colName) {
-        FILTERS.find(exactText(colName)).click();
+        filters.find(exactText(colName)).click();
         return this;
     }
 
     public void verifyItemsColor(String color) {
-        for (int i = 0; i < ROWS.size(); i++) {
-            if (ROWS.get(i).isDisplayed())
+        for (int i = 0; i < rows.size(); i++) {
+            if (rows.get(i).isDisplayed())
                 verifyColor(i, attribute("style", "color: " + color + ";"));
         }
     }
 
     public void verifyAllRowsDisplayed() throws Exception {
         int visibleRowsCount = 0;
-        for (SelenideElement row : ROWS) {
+        for (SelenideElement row : rows) {
             if (row.isDisplayed())
                 visibleRowsCount++;
         }
-        if (visibleRowsCount != ROWS.size())
-            throw new Exception("Not all rows are displayed!\nExpected: " + ROWS.size() + "\nActual: " + visibleRowsCount);
+        if (visibleRowsCount != rows.size())
+            throw new Exception("Not all rows are displayed!\nExpected: " + rows.size() + "\nActual: " + visibleRowsCount);
     }
 
     private void verifyColor(int rowIndex, Condition c) {
-        ROWS.get(rowIndex).$$("td .media-photo").get(0).shouldHave(c);
+        rows.get(rowIndex).$$("td .media-photo").get(0).shouldHave(c);
     }
 }

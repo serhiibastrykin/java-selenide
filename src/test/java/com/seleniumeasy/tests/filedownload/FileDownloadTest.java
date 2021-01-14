@@ -14,8 +14,8 @@ import static com.seleniumeasy.alertsandmodals.FileDownloadPage.getContentOfTheF
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class FileDownloadTest extends SettingsSeleniumEasy {
-    private final String FILE = "easyinfo.txt",
-            INPUT_MESSAGE = "Hello\nWorld!";
+    private final String file = "easyinfo.txt",
+            inputMessage = "Hello\nWorld!";
 
     FileDownloadPage fileDownloadPage = new FileDownloadPage();
 
@@ -24,16 +24,16 @@ public class FileDownloadTest extends SettingsSeleniumEasy {
         fileDownloadPage
                 .clickAlertAndModals()
                 .openFileDownload()
-                .enterYourMessage(INPUT_MESSAGE)
+                .enterYourMessage(inputMessage)
                 .clickGenerateFile()
                 .downloadGeneratedFile();
-        assertThat(getContentOfTheFile(FILE)).isEqualTo(INPUT_MESSAGE);
+        assertThat(getContentOfTheFile(file)).isEqualTo(inputMessage);
     }
 
     @After
     public void deleteDownloadedFile() {
         try {
-            Files.delete(Paths.get(DOWNLOAD_DIR + File.separator + FILE));
+            Files.delete(Paths.get(DOWNLOAD_DIR + File.separator + file));
         } catch (IOException e) {
             e.printStackTrace();
         }

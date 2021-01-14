@@ -10,20 +10,20 @@ import static com.codeborne.selenide.Selenide.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TableSortAndSearchPage extends DemoHomePage {
-    private final SelenideElement TABLE_HEADER = $(".thead-inverse"),
-            TABLE_BODY = $("tbody"),
-            INPUT_SEARCH = $("input[type=search]");
-    private final ElementsCollection PAGINATION = $$("#example_paginate .paginate_button");
+    private final SelenideElement tableHeader = $(".thead-inverse"),
+            tableBody = $("tbody"),
+            inputSearch = $("input[type=search]");
+    private final ElementsCollection pagination = $$("#example_paginate .paginate_button");
 
     public TableSortAndSearchPage clickColumn(int colIndex) {
         sleep(200);
-        TABLE_HEADER.$$("th").get(colIndex).click();
+        tableHeader.$$("th").get(colIndex).click();
         return this;
     }
 
     public TableSortAndSearchPage clickColumn(String colName) {
         sleep(200);
-        TABLE_HEADER.$$("th").find(exactText(colName)).click();
+        tableHeader.$$("th").find(exactText(colName)).click();
         return this;
     }
 
@@ -38,12 +38,12 @@ public class TableSortAndSearchPage extends DemoHomePage {
 
     public TableSortAndSearchPage enterSearchText(String text) {
         sleep(500);
-        INPUT_SEARCH.sendKeys(text);
+        inputSearch.sendKeys(text);
         return this;
     }
 
     public void verifyFoundValues(String colName, Condition c) {
-        int rowCount = TABLE_BODY.$$("tr").size();
+        int rowCount = tableBody.$$("tr").size();
         for (int i = 0; i < rowCount; i++) {
             verifyColumnValue(i, colName, c);
         }
@@ -51,7 +51,7 @@ public class TableSortAndSearchPage extends DemoHomePage {
 
     public TableSortAndSearchPage clickPage(int pageIndex) {
         sleep(200);
-        PAGINATION.get(pageIndex).click();
+        pagination.get(pageIndex).click();
         return this;
     }
 
@@ -60,7 +60,7 @@ public class TableSortAndSearchPage extends DemoHomePage {
     }
 
     private int getColumnIndex(String colName) {
-        ElementsCollection columns = TABLE_HEADER.$$("th");
+        ElementsCollection columns = tableHeader.$$("th");
         int colIndex = -1;
         for (int i = 0; i < columns.size(); i++) {
             String columnText = columns.get(i).text();
@@ -74,7 +74,7 @@ public class TableSortAndSearchPage extends DemoHomePage {
     }
 
     private SelenideElement getTableRow(int rowIndex) {
-        return TABLE_BODY.$$("tr").get(rowIndex);
+        return tableBody.$$("tr").get(rowIndex);
     }
 
     private SelenideElement getCellText(int rowIndex, int colIndex) {
