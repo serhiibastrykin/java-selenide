@@ -5,9 +5,9 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Condition.empty;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TableDataSearchPage extends DemoHomePage {
@@ -22,13 +22,13 @@ public class TableDataSearchPage extends DemoHomePage {
     }
 
     public TableDataSearchPage enterSearchText(int colIndex, String text) {
-        columns.get(colIndex).sendKeys(text);
+        columns.get(colIndex).shouldBe(visible, empty).sendKeys(text);
         return this;
     }
 
     public TableDataSearchPage enterSearchText(String colName, String text) {
         int colIndex = getColumnIndex(colName);
-        columns.get(colIndex).sendKeys(text);
+        columns.get(colIndex).shouldBe(visible, empty).sendKeys(text);
         return this;
     }
 

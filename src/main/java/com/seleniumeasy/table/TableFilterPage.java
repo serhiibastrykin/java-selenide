@@ -5,23 +5,20 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 
-import static com.codeborne.selenide.Condition.attribute;
-import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class TableFilterPage extends DemoHomePage {
     private final ElementsCollection filters = $$(".btn-group button"),
             rows = $$("tbody tr");
 
     public TableFilterPage clickColumn(int colIndex) {
-        sleep(200);
-        filters.get(colIndex).click();
+        filters.get(colIndex).shouldBe(visible).click();
         return this;
     }
 
     public TableFilterPage clickColumn(String colName) {
-        filters.find(exactText(colName)).click();
+        filters.find(exactText(colName)).shouldBe(visible).click();
         return this;
     }
 
