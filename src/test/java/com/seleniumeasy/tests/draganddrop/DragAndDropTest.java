@@ -16,7 +16,6 @@ public class DragAndDropTest extends SettingsSeleniumEasy {
                 .clickOthersDropdown()
                 .openDragAndDrop()
                 .performDragAndDrop();
-        assertThat(true).isEqualTo(dragAndDropPage.
-                verifyPresenceOfAllDraggableElements());
+        assertThat(true).isEqualTo(dragAndDropPage.validateDroppableElements());
     }
 }

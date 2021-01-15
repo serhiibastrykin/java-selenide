@@ -14,13 +14,13 @@ public class TableFilterPage extends DemoHomePage {
     private final ElementsCollection filters = $$(".btn-group button"),
             rows = $$("tbody tr");
 
-    public TableFilterPage clickColumn(int colIndex) {
+    public TableFilterPage clickFilter(int colIndex) {
         sleep(200);
         filters.get(colIndex).click();
         return this;
     }
 
-    public TableFilterPage clickColumn(String colName) {
+    public TableFilterPage clickFilter(String colName) {
         filters.find(exactText(colName)).click();
         return this;
     }

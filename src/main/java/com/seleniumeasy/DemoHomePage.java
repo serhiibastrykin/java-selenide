@@ -14,6 +14,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class DemoHomePage {
+    public static final SelenideElement BUTTON_CLOSE_POPUP = $("#at-cv-lightbox-close");
     private final SelenideElement openedMenu = $(".open .dropdown-menu"),
             dropdownInputFormsMain = $x("//li[@class='dropdown']/a[contains(text(), 'Input Forms')]"),
             dropdownInputForms = $x("//li[@class='tree-branch']/a[contains(text(), 'Input Forms')]"),
@@ -25,7 +26,6 @@ public class DemoHomePage {
             itemFileDownload = $(byText("File Download")),
             dropdownOthers = $(byText("Others")),
             itemDragAndDrop = $(byText("Drag and Drop"));
-    public static final SelenideElement BUTTON_CLOSE_POPUP = $("#at-cv-lightbox-close");
 
     private void clickInputFormsDropdownMain() {
         dropdownInputFormsMain.click();
@@ -62,7 +62,8 @@ public class DemoHomePage {
         dropdownTable.click();
     }
 
-    public <PageObjectClass> PageObjectClass openTable(Table table, Class<PageObjectClass> pageObjectClass) {
+    public <PageObjectClass> PageObjectClass openTable
+            (Table table, Class<PageObjectClass> pageObjectClass) {
         clickTableDropdown();
         openedMenu.$$("li").find(exactText(table.getVal())).click();
         return Selenide.page(pageObjectClass);

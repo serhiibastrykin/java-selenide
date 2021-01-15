@@ -5,15 +5,15 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 
-import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TableSortAndSearchPage extends DemoHomePage {
-    private final SelenideElement tableHeader = $(".thead-inverse"),
+    private final SelenideElement tableHeader = $("thead"),
             tableBody = $("tbody"),
-            inputSearch = $("input[type=search]");
-    private final ElementsCollection pagination = $$("#example_paginate .paginate_button");
+            inputSearch = $("#example_filter input");
+    private final ElementsCollection pagination = $$("#example_paginate a");
 
     public TableSortAndSearchPage clickColumn(int colIndex) {
         sleep(200);
@@ -37,7 +37,7 @@ public class TableSortAndSearchPage extends DemoHomePage {
     }
 
     public TableSortAndSearchPage enterSearchText(String text) {
-        sleep(500);
+        sleep(200);
         inputSearch.sendKeys(text);
         return this;
     }

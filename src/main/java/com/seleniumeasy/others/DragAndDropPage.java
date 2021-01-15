@@ -18,7 +18,7 @@ public class DragAndDropPage extends DemoHomePage {
         return this;
     }
 
-    public boolean verifyPresenceOfAllDraggableElements() {
+    public boolean validateDroppableElements() {
         return droppedItems.size() == draggableElements.size() ? true : false;
     }
 }

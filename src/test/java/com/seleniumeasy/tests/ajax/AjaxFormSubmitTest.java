@@ -7,7 +7,7 @@ import utils.SettingsSeleniumEasy;
 public class AjaxFormSubmitTest extends SettingsSeleniumEasy {
     private final String name = "Serhii",
             comment = "This is my comment.",
-            message = "Form submited Successfully!";
+            message = "Form submited Successfully!";    //Bug on the page: typo in word "submitted"
 
     AjaxFormSubmitPage ajaxFormSubmitPage = new AjaxFormSubmitPage();
 

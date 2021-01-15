@@ -20,8 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 import static java.util.Objects.requireNonNull;
 import static org.junit.Assert.assertEquals;
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
@@ -35,32 +34,36 @@ public class TableDataDownloadPage extends DemoHomePage {
             pagination = $$("#example_paginate a");
 
     public TableDataDownloadPage clickColumn(int colIndex) {
-        headers.get(colIndex).shouldBe(visible).click();
+        sleep(200);
+        headers.get(colIndex).click();
         return this;
     }
 
     public TableDataDownloadPage clickColumn(String colName) {
-        headers.find(exactText(colName)).shouldBe(visible).click();
+        headers.find(exactText(colName)).click();
         return this;
     }
 
     public TableDataDownloadPage clickButton(int buttonIndex) {
-        buttons.get(buttonIndex).shouldBe(visible).click();
+        sleep(200);
+        buttons.get(buttonIndex).click();
         return this;
     }
 
     public TableDataDownloadPage clickButton(String buttonName) {
-        buttons.find(exactText(buttonName)).shouldBe(visible).click();
+        buttons.find(exactText(buttonName)).click();
         return this;
     }
 
     public TableDataDownloadPage clickPage(int pageIndex) {
-        pagination.get(pageIndex).shouldBe(visible).click();
+        sleep(200);
+        pagination.get(pageIndex).click();
         return this;
     }
 
     public TableDataDownloadPage enterSearchText(String text) {
-        inputSearch.shouldBe(empty).sendKeys(text);
+        sleep(200);
+        inputSearch.sendKeys(text);
         return this;
     }
 
