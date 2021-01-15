@@ -5,9 +5,8 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Selenide.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TableSortAndSearchPage extends DemoHomePage {
@@ -17,12 +16,14 @@ public class TableSortAndSearchPage extends DemoHomePage {
     private final ElementsCollection pagination = $$("#example_paginate .paginate_button");
 
     public TableSortAndSearchPage clickColumn(int colIndex) {
-        tableHeader.$$("th").get(colIndex).shouldBe(visible).click();
+        sleep(200);
+        tableHeader.$$("th").get(colIndex).click();
         return this;
     }
 
     public TableSortAndSearchPage clickColumn(String colName) {
-        tableHeader.$$("th").find(exactText(colName)).shouldBe(visible).click();
+        sleep(200);
+        tableHeader.$$("th").find(exactText(colName)).click();
         return this;
     }
 
@@ -36,7 +37,8 @@ public class TableSortAndSearchPage extends DemoHomePage {
     }
 
     public TableSortAndSearchPage enterSearchText(String text) {
-        inputSearch.shouldBe(visible, empty).sendKeys(text);
+        sleep(500);
+        inputSearch.sendKeys(text);
         return this;
     }
 
@@ -48,7 +50,8 @@ public class TableSortAndSearchPage extends DemoHomePage {
     }
 
     public TableSortAndSearchPage clickPage(int pageIndex) {
-        pagination.get(pageIndex).shouldBe(visible).click();
+        sleep(200);
+        pagination.get(pageIndex).click();
         return this;
     }
 

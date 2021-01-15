@@ -60,7 +60,7 @@ public class TableDataDownloadPage extends DemoHomePage {
     }
 
     public TableDataDownloadPage enterSearchText(String text) {
-        inputSearch.shouldBe(visible, empty).sendKeys(text);
+        inputSearch.shouldBe(empty).sendKeys(text);
         return this;
     }
 
