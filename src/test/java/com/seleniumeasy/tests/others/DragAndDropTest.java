@@ -1,4 +1,4 @@
-package com.seleniumeasy.tests.draganddrop;
+package com.seleniumeasy.tests.others;
 
 import com.seleniumeasy.others.DragAndDropPage;
 import org.junit.Test;

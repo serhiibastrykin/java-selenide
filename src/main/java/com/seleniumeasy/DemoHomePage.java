@@ -8,6 +8,7 @@ import com.seleniumeasy.enums.InputForms;
 import com.seleniumeasy.inputforms.*;
 import com.seleniumeasy.others.DragAndDropPage;
 import com.seleniumeasy.enums.Table;
+import com.seleniumeasy.others.DynamicDataLoadingPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -32,7 +33,8 @@ public class DemoHomePage {
             dropdownAlertAndModals = $(byText("Alerts & Modals")),
             itemFileDownload = $(byText("File Download")),
             dropdownOthers = $(byText("Others")),
-            itemDragAndDrop = $(byText("Drag and Drop"));
+            itemDragAndDrop = $(byText("Drag and Drop")),
+            itemDynamicDataLoading = $(byText("Dynamic Data Loading"));
 
     private void clickInputFormsDropdownMain() {
         dropdownInputFormsMain.click();
@@ -94,6 +96,11 @@ public class DemoHomePage {
     public DragAndDropPage openDragAndDrop() {
         itemDragAndDrop.click();
         return new DragAndDropPage();
+    }
+
+    public DynamicDataLoadingPage openDynamicDataLoading() {
+        itemDynamicDataLoading.click();
+        return new DynamicDataLoadingPage();
     }
 
     protected static void waitForFile(File file) {
