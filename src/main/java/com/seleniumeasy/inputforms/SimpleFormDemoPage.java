@@ -1,5 +1,6 @@
 package com.seleniumeasy.inputforms;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 
@@ -25,8 +26,8 @@ public class SimpleFormDemoPage extends DemoHomePage {
         return this;
     }
 
-    public void validateDisplayedMessage(String message) {
-        messageDisplayed.shouldHave(exactText(message));
+    public void validateDisplayedMessage(Condition c) {
+        messageDisplayed.should(c);
     }
 
     public SimpleFormDemoPage enterFirstNumber(String yourFirstNumber) {

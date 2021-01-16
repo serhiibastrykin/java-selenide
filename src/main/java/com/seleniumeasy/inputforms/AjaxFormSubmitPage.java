@@ -1,9 +1,9 @@
 package com.seleniumeasy.inputforms;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 
 public class AjaxFormSubmitPage extends DemoHomePage {
@@ -27,7 +27,7 @@ public class AjaxFormSubmitPage extends DemoHomePage {
         return this;
     }
 
-    public void verifyDisplayedMessage(String message) {
-        messageDisplayed.shouldHave(text(message));
+    public void validateDisplayedMessage(Condition c) {
+        messageDisplayed.should(c);
     }
 }

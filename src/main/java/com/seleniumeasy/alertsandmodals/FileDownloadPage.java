@@ -1,17 +1,12 @@
 package com.seleniumeasy.alertsandmodals;
 
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
 import com.seleniumeasy.DemoHomePage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.ArrayList;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -48,12 +43,5 @@ public class FileDownloadPage extends DemoHomePage {
             reader.close();
             return String.join("\n", content);
         }
-    }
-
-    private void waitForFile(File file) {
-        Wait<WebDriver> wait = new FluentWait<>(WebDriverRunner.getWebDriver())
-                .withTimeout(Duration.ofSeconds(5))
-                .pollingEvery(Duration.ofMillis(500));
-        wait.until((condition) -> file.exists());
     }
 }

@@ -2,12 +2,8 @@ package com.seleniumeasy.table;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
 import com.seleniumeasy.DemoHomePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -15,11 +11,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.*;
 import static java.util.Objects.requireNonNull;
 import static org.junit.Assert.assertEquals;
@@ -40,6 +35,7 @@ public class TableDataDownloadPage extends DemoHomePage {
     }
 
     public TableDataDownloadPage clickColumn(String colName) {
+        sleep(200);
         headers.find(exactText(colName)).click();
         return this;
     }
@@ -89,13 +85,6 @@ public class TableDataDownloadPage extends DemoHomePage {
         List<List<String>> entireContent = getEntireContent();
         List<String> joinedContent = joinContent(entireContent);
         assertEquals(joinedContent, readDownloadedFileContent());
-    }
-
-    private void waitForFile(File file) {
-        Wait<WebDriver> wait = new FluentWait<>(WebDriverRunner.getWebDriver())
-                .withTimeout(Duration.ofSeconds(5))
-                .pollingEvery(Duration.ofMillis(500));
-        wait.until((condition) -> file.exists());
     }
 
     private List<String> joinContent(List<List<String>> collections) {

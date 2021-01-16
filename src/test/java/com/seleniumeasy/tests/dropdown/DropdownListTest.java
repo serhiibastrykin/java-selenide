@@ -4,10 +4,11 @@ import com.seleniumeasy.inputforms.SelectDropdownListPage;
 import org.junit.Test;
 import utils.SettingsSeleniumEasy;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.seleniumeasy.enums.InputForms.SELECT_DROPDOWN_LIST;
 
 public class DropdownListTest extends SettingsSeleniumEasy {
-    private final String daySelected = "Friday";
+    private final String day = "Saturday";
 
     SelectDropdownListPage selectDropdownListPage = new SelectDropdownListPage();
 
@@ -15,8 +16,7 @@ public class DropdownListTest extends SettingsSeleniumEasy {
     public void selectValueFromDropdown() {
         selectDropdownListPage
                 .openInputForms(SELECT_DROPDOWN_LIST, SelectDropdownListPage.class)
-                .clickPleaseSelect()
-                .selectValue()
-                .validateSelectedValue(daySelected);
+                .selectDay(day)
+                .validateDisplayedDay(text(day));
     }
 }
