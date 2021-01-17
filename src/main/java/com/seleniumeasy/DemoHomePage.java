@@ -2,19 +2,13 @@ package com.seleniumeasy;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
 import com.seleniumeasy.alertsandmodals.FileDownloadPage;
 import com.seleniumeasy.enums.InputForms;
-import com.seleniumeasy.inputforms.*;
-import com.seleniumeasy.others.DragAndDropPage;
 import com.seleniumeasy.enums.Table;
+import com.seleniumeasy.inputforms.AjaxFormSubmitPage;
+import com.seleniumeasy.inputforms.SimpleFormDemoPage;
+import com.seleniumeasy.others.DragAndDropPage;
 import com.seleniumeasy.others.DynamicDataLoadingPage;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-
-import java.io.File;
-import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selectors.byText;
@@ -101,12 +95,5 @@ public class DemoHomePage {
     public DynamicDataLoadingPage openDynamicDataLoading() {
         itemDynamicDataLoading.click();
         return new DynamicDataLoadingPage();
-    }
-
-    protected static void waitForFile(File file) {
-        Wait<WebDriver> wait = new FluentWait<>(WebDriverRunner.getWebDriver())
-                .withTimeout(Duration.ofSeconds(5))
-                .pollingEvery(Duration.ofMillis(500));
-        wait.until((condition) -> file.exists());
     }
 }

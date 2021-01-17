@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.seleniumeasy.waits.CustomWaits.waitForFile;
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
 
 public class FileDownloadPage extends DemoHomePage {

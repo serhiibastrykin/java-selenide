@@ -16,6 +16,7 @@ import java.util.List;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.seleniumeasy.waits.CustomWaits.waitForFile;
 import static java.util.Objects.requireNonNull;
 import static org.junit.Assert.assertEquals;
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
