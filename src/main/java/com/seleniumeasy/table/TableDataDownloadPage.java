@@ -67,7 +67,7 @@ public class TableDataDownloadPage extends DemoHomePage {
         File downloadedFile = new File(DOWNLOAD_DIR + File.separator + FILE);
         waitForFile(downloadedFile);
         if (!downloadedFile.exists()) {
-            throw new IOException("The file doesn't exist!");
+            throw new IOException("The file" + FILE + "doesn't exist!");
         }
     }
 
