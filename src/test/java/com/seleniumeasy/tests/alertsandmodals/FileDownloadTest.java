@@ -1,4 +1,4 @@
-package com.seleniumeasy.tests.filedownload;
+package com.seleniumeasy.tests.alertsandmodals;
 
 import com.seleniumeasy.alertsandmodals.FileDownloadPage;
 import org.junit.After;
@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static com.seleniumeasy.enums.AlertsAndModals.FILE_DOWNLOAD;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class FileDownloadTest extends SettingsSeleniumEasy {
@@ -21,8 +22,7 @@ public class FileDownloadTest extends SettingsSeleniumEasy {
     @Test
     public void downloadFileTest() throws IOException {
         fileDownloadPage
-                .clickAlertAndModals()
-                .openFileDownload()
+                .openAlertsAndModals(FILE_DOWNLOAD, FileDownloadPage.class)
                 .enterYourMessage(inputMessage)
                 .clickGenerateFile()
                 .downloadGeneratedFile();

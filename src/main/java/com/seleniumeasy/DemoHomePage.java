@@ -2,7 +2,7 @@ package com.seleniumeasy;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.alertsandmodals.FileDownloadPage;
+import com.seleniumeasy.enums.AlertsAndModals;
 import com.seleniumeasy.enums.InputForms;
 import com.seleniumeasy.enums.Table;
 import com.seleniumeasy.inputforms.AjaxFormSubmitPage;
@@ -25,7 +25,6 @@ public class DemoHomePage {
             itemSimpleFormDemo = $x("//div[@class='list-group']/a[contains(text(), 'Simple Form Demo')]"),
             dropdownTable = $x("//li[@class='dropdown']/a[contains(text(), 'Table')]"),
             dropdownAlertAndModals = $(byText("Alerts & Modals")),
-            itemFileDownload = $(byText("File Download")),
             dropdownOthers = $(byText("Others")),
             itemDragAndDrop = $(byText("Drag and Drop")),
             itemDynamicDataLoading = $(byText("Dynamic Data Loading"));
@@ -72,14 +71,15 @@ public class DemoHomePage {
         return Selenide.page(pageObjectClass);
     }
 
-    public DemoHomePage clickAlertAndModals() {
+    private void clickAlertAndModals() {
         dropdownAlertAndModals.click();
-        return this;
     }
 
-    public FileDownloadPage openFileDownload() {
-        itemFileDownload.click();
-        return new FileDownloadPage();
+    public <PageObjectClass> PageObjectClass openAlertsAndModals
+            (AlertsAndModals alertsAndModals, Class<PageObjectClass> pageObjectClass) {
+        clickAlertAndModals();
+        openedMenu.$$("li").find(exactText(alertsAndModals.getVal())).click();
+        return Selenide.page(pageObjectClass);
     }
 
     public DemoHomePage clickOthersDropdown() {

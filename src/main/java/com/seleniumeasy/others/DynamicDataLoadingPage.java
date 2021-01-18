@@ -9,11 +9,11 @@ import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selenide.$;
 
 public class DynamicDataLoadingPage extends DemoHomePage {
-    private final SelenideElement buttonGenNewUser = $("#save"),
+    private final SelenideElement buttonGetNewUser = $("#save"),
             displayedContent = $("#loading");
 
-    public DynamicDataLoadingPage clickGenNewUser() {
-        buttonGenNewUser.click();
+    public DynamicDataLoadingPage clickGetNewUser() {
+        buttonGetNewUser.click();
         return this;
     }
 

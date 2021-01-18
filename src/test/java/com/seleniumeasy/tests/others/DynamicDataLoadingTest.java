@@ -15,7 +15,7 @@ public class DynamicDataLoadingTest extends SettingsSeleniumEasy {
         dynamicDataLoadingPage
                 .clickOthersDropdown()
                 .openDynamicDataLoading()
-                .clickGenNewUser()
+                .clickGetNewUser()
                 .verifyImageIsDisplayed()
                 .validateDisplayedText(text("First Name"), text("Last Name"));
     }
