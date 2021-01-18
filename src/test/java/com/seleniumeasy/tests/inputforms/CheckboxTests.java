@@ -1,4 +1,4 @@
-package com.seleniumeasy.tests.checkbox;
+package com.seleniumeasy.tests.inputforms;
 
 import com.seleniumeasy.inputforms.CheckboxDemoPage;
 import org.junit.Test;

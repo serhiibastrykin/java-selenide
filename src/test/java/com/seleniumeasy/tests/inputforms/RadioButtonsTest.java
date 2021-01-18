@@ -1,4 +1,4 @@
-package com.seleniumeasy.tests.radiobuttons;
+package com.seleniumeasy.tests.inputforms;
 
 import com.seleniumeasy.inputforms.RadioButtonsDemoPage;
 import org.junit.Test;

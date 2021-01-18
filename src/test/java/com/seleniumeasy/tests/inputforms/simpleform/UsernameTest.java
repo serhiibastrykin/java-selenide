@@ -1,4 +1,4 @@
-package com.seleniumeasy.tests.simpleform;
+package com.seleniumeasy.tests.inputforms.simpleform;
 
 import com.seleniumeasy.inputforms.SimpleFormDemoPage;
 import utils.SettingsSeleniumEasy;

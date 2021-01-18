@@ -1,4 +1,4 @@
-package com.seleniumeasy.tests.ajax;
+package com.seleniumeasy.tests.inputforms;
 
 import com.seleniumeasy.inputforms.AjaxFormSubmitPage;
 import org.junit.Test;

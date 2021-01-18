@@ -1,4 +1,4 @@
-package com.seleniumeasy.tests.dropdown;
+package com.seleniumeasy.tests.inputforms;
 
 import com.seleniumeasy.inputforms.SelectDropdownListPage;
 import org.junit.Test;

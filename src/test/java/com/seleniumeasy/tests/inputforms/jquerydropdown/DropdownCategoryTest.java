@@ -1,4 +1,4 @@
-package com.seleniumeasy.tests.dropdown;
+package com.seleniumeasy.tests.inputforms.jquerydropdown;
 
 import com.seleniumeasy.inputforms.DropdownCategory;
 import org.junit.Test;
