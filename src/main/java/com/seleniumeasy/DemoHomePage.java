@@ -7,6 +7,7 @@ import com.seleniumeasy.enums.InputForms;
 import com.seleniumeasy.enums.Table;
 import com.seleniumeasy.inputforms.AjaxFormSubmitPage;
 import com.seleniumeasy.inputforms.SimpleFormDemoPage;
+import com.seleniumeasy.listbox.BootstrapListBoxPage;
 import com.seleniumeasy.others.DragAndDropPage;
 import com.seleniumeasy.others.DynamicDataLoadingPage;
 
@@ -25,6 +26,8 @@ public class DemoHomePage {
             itemSimpleFormDemo = $x("//div[@class='list-group']/a[contains(text(), 'Simple Form Demo')]"),
             dropdownTable = $x("//li[@class='dropdown']/a[contains(text(), 'Table')]"),
             dropdownAlertAndModals = $(byText("Alerts & Modals")),
+            dropdownListBox = $(byText("List Box")),
+            itemBootstrapListBox = $(byText("Bootstrap List Box")),
             dropdownOthers = $(byText("Others")),
             itemDragAndDrop = $(byText("Drag and Drop")),
             itemDynamicDataLoading = $(byText("Dynamic Data Loading"));
@@ -80,6 +83,16 @@ public class DemoHomePage {
         clickAlertAndModals();
         openedMenu.$$("li").find(exactText(alertsAndModals.getVal())).click();
         return Selenide.page(pageObjectClass);
+    }
+
+    public DemoHomePage clickListBox() {
+        dropdownListBox.click();
+        return this;
+    }
+
+    public BootstrapListBoxPage openBootstrapListBox() {
+        itemBootstrapListBox.click();
+        return new BootstrapListBoxPage();
     }
 
     public DemoHomePage clickOthersDropdown() {
