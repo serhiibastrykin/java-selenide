@@ -11,14 +11,17 @@ public class DragAndDropPage extends DemoHomePage {
             droppedItems = $$("#droppedlist span");
     private final SelenideElement dropHere = $("#mydropzone");
 
-    public DragAndDropPage performDragAndDrop() {
-        for (int i = 0; i < draggableElements.size(); i++) {
-            draggableElements.get(i).dragAndDropTo(dropHere);
+    public void performDragAndDrop() {
+        for (SelenideElement draggableElement : draggableElements) {
+            draggableElement.dragAndDropTo(dropHere);
         }
-        return this;
     }
 
-    public boolean validateDroppableElements() {
-        return droppedItems.size() == draggableElements.size() ? true : false;
+    public boolean validateDroppedItemsSize(int s) {
+        if (droppedItems.size() != s) {
+            System.out.println("Expected size: " + s + "\nActual size: " + droppedItems.size());
+            return false;
+        }
+        return true;
     }
 }

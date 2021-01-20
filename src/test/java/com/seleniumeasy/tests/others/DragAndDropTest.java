@@ -1,10 +1,9 @@
 package com.seleniumeasy.tests.others;
 
 import com.seleniumeasy.others.DragAndDropPage;
+import org.junit.Assert;
 import org.junit.Test;
 import utils.SettingsSeleniumEasy;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class DragAndDropTest extends SettingsSeleniumEasy {
 
@@ -16,6 +15,6 @@ public class DragAndDropTest extends SettingsSeleniumEasy {
                 .clickOthersDropdown()
                 .openDragAndDrop()
                 .performDragAndDrop();
-        assertThat(true).isEqualTo(dragAndDropPage.validateDroppableElements());
+        Assert.assertTrue(dragAndDropPage.validateDroppedItemsSize(4));
     }
 }
