@@ -21,8 +21,8 @@ public class CheckboxDemoPage extends DemoHomePage {
     }
 
     public CheckboxDemoPage checkAllCheckboxes() {
-        for (int i = 0; i < checkboxes.size(); i++) {
-            checkboxes.get(i).setSelected(true);
+        for (SelenideElement checkbox : checkboxes) {
+            checkbox.setSelected(true);
         }
         return this;
     }
