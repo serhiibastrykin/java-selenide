@@ -2,7 +2,7 @@ package com.seleniumeasy.tests.inputforms.simpleform;
 
 import com.seleniumeasy.inputforms.SimpleFormDemoPage;
 import utils.SettingsSeleniumEasy;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.seleniumeasy.enums.InputForms.SIMPLE_FORM_DEMO;

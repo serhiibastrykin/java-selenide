@@ -1,7 +1,7 @@
 package com.seleniumeasy.tests.table;
 
 import com.seleniumeasy.table.TableFilterPage;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 import static com.seleniumeasy.enums.Table.TABLE_FILTER;

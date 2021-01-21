@@ -1,8 +1,8 @@
 package com.seleniumeasy.tests.others;
 
 import com.seleniumeasy.others.DragAndDropPage;
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 public class DragAndDropTest extends SettingsSeleniumEasy {

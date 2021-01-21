@@ -1,7 +1,7 @@
 package com.seleniumeasy.tests.alertsandmodals;
 
 import com.seleniumeasy.alertsandmodals.JavascriptAlertsPage;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 import static com.codeborne.selenide.Condition.exactText;

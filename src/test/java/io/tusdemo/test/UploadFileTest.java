@@ -1,7 +1,7 @@
 package io.tusdemo.test;
 
 import io.tusdemo.UploadFilePage;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import utils.SettingsTusDemo;
 
 import java.io.*;

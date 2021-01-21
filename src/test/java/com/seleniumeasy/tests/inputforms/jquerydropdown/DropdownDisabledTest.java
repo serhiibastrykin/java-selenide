@@ -1,7 +1,7 @@
 package com.seleniumeasy.tests.inputforms.jquerydropdown;
 
 import com.seleniumeasy.inputforms.DropdownDisabled;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 import static com.codeborne.selenide.Condition.attribute;

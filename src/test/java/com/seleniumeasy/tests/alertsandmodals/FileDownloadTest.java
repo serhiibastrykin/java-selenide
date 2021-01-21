@@ -1,8 +1,8 @@
 package com.seleniumeasy.tests.alertsandmodals;
 
 import com.seleniumeasy.alertsandmodals.FileDownloadPage;
-import org.junit.After;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 import java.io.File;
@@ -29,7 +29,7 @@ public class FileDownloadTest extends SettingsSeleniumEasy {
         assertThat(fileDownloadPage.getContentOfTheFile(file)).isEqualTo(inputMessage);
     }
 
-    @After
+    @AfterMethod
     public void deleteDownloadedFile() {
         try {
             Files.delete(Paths.get(DOWNLOAD_DIR + File.separator + file));

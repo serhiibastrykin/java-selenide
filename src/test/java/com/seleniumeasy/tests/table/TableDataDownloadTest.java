@@ -1,8 +1,8 @@
 package com.seleniumeasy.tests.table;
 
 import com.seleniumeasy.table.TableDataDownloadPage;
-import org.junit.After;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 import java.io.File;
@@ -53,7 +53,7 @@ public class TableDataDownloadTest extends SettingsSeleniumEasy {
                 .closePrintDialog();
     }
 
-    @After
+    @AfterMethod
     public void deleteDownloadedFile() {
         try {
             Files.delete(Paths.get(DOWNLOAD_DIR + File.separator + FILE));

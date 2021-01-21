@@ -4,6 +4,7 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -18,7 +19,6 @@ import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.seleniumeasy.waits.CustomWaits.waitForFile;
 import static java.util.Objects.requireNonNull;
-import static org.junit.Assert.assertEquals;
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
 
 public class TableDataDownloadPage extends DemoHomePage {
@@ -85,7 +85,7 @@ public class TableDataDownloadPage extends DemoHomePage {
     public void compareDisplayedAndDownloadedData() throws IOException {
         List<List<String>> entireContent = getEntireContent();
         List<String> joinedContent = joinContent(entireContent);
-        assertEquals(joinedContent, readDownloadedFileContent());
+        Assert.assertEquals(joinedContent, readDownloadedFileContent());
     }
 
     private List<String> joinContent(List<List<String>> collections) {

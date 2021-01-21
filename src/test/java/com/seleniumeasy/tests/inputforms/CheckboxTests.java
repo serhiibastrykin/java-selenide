@@ -1,7 +1,7 @@
 package com.seleniumeasy.tests.inputforms;
 
 import com.seleniumeasy.inputforms.CheckboxDemoPage;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 import static com.seleniumeasy.enums.InputForms.CHECKBOX_DEMO;

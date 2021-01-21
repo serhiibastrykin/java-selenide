@@ -1,7 +1,7 @@
 package com.seleniumeasy.tests.inputforms;
 
 import com.seleniumeasy.inputforms.SelectDropdownListPage;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 import static com.codeborne.selenide.Condition.text;

@@ -1,7 +1,7 @@
 package com.seleniumeasy.tests.listbox;
 
 import com.seleniumeasy.listbox.BootstrapListBoxPage;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 import static com.codeborne.selenide.Condition.text;

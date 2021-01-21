@@ -2,7 +2,7 @@ package com.seleniumeasy.tests.inputforms.simpleform;
 
 import com.seleniumeasy.inputforms.SimpleFormDemoPage;
 import utils.SettingsSeleniumEasy;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import static com.seleniumeasy.inputforms.SimpleFormDemoPage.addTwoNumbers;
 
