@@ -4,4 +4,5 @@
 *.iws
 target/
 build/
+allure-results/
 TableActions.java
