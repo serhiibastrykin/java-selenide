@@ -2,14 +2,9 @@ package com.seleniumeasy;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.enums.AlertsAndModals;
-import com.seleniumeasy.enums.InputForms;
-import com.seleniumeasy.enums.Table;
+import com.seleniumeasy.enums.*;
 import com.seleniumeasy.inputforms.AjaxFormSubmitPage;
 import com.seleniumeasy.inputforms.SimpleFormDemoPage;
-import com.seleniumeasy.listbox.BootstrapListBoxPage;
-import com.seleniumeasy.others.DragAndDropPage;
-import com.seleniumeasy.others.DynamicDataLoadingPage;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selectors.byText;
@@ -20,17 +15,14 @@ public class DemoHomePage {
     public static final SelenideElement BUTTON_CLOSE_POPUP = $("#at-cv-lightbox-close");
     private final SelenideElement openedMenu = $(".open .dropdown-menu"),
             dropdownInputFormsMain = $x("//li[@class='dropdown']/a[contains(text(), 'Input Forms')]"),
-            dropdownInputForms = $x("//li[@class='tree-branch']/a[contains(text(), 'Input Forms')]"),
+            menuListInputForms = $x("//li[@class='tree-branch']/a[contains(text(), 'Input Forms')]"),
             itemAjaxFormSubmit = $x("//li[@class='tree-branch']/ul/li/a[contains(text(), 'Ajax Form Submit')]"),
             buttonStartPractising = $("#btn_basic_example"),
             itemSimpleFormDemo = $x("//div[@class='list-group']/a[contains(text(), 'Simple Form Demo')]"),
             dropdownTable = $x("//li[@class='dropdown']/a[contains(text(), 'Table')]"),
             dropdownAlertAndModals = $(byText("Alerts & Modals")),
             dropdownListBox = $(byText("List Box")),
-            itemBootstrapListBox = $(byText("Bootstrap List Box")),
-            dropdownOthers = $(byText("Others")),
-            itemDragAndDrop = $(byText("Drag and Drop")),
-            itemDynamicDataLoading = $(byText("Dynamic Data Loading"));
+            dropdownOthers = $(byText("Others"));
 
     private void clickInputFormsDropdownMain() {
         dropdownInputFormsMain.click();
@@ -44,7 +36,7 @@ public class DemoHomePage {
     }
 
     public DemoHomePage clickInputFormsDropdown() {
-        dropdownInputForms.click();
+        menuListInputForms.click();
         return this;
     }
 
@@ -85,28 +77,25 @@ public class DemoHomePage {
         return Selenide.page(pageObjectClass);
     }
 
-    public DemoHomePage clickListBox() {
+    private void clickListBox() {
         dropdownListBox.click();
-        return this;
     }
 
-    public BootstrapListBoxPage openBootstrapListBox() {
-        itemBootstrapListBox.click();
-        return new BootstrapListBoxPage();
+    public <PageObjectClass> PageObjectClass openBootstrapListBox
+            (ListBox listBox, Class<PageObjectClass> pageObjectClass) {
+        clickListBox();
+        openedMenu.$$("li").find(exactText(listBox.getVal())).click();
+        return Selenide.page(pageObjectClass);
     }
 
-    public DemoHomePage clickOthersDropdown() {
+    private void clickOthersDropdown() {
         dropdownOthers.click();
-        return this;
     }
 
-    public DragAndDropPage openDragAndDrop() {
-        itemDragAndDrop.click();
-        return new DragAndDropPage();
-    }
-
-    public DynamicDataLoadingPage openDynamicDataLoading() {
-        itemDynamicDataLoading.click();
-        return new DynamicDataLoadingPage();
+    public <PageObjectClass> PageObjectClass openOthers
+            (Others others, Class<PageObjectClass> pageObjectClass) {
+        clickOthersDropdown();
+        openedMenu.$$("li").find(exactText(others.getVal())).click();
+        return Selenide.page(pageObjectClass);
     }
 }

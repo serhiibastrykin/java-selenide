@@ -1,12 +1,12 @@
 package com.seleniumeasy.enums;
 
-public enum AlertsAndModals {
-    FILE_DOWNLOAD("File Download"),
-    JAVASCRIPT_ALERTS("Javascript Alerts");
+public enum ListBox {
+    BOOTSTRAP_LIST_BOX("Bootstrap List Box"),
+    JQUERY_LIST_BOX("JQuery List Box");
 
     private final String val;
 
-    AlertsAndModals(String val) {
+    ListBox(String val) {
         this.val = val;
     }
 
