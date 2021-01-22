@@ -1,22 +1,20 @@
-package com.seleniumeasy.tests.draganddrop;
+package com.seleniumeasy.tests.others;
 
 import com.seleniumeasy.others.DragAndDropPage;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class DragAndDropTest extends SettingsSeleniumEasy {
 
     DragAndDropPage dragAndDropPage = new DragAndDropPage();
 
-    @Test
+    @Test (enabled = false)
     public void dragAndDropTest() {
         dragAndDropPage
                 .clickOthersDropdown()
                 .openDragAndDrop()
                 .performDragAndDrop();
-        assertThat(true).isEqualTo(dragAndDropPage.
-                verifyPresenceOfAllDraggableElements());
+        Assert.assertTrue(dragAndDropPage.validateDroppedItemsSize(4));
     }
 }

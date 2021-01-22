@@ -1,7 +1,7 @@
 package com.seleniumeasy.tests.table;
 
 import com.seleniumeasy.table.TableFilterPage;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 import static com.seleniumeasy.enums.Table.TABLE_FILTER;
@@ -14,7 +14,7 @@ public class TableFilterTest extends SettingsSeleniumEasy {
     public void testFilterByColors() {
         tableFilterPage
                 .openTable(TABLE_FILTER, TableFilterPage.class)
-                .clickColumn(1)
+                .clickFilter(1)
                 .verifyItemsColor("orange");
     }
 
@@ -22,7 +22,7 @@ public class TableFilterTest extends SettingsSeleniumEasy {
     public void testFilterAll() throws Exception {
         tableFilterPage
                 .openTable(TABLE_FILTER, TableFilterPage.class)
-                .clickColumn("All")
+                .clickFilter("All")
                 .verifyAllRowsDisplayed();
     }
 }

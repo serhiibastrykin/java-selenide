@@ -1,27 +1,22 @@
 package com.seleniumeasy.inputforms;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selenide.$;
 
 public class SelectDropdownListPage extends DemoHomePage {
-    private final SelenideElement DROPDOWN_PLEASE_SELECT = $("#select-demo"),
-            VALUE = $("#select-demo option[value=\"Friday\"]"),
-            SELECTED_VALUE = $(".selected-value");
+    private final SelenideElement selectedValue = $("#select-demo"),
+            displayedValue = $(".selected-value");
 
-    public SelectDropdownListPage clickPleaseSelect() {
-        DROPDOWN_PLEASE_SELECT.click();
+    public SelectDropdownListPage selectDay(String day) {
+        selectedValue.$$("option").find(value(day)).setSelected(true);
         return this;
     }
 
-    public SelectDropdownListPage selectValue() {
-        VALUE.setSelected(true);
-        return this;
-    }
-
-    public void validateSelectedValue(String day) {
-        SELECTED_VALUE.shouldHave(text(day));
+    public void validateDisplayedDay(Condition c) {
+        displayedValue.should(c);
     }
 }

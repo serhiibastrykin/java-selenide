@@ -8,16 +8,18 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import javax.annotation.Nonnull;
 import java.util.HashMap;
 
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
 
 public class ChromeDriverProvider implements WebDriverProvider {
 
+    @Nonnull
     @Override
-    public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
+    public WebDriver createDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
 
-        WebDriverManager.chromedriver().browserVersion("87").setup();
+        WebDriverManager.chromedriver().browserVersion("88").setup();
         HashMap<String, Object> chromePrefs = new HashMap<>();
         chromePrefs.put("profile.default_content_settings.popups", 0);
         chromePrefs.put("download.default_directory", DOWNLOAD_DIR);
@@ -33,7 +35,6 @@ public class ChromeDriverProvider implements WebDriverProvider {
         options.addArguments("--ignore-certificate-errors");
         options.addArguments("--allow-running-insecure-content");
 
-        ChromeDriver driver = new ChromeDriver(options);
-        return driver;
+        return new ChromeDriver(options);
     }
 }

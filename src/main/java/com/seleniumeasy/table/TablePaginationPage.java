@@ -8,15 +8,15 @@ import static com.codeborne.selenide.Selenide.$$;
 import static org.openqa.selenium.By.tagName;
 
 public class TablePaginationPage extends DemoHomePage {
-    private final ElementsCollection PAGINATION = $$(".pager li"),
-            ROWS = $$("tbody tr");
+    private final ElementsCollection pagination = $$(".pager li"),
+            rows = $$("tbody tr");
 
     public TablePaginationPage clickPage(int pageIndex) {
-        PAGINATION.get(pageIndex).$(tagName("a")).click();
+        pagination.get(pageIndex).$(tagName("a")).click();
         return this;
     }
 
     public void verifyClickedPageIsOpen(int rowIndex, int colIndex, Condition c) {
-        ROWS.get(rowIndex).$$("td").get(colIndex).should(c);
+        rows.get(rowIndex).$$("td").get(colIndex).should(c);
     }
 }

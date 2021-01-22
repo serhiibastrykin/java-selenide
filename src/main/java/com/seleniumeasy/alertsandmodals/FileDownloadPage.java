@@ -10,32 +10,32 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.seleniumeasy.waits.CustomWaits.waitForFile;
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
 
 public class FileDownloadPage extends DemoHomePage {
-    private final SelenideElement FIELD_ENTER_DATA = $("#textbox"),
-            BUTTON_GENERATE_FILE = $("#create"),
-            BUTTON_DOWNLOAD = $("#link-to-download");
+    private final SelenideElement fieldEnterData = $("#textbox"),
+            buttonGenerateFile = $("#create"),
+            buttonDownload = $("#link-to-download");
 
     public FileDownloadPage enterYourMessage(String yourMessage) {
-        FIELD_ENTER_DATA.sendKeys(yourMessage);
+        fieldEnterData.sendKeys(yourMessage);
         return this;
     }
 
     public FileDownloadPage clickGenerateFile() {
-        BUTTON_GENERATE_FILE.click();
+        buttonGenerateFile.click();
         return this;
     }
 
     public void downloadGeneratedFile() {
-        BUTTON_DOWNLOAD.click();
-        sleep(1000);
+        buttonDownload.click();
     }
 
-    public static String getContentOfTheFile(String filename) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(DOWNLOAD_DIR +
-                File.separator + filename))) {
+    public String getContentOfTheFile(String filename) throws IOException {
+        File downloadedFile = new File(DOWNLOAD_DIR + File.separator + filename);
+        waitForFile(downloadedFile);
+        try (BufferedReader reader = new BufferedReader(new FileReader(downloadedFile))) {
             ArrayList<String> content = new ArrayList<>();
             String strCurrentLine;
             while ((strCurrentLine = reader.readLine()) != null) {

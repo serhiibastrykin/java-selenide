@@ -1,14 +1,14 @@
-package com.seleniumeasy.tests.simpleform;
+package com.seleniumeasy.tests.inputforms.simpleform;
 
 import com.seleniumeasy.inputforms.SimpleFormDemoPage;
 import utils.SettingsSeleniumEasy;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import static com.seleniumeasy.inputforms.SimpleFormDemoPage.addTwoNumbers;
 
 public class AdditionTest extends SettingsSeleniumEasy {
-    private final String FIRST_NUMBER = "25",
-            SECOND_NUMBER = "23";
+    private final String firstNumber = "25",
+            secondNumber = "23";
 
     SimpleFormDemoPage simpleFormDemoPage = new SimpleFormDemoPage();
 
@@ -17,9 +17,9 @@ public class AdditionTest extends SettingsSeleniumEasy {
         simpleFormDemoPage
                 .clickStartPractisingButton()
                 .openSimpleFormDemo()
-                .enterFirstNumber(FIRST_NUMBER)
-                .enterSecondNumber(SECOND_NUMBER)
+                .enterFirstNumber(firstNumber)
+                .enterSecondNumber(secondNumber)
                 .clickGetTotalButton()
-                .validateTotalDisplayed(addTwoNumbers(FIRST_NUMBER, SECOND_NUMBER));
+                .validateTotalDisplayed(addTwoNumbers(firstNumber, secondNumber));
     }
 }
