@@ -81,7 +81,7 @@ public class DemoHomePage {
         dropdownListBox.click();
     }
 
-    public <PageObjectClass> PageObjectClass openBootstrapListBox
+    public <PageObjectClass> PageObjectClass openListBox
             (ListBox listBox, Class<PageObjectClass> pageObjectClass) {
         clickListBox();
         openedMenu.$$("li").find(exactText(listBox.getVal())).click();

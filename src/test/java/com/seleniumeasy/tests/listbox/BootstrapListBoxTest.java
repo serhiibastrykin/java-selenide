@@ -14,7 +14,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testMoveElementRightByIndex() {
         bootstrapListBoxPage
-                .openBootstrapListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .selectLeftItemByIndex(0)
                 .moveRight()
                 .validateItemIsDisplayedRight("list");
@@ -23,7 +23,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testMoveElementLeftByIndex() {
         bootstrapListBoxPage
-                .openBootstrapListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .selectRightItemByIndex(2)
                 .moveLeft()
                 .validateItemIsDisplayedLeft("risus");
@@ -32,7 +32,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testMoveElementRightByName() {
         bootstrapListBoxPage
-                .openBootstrapListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .selectLeftItemByName("facilisis")
                 .moveRight()
                 .validateItemIsDisplayedRight("Dapibus ac facilisis in");
@@ -41,7 +41,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testMoveElementLeftByName() {
         bootstrapListBoxPage
-                .openBootstrapListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .selectRightItemByName("Porta ac consectetur ac")
                 .moveLeft()
                 .validateItemIsDisplayedLeft("Porta");
@@ -50,7 +50,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testMoveAllElementsRight() {
         bootstrapListBoxPage
-                .openBootstrapListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .clickLeftSelectAll()
                 .moveRight()
                 .validateRightBoxSize(10);
@@ -59,7 +59,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testMoveAllElementsLeft() {
         bootstrapListBoxPage
-                .openBootstrapListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .clickRightSelectAll()
                 .moveLeft()
                 .validateLeftBoxSize(10);
@@ -68,7 +68,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testValidateItemsFoundRight() {
         bootstrapListBoxPage
-                .openBootstrapListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .searchInsideRightBox("leo")
                 .validateItemsFoundRight(text("leo"));
     }
@@ -76,7 +76,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testValidateItemsFoundLeft() {
         bootstrapListBoxPage
-                .openBootstrapListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .searchInsideLeftBox("ac")
                 .validateItemsFoundLeft(text("ac"));
     }
