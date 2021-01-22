@@ -9,7 +9,7 @@ public class DragAndDropTest extends SettingsSeleniumEasy {
 
     DragAndDropPage dragAndDropPage = new DragAndDropPage();
 
-    @Test
+    @Test (enabled = false)
     public void dragAndDropTest() {
         dragAndDropPage
                 .clickOthersDropdown()
