@@ -9,6 +9,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import javax.annotation.Nonnull;
+import java.util.Collections;
 import java.util.HashMap;
 
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
@@ -30,8 +31,14 @@ public class ChromeDriverProvider implements WebDriverProvider {
 
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("prefs", chromePrefs);
-        options.addArguments("--test-type");
+        options.setExperimentalOption("excludeSwitches",
+                Collections.singletonList("enable-automation"));
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-notifications");
         options.addArguments("--disable-popup-blocking");
+        options.addArguments("--disable-browser-side-navigation");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--test-type");
         options.addArguments("--ignore-certificate-errors");
         options.addArguments("--allow-running-insecure-content");
 
