@@ -15,20 +15,20 @@ public class CheckboxDemoPage extends DemoHomePage {
 
     public CheckboxDemoPage checkSeveralCheckboxes() {
         for (int i = 0; i < checkboxes.size()-1.; i++) {
-            checkboxes.get(i).setSelected(true);
+            checkboxes.get(i).scrollTo().setSelected(true);
         }
         return this;
     }
 
     public CheckboxDemoPage checkAllCheckboxes() {
         for (SelenideElement checkbox : checkboxes) {
-            checkbox.setSelected(true);
+            checkbox.scrollTo().setSelected(true);
         }
         return this;
     }
 
-    public CheckboxDemoPage verifyValueOfTheButton(boolean b) {
-        statusValueOfTheButton.shouldHave(value(String.valueOf(b)));
+    public CheckboxDemoPage verifyValueOfTheButton(String val) {
+        statusValueOfTheButton.shouldHave(value(val));
         return this;
     }
 

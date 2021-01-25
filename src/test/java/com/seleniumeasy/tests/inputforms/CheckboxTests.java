@@ -8,9 +8,9 @@ import static com.seleniumeasy.enums.InputForms.CHECKBOX_DEMO;
 
 public class CheckboxTests extends SettingsSeleniumEasy {
     private final String nameBefore = "Check All",
-            nameAfter = "Uncheck All";
-    private final boolean valueBefore = false,
-            valueAfter = true;
+            nameAfter = "Uncheck All",
+            valueBefore = "false",
+            valueAfter = "true";
 
     CheckboxDemoPage checkboxDemoPage = new CheckboxDemoPage();
 

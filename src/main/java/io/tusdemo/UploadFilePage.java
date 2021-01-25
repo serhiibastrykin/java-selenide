@@ -5,7 +5,8 @@ import com.codeborne.selenide.SelenideElement;
 import java.io.File;
 import java.util.ArrayList;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
@@ -33,6 +34,6 @@ public class UploadFilePage {
     public void validateDisplayedText(String content) {
         ArrayList<String> tabs = new ArrayList<>(getWebDriver().getWindowHandles());
         getWebDriver().switchTo().window(tabs.get(1));
-        displayedText.shouldHave(text(content));
+        displayedText.shouldHave(exactText(content));
     }
 }
