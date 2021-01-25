@@ -17,7 +17,7 @@ public class SettingsSeleniumEasy {
     private final String baseUrl = "https://www.seleniumeasy.com/test/";
 
     @BeforeClass
-    public static void setUp() {
+    public void setUp() {
         Configuration.browser = ChromeDriverProvider.class.getName();
         Configuration.startMaximized = true;
     }
@@ -36,7 +36,7 @@ public class SettingsSeleniumEasy {
     }
 
     @AfterClass
-    public static void tearDown() {
+    public void tearDown() {
         closeWebDriver();
     }
 }

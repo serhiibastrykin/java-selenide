@@ -34,7 +34,7 @@ public class FileDownloadPage extends DemoHomePage {
 
     public String getContentOfTheFile(String filename) throws IOException {
         File downloadedFile = new File(DOWNLOAD_DIR + File.separator + filename);
-        waitForFile(downloadedFile);
+        waitForFile(downloadedFile, 5);
         try (BufferedReader reader = new BufferedReader(new FileReader(downloadedFile))) {
             ArrayList<String> content = new ArrayList<>();
             String strCurrentLine;

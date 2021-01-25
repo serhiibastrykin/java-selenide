@@ -13,7 +13,7 @@ public class SettingsTusDemo {
     private final String baseUrl = "https://tus.io/demo.html";
 
     @BeforeClass
-    public static void setUp() {
+    public void setUp() {
         Configuration.browser = "firefox";
         Configuration.startMaximized = true;
     }
@@ -31,7 +31,7 @@ public class SettingsTusDemo {
     }
 
     @AfterClass
-    public static void tearDown() {
+    public void tearDown() {
         closeWebDriver();
     }
 }
