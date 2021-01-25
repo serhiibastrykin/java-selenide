@@ -14,7 +14,7 @@ import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 
 public class SettingsSeleniumEasy {
     public final static String DOWNLOAD_DIR = System.getProperty("user.dir") + File.separator + "target";
-    private final String baseUrl = "https://www.seleniumeasy.com/test/";
+    private final String baseURL = "https://www.seleniumeasy.com/test/";
 
     @BeforeClass
     public void setUp() {
@@ -24,7 +24,7 @@ public class SettingsSeleniumEasy {
 
     @BeforeMethod
     public void openWebsite() {
-        open(baseUrl);
+        open(baseURL);
         BUTTON_CLOSE_POPUP.click();
     }
 

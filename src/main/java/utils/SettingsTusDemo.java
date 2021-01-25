@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 
 public class SettingsTusDemo {
-    private final String baseUrl = "https://tus.io/demo.html";
+    private final String baseURL = "https://tus.io/demo.html";
 
     @BeforeClass
     public void setUp() {
@@ -20,7 +20,7 @@ public class SettingsTusDemo {
 
     @BeforeMethod
     public void openWebsite() {
-        open(baseUrl);
+        open(baseURL);
     }
 
     @AfterMethod
