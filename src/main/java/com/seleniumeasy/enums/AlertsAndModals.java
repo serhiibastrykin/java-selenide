@@ -3,7 +3,8 @@ package com.seleniumeasy.enums;
 public enum AlertsAndModals {
     FILE_DOWNLOAD("File Download"),
     JAVASCRIPT_ALERTS("Javascript Alerts"),
-    BOOTSTRAP_ALERTS("Bootstrap Alerts");
+    BOOTSTRAP_ALERTS("Bootstrap Alerts"),
+    PROGRESS_BAR_MODAL("Progress Bar Modal");
 
     private final String val;
 
