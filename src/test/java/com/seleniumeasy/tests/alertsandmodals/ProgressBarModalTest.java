@@ -16,7 +16,7 @@ public class ProgressBarModalTest extends SettingsSeleniumEasy {
         progressBarModalPage
                 .openAlertsAndModals(PROGRESS_BAR_MODAL, ProgressBarModalPage.class)
                 .openSimpleDialog()
-                .verifySimpleDialogIsDisplayed(exactText("Loading"));
+                .verifySimpleDialog(exactText("Loading"));
     }
 
     @Test
@@ -24,7 +24,7 @@ public class ProgressBarModalTest extends SettingsSeleniumEasy {
         progressBarModalPage
                 .openAlertsAndModals(PROGRESS_BAR_MODAL, ProgressBarModalPage.class)
                 .openDialogWithCustomMessage()
-                .verifyDialogWithCustomMessageIsDisplayed(exactText("Custom message"));
+                .verifyDialogWithCustomMessage(exactText("Custom message"));
     }
 
     @Test
@@ -32,6 +32,6 @@ public class ProgressBarModalTest extends SettingsSeleniumEasy {
         progressBarModalPage
                 .openAlertsAndModals(PROGRESS_BAR_MODAL, ProgressBarModalPage.class)
                 .openDialogWithCustomSettings()
-                .verifyDialogWithCustomSettingsIsDisplayed(exactText("Hello Mr. Alert !"));
+                .verifyDialogWithCustomSettings(exactText("Hello Mr. Alert !"));
     }
 }

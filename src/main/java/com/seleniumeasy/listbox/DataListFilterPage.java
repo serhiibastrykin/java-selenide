@@ -15,7 +15,7 @@ public class DataListFilterPage extends DemoHomePage {
             emails = $$x("//span[contains(text(), 'Email')]");
 
     public DataListFilterPage enterSearchText(String searchText) {
-        inputSearchAttendees.sendKeys(searchText);
+        inputSearchAttendees.setValue(searchText);
         return this;
     }
 

@@ -27,15 +27,15 @@ public class ProgressBarModalPage extends DemoHomePage {
         return this;
     }
 
-    public void verifySimpleDialogIsDisplayed(Condition c) {
+    public void verifySimpleDialog(Condition c) {
         modalDialog.should(c);
     }
 
-    public void verifyDialogWithCustomMessageIsDisplayed(Condition c) {
+    public void verifyDialogWithCustomMessage(Condition c) {
         modalDialog.should(c);
     }
 
-    public void verifyDialogWithCustomSettingsIsDisplayed(Condition c) {
+    public void verifyDialogWithCustomSettings(Condition c) {
         modalDialog.should(c);
     }
 }
