@@ -5,6 +5,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
+import static com.seleniumeasy.enums.Others.DRAG_AND_DROP;
+
 public class DragAndDropTest extends SettingsSeleniumEasy {
 
     DragAndDropPage dragAndDropPage = new DragAndDropPage();
@@ -12,8 +14,7 @@ public class DragAndDropTest extends SettingsSeleniumEasy {
     @Test (enabled = false)
     public void dragAndDropTest() {
         dragAndDropPage
-                .clickOthersDropdown()
-                .openDragAndDrop()
+                .openOthers(DRAG_AND_DROP, DragAndDropPage.class)
                 .performDragAndDrop();
         Assert.assertTrue(dragAndDropPage.validateDroppedItemsSize(4));
     }

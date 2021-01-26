@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.seleniumeasy.enums.ListBox.BOOTSTRAP_LIST_BOX;
 
 public class BootstrapListBoxTest extends SettingsSeleniumEasy {
 
@@ -13,8 +14,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testMoveElementRightByIndex() {
         bootstrapListBoxPage
-                .clickListBox()
-                .openBootstrapListBox()
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .selectLeftItemByIndex(0)
                 .moveRight()
                 .validateItemIsDisplayedRight("list");
@@ -23,8 +23,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testMoveElementLeftByIndex() {
         bootstrapListBoxPage
-                .clickListBox()
-                .openBootstrapListBox()
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .selectRightItemByIndex(2)
                 .moveLeft()
                 .validateItemIsDisplayedLeft("risus");
@@ -33,8 +32,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testMoveElementRightByName() {
         bootstrapListBoxPage
-                .clickListBox()
-                .openBootstrapListBox()
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .selectLeftItemByName("facilisis")
                 .moveRight()
                 .validateItemIsDisplayedRight("Dapibus ac facilisis in");
@@ -43,8 +41,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testMoveElementLeftByName() {
         bootstrapListBoxPage
-                .clickListBox()
-                .openBootstrapListBox()
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .selectRightItemByName("Porta ac consectetur ac")
                 .moveLeft()
                 .validateItemIsDisplayedLeft("Porta");
@@ -53,8 +50,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testMoveAllElementsRight() {
         bootstrapListBoxPage
-                .clickListBox()
-                .openBootstrapListBox()
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .clickLeftSelectAll()
                 .moveRight()
                 .validateRightBoxSize(10);
@@ -63,8 +59,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testMoveAllElementsLeft() {
         bootstrapListBoxPage
-                .clickListBox()
-                .openBootstrapListBox()
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .clickRightSelectAll()
                 .moveLeft()
                 .validateLeftBoxSize(10);
@@ -73,8 +68,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testValidateItemsFoundRight() {
         bootstrapListBoxPage
-                .clickListBox()
-                .openBootstrapListBox()
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .searchInsideRightBox("leo")
                 .validateItemsFoundRight(text("leo"));
     }
@@ -82,8 +76,7 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     @Test
     public void testValidateItemsFoundLeft() {
         bootstrapListBoxPage
-                .clickListBox()
-                .openBootstrapListBox()
+                .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
                 .searchInsideLeftBox("ac")
                 .validateItemsFoundLeft(text("ac"));
     }

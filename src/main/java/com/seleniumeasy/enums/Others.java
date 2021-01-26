@@ -1,12 +1,12 @@
 package com.seleniumeasy.enums;
 
-public enum AlertsAndModals {
-    FILE_DOWNLOAD("File Download"),
-    JAVASCRIPT_ALERTS("Javascript Alerts");
+public enum Others {
+    DRAG_AND_DROP("Drag and Drop"),
+    DYNAMIC_DATA_LOADING("Dynamic Data Loading");
 
     private final String val;
 
-    AlertsAndModals(String val) {
+    Others(String val) {
         this.val = val;
     }
 

@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.seleniumeasy.enums.Others.DYNAMIC_DATA_LOADING;
 
 public class DynamicDataLoadingTest extends SettingsSeleniumEasy {
 
@@ -13,8 +14,7 @@ public class DynamicDataLoadingTest extends SettingsSeleniumEasy {
     @Test
     public void testDynamicDataLoading() {
         dynamicDataLoadingPage
-                .clickOthersDropdown()
-                .openDynamicDataLoading()
+                .openOthers(DYNAMIC_DATA_LOADING, DynamicDataLoadingPage.class)
                 .clickGetNewUser()
                 .verifyImageIsDisplayed()
                 .validateDisplayedText(text("First Name"), text("Last Name"));
