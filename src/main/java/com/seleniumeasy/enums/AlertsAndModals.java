@@ -1,11 +1,12 @@
 package com.seleniumeasy.enums;
 
 public enum AlertsAndModals {
-    FILE_DOWNLOAD("File Download"),
-    JAVASCRIPT_ALERTS("Javascript Alerts"),
     BOOTSTRAP_ALERTS("Bootstrap Alerts"),
     BOOTSTRAP_MODALS("Bootstrap Modals"),
-    PROGRESS_BAR_MODAL("Progress Bar Modal");
+    WINDOW_POPUP_MODAL("Window Popup Modal"),
+    PROGRESS_BAR_MODAL("Progress Bar Modal"),
+    JAVASCRIPT_ALERTS("Javascript Alerts"),
+    FILE_DOWNLOAD("File Download");
 
     private final String val;
 

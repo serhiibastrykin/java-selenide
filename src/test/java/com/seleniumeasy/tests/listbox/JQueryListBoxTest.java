@@ -34,7 +34,7 @@ public class JQueryListBoxTest extends SettingsSeleniumEasy {
 
     @Test
     public void testAddItems() {
-        String[] names = new String[] {"Luiza", "Laura", "Isis"};
+        String[] names = {"Luiza", "Laura", "Isis"};
         jQueryListBoxPage
                 .openListBox(JQUERY_LIST_BOX, JQueryListBoxPage.class)
                 .addItemsToResultList(names)
@@ -44,7 +44,7 @@ public class JQueryListBoxTest extends SettingsSeleniumEasy {
 
     @Test
     public void testRemoveItems() {
-        String[] names = new String[] {"Beatriz", "Giovanna", "Lara", "Julia"};
+        String[] names = {"Beatriz", "Giovanna", "Lara", "Julia"};
         jQueryListBoxPage
                 .openListBox(JQUERY_LIST_BOX, JQueryListBoxPage.class)
                 .addItemsToResultList(names)
