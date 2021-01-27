@@ -54,6 +54,6 @@ public class TableSortAndSearchTest extends SettingsSeleniumEasy {
         tableSortAndSearchPage
                 .openTable(TABLE_SORT_AND_SEARCH, TableSortAndSearchPage.class)
                 .clickPage(2)
-                .verifyClickedPageIsOpen(0, exactText(cellText));
+                .verifyClickedPage(0, exactText(cellText));
     }
 }

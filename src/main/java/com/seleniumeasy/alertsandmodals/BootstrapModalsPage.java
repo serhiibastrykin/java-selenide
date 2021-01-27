@@ -3,7 +3,6 @@ package com.seleniumeasy.alertsandmodals;
 import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 
-import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
@@ -60,6 +59,6 @@ public class BootstrapModalsPage extends DemoHomePage {
     }
 
     public void verifyBothModalsNotDisplayed() {
-        openedModal.shouldNot(exist);
+        openedModal.shouldNotBe(visible);
     }
 }

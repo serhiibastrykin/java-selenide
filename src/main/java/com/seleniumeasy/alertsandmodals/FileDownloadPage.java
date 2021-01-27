@@ -18,8 +18,8 @@ public class FileDownloadPage extends DemoHomePage {
             buttonGenerateFile = $("#create"),
             buttonDownload = $("#link-to-download");
 
-    public FileDownloadPage enterYourMessage(String yourMessage) {
-        fieldEnterData.sendKeys(yourMessage);
+    public FileDownloadPage enterYourMessage(String message) {
+        fieldEnterData.setValue(message);
         return this;
     }
 

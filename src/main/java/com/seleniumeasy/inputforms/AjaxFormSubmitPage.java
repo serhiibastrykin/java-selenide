@@ -4,26 +4,33 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 
-import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.*;
 
 public class AjaxFormSubmitPage extends DemoHomePage {
     private final SelenideElement inputName = $("#title"),
             inputComment = $("#description"),
             buttonSubmit = $("#btn-submit"),
+            loadingIcon = $("img[src='LoaderIcon.gif']"),
             messageDisplayed = $("#submit-control");
 
     public AjaxFormSubmitPage enterName(String name) {
-        inputName.sendKeys(name);
+        inputName.setValue(name);
         return this;
     }
 
     public AjaxFormSubmitPage enterComment(String comment) {
-        inputComment.sendKeys(comment);
+        inputComment.setValue(comment);
         return this;
     }
 
     public AjaxFormSubmitPage clickSubmitButton() {
         buttonSubmit.click();
+        return this;
+    }
+
+    public AjaxFormSubmitPage verifyLoadingIconIsDisplayed() {
+        loadingIcon.shouldBe(visible);
         return this;
     }
 

@@ -16,7 +16,7 @@ public class TablePaginationPage extends DemoHomePage {
         return this;
     }
 
-    public void verifyClickedPageIsOpen(int rowIndex, int colIndex, Condition c) {
+    public void verifyClickedPage(int rowIndex, int colIndex, Condition c) {
         rows.get(rowIndex).$$("td").get(colIndex).should(c);
     }
 }

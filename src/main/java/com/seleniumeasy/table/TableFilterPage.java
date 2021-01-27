@@ -43,6 +43,6 @@ public class TableFilterPage extends DemoHomePage {
     }
 
     private void verifyColor(int rowIndex, Condition c) {
-        rows.get(rowIndex).$$("td .media-photo").get(0).shouldHave(c);
+        rows.get(rowIndex).$$("td .media-photo").get(0).should(c);
     }
 }

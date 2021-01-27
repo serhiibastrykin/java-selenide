@@ -55,7 +55,7 @@ public class TableDataDownloadPage extends DemoHomePage {
 
     public TableDataDownloadPage enterSearchText(String text) {
         sleep(200);
-        inputSearch.sendKeys(text);
+        inputSearch.setValue(text);
         return this;
     }
 

@@ -29,16 +29,16 @@ public class TableSortAndSearchPage extends DemoHomePage {
 
     public void verifyColumnValue(int rowIndex, String colName, Condition c) {
         int colIndex = getColumnIndex(colName);
-        getCellText(rowIndex, colIndex).shouldHave(c);
+        getCellText(rowIndex, colIndex).should(c);
     }
 
     public void verifyColumnValue(int rowIndex, int colIndex, Condition c) {
-        getCellText(rowIndex, colIndex).shouldHave(c);
+        getCellText(rowIndex, colIndex).should(c);
     }
 
     public TableSortAndSearchPage enterSearchText(String text) {
         sleep(200);
-        inputSearch.sendKeys(text);
+        inputSearch.setValue(text);
         return this;
     }
 
@@ -55,7 +55,7 @@ public class TableSortAndSearchPage extends DemoHomePage {
         return this;
     }
 
-    public void verifyClickedPageIsOpen(int colIndex, Condition c) {
+    public void verifyClickedPage(int colIndex, Condition c) {
         getTableRow(0).$$("td").get(colIndex).should(c);
     }
 
