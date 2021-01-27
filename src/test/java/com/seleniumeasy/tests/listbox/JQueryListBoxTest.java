@@ -15,9 +15,9 @@ public class JQueryListBoxTest extends SettingsSeleniumEasy {
         String name = "Helena";
         jQueryListBoxPage
                 .openListBox(JQUERY_LIST_BOX, JQueryListBoxPage.class)
-                .addItemToResultList(name)
-                .validateItemIsNotDisplayedInPickList(name)
-                .validateItemIsDisplayedInResultList(name);
+                .addItemsToResultList(name)
+                .validateItemsAreNotDisplayedInPickList(name)
+                .validateItemsAreDisplayedInResultList(name);
     }
 
     @Test
@@ -25,11 +25,11 @@ public class JQueryListBoxTest extends SettingsSeleniumEasy {
         String name = "Alice";
         jQueryListBoxPage
                 .openListBox(JQUERY_LIST_BOX, JQueryListBoxPage.class)
-                .addItemToResultList(name)
-                .validateItemIsDisplayedInResultList(name)
-                .removeItemFromResultList(name)
-                .validateItemIsNotDisplayedInResultList(name)
-                .validateItemIsDisplayedInPickList(name);
+                .addItemsToResultList(name)
+                .validateItemsAreDisplayedInResultList(name)
+                .removeItemsFromResultList(name)
+                .validateItemsAreNotDisplayedInResultList(name)
+                .validateItemsAreDisplayedInPickList(name);
     }
 
     @Test

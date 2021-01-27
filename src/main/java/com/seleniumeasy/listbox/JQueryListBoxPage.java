@@ -5,8 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 
 import static com.codeborne.selenide.CollectionCondition.size;
-import static com.codeborne.selenide.Condition.exactText;
-import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -18,13 +17,7 @@ public class JQueryListBoxPage extends DemoHomePage {
     private final ElementsCollection pickList = $$(".pickData option"),
             resultList = $$(".pickListResult option");
 
-    public JQueryListBoxPage addItemToResultList(String name) {
-        pickList.find(exactText(name)).click();
-        buttonAdd.click();
-        return this;
-    }
-
-    public JQueryListBoxPage addItemsToResultList(String[] names) {
+    public JQueryListBoxPage addItemsToResultList(String... names) {
         for (String name : names) {
             pickList.find(exactText(name)).click();
         }
@@ -32,13 +25,7 @@ public class JQueryListBoxPage extends DemoHomePage {
         return this;
     }
 
-    public JQueryListBoxPage removeItemFromResultList(String name) {
-        resultList.find(exactText(name)).click();
-        buttonRemove.click();
-        return this;
-    }
-
-    public JQueryListBoxPage removeItemsFromResultList(String[] names) {
+    public JQueryListBoxPage removeItemsFromResultList(String... names) {
         for (String name : names) {
             resultList.find(exactText(name)).click();
         }
@@ -66,48 +53,29 @@ public class JQueryListBoxPage extends DemoHomePage {
         return this;
     }
 
-    public void validateItemIsDisplayedInPickList(String name) {
-        pickList.find(exactText(name)).should(exist);
-    }
-
-    public JQueryListBoxPage validateItemIsNotDisplayedInPickList(String name) {
-        pickList.find(exactText(name)).shouldNot(exist);
-        return this;
-    }
-
-    public JQueryListBoxPage validateItemIsDisplayedInResultList(String name) {
-        resultList.find(exactText(name)).should(exist);
-        return this;
-    }
-
-    public JQueryListBoxPage validateItemIsNotDisplayedInResultList(String name) {
-        resultList.find(exactText(name)).shouldNot(exist);
-        return this;
-    }
-
-    public void validateItemsAreDisplayedInPickList(String[] names) {
+    public void validateItemsAreDisplayedInPickList(String... names) {
         for (String name : names) {
-            pickList.find(exactText(name)).should(exist);
+            pickList.find(exactText(name)).shouldBe(visible);
         }
     }
 
-    public JQueryListBoxPage validateItemsAreNotDisplayedInPickList(String[] names) {
+    public JQueryListBoxPage validateItemsAreNotDisplayedInPickList(String... names) {
         for (String name : names) {
-            pickList.find(exactText(name)).shouldNot(exist);
+            pickList.find(exactText(name)).shouldNotBe(visible);
         }
         return this;
     }
 
-    public JQueryListBoxPage validateItemsAreDisplayedInResultList(String[] names) {
+    public JQueryListBoxPage validateItemsAreDisplayedInResultList(String... names) {
         for (String name : names) {
-            resultList.find(exactText(name)).should(exist);
+            resultList.find(exactText(name)).shouldBe(visible);
         }
         return this;
     }
 
-    public JQueryListBoxPage validateItemsAreNotDisplayedInResultList(String[] names) {
+    public JQueryListBoxPage validateItemsAreNotDisplayedInResultList(String... names) {
         for (String name : names) {
-            resultList.find(exactText(name)).shouldNot(exist);
+            resultList.find(exactText(name)).shouldNotBe(visible);
         }
         return this;
     }
