@@ -56,4 +56,14 @@ public class TableSortAndSearchTest extends SettingsSeleniumEasy {
                 .clickPage(2)
                 .verifyClickedPage(0, exactText(cellText));
     }
+
+    @Test
+    public void testChangeEntriesSize() {
+        tableSortAndSearchPage
+                .openTable(TABLE_SORT_AND_SEARCH, TableSortAndSearchPage.class)
+                .changeEntriesSize(25)
+                .clickColumn("Start date")
+                .clickPage(3)
+                .verifyColumnValue(5, 2, exactText("London"));
+    }
 }

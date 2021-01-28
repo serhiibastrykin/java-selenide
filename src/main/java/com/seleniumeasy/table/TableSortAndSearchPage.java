@@ -27,6 +27,13 @@ public class TableSortAndSearchPage extends DemoHomePage {
         return this;
     }
 
+    // Valid size values: 10, 25, 50, 100
+    public TableSortAndSearchPage changeEntriesSize(int size) {
+        String entriesSize = String.format("select[name=example_length] option[value='%d']", size);
+        $(entriesSize).setSelected(true);
+        return this;
+    }
+
     public void verifyColumnValue(int rowIndex, String colName, Condition c) {
         int colIndex = getColumnIndex(colName);
         getCellText(rowIndex, colIndex).should(c);
