@@ -5,6 +5,7 @@ public enum InputForms {
     CHECKBOX_DEMO("Checkbox Demo"),
     SELECT_DROPDOWN_LIST("Select Dropdown List"),
     RADIO_BUTTONS_DEMO("Radio Buttons Demo"),
+    INPUT_FORM_SUBMIT("Input Form Submit"),
     JQUERY_SELECT_DROPDOWN("JQuery Select Dropdown");
 
     private final String val;
