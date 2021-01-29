@@ -35,6 +35,6 @@ public class AjaxFormSubmitPage extends DemoHomePage {
     }
 
     public void validateDisplayedMessage(Condition c) {
-        messageDisplayed.waitUntil(c, 5000, 500);
+        messageDisplayed.waitUntil(c, 6000, 500);
     }
 }
