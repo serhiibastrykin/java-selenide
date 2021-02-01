@@ -10,7 +10,7 @@ public class WindowPopupModalTest extends SettingsSeleniumEasy {
 
     WindowPopupModalPage windowPopupModalPage = new WindowPopupModalPage();
 
-    @Test (enabled = false)
+    @Test
     public void testOpeningThreePopups() {
         windowPopupModalPage
                 .openAlertsAndModals(WINDOW_POPUP_MODAL, WindowPopupModalPage.class)
@@ -20,7 +20,7 @@ public class WindowPopupModalTest extends SettingsSeleniumEasy {
                 .verifyFacebookPopupIsOpen();
     }
 
-    @Test (enabled = false)
+    @Test
     public void testClosingThreePopups() {
         windowPopupModalPage
                 .openAlertsAndModals(WINDOW_POPUP_MODAL, WindowPopupModalPage.class)

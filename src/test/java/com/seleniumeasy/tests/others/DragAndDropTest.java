@@ -11,6 +11,10 @@ public class DragAndDropTest extends SettingsSeleniumEasy {
 
     DragAndDropPage dragAndDropPage = new DragAndDropPage();
 
+    /*
+    There is a bug with drag and drop functionality on the website,
+    therefore, the result is always "false"
+     */
     @Test (enabled = false)
     public void dragAndDropTest() {
         dragAndDropPage
