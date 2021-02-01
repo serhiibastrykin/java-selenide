@@ -16,13 +16,11 @@ public class TableSortAndSearchPage extends DemoHomePage {
     private final ElementsCollection pagination = $$("#example_paginate a");
 
     public TableSortAndSearchPage clickColumn(int colIndex) {
-        sleep(200);
         tableHeader.$$("th").get(colIndex).click();
         return this;
     }
 
     public TableSortAndSearchPage clickColumn(String colName) {
-        sleep(200);
         tableHeader.$$("th").find(exactText(colName)).click();
         return this;
     }
@@ -44,7 +42,6 @@ public class TableSortAndSearchPage extends DemoHomePage {
     }
 
     public TableSortAndSearchPage enterSearchText(String text) {
-        sleep(200);
         inputSearch.setValue(text);
         return this;
     }
@@ -57,7 +54,6 @@ public class TableSortAndSearchPage extends DemoHomePage {
     }
 
     public TableSortAndSearchPage clickPage(int pageIndex) {
-        sleep(200);
         pagination.get(pageIndex).click();
         return this;
     }

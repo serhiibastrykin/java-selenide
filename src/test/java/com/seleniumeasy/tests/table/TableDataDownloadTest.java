@@ -17,7 +17,7 @@ public class TableDataDownloadTest extends SettingsSeleniumEasy {
 
     TableDataDownloadPage tableDataDownloadPage = new TableDataDownloadPage();
 
-    @Test
+    @Test (priority = 3)
     public void testDataComparison() throws IOException {
         tableDataDownloadPage
                 .openTable(TABLE_DATA_DOWNLOAD, TableDataDownloadPage.class)
@@ -26,7 +26,7 @@ public class TableDataDownloadTest extends SettingsSeleniumEasy {
                 .compareDisplayedAndDownloadedData();
     }
 
-    @Test
+    @Test (priority = 1)
     public void testSortedDataComparison() throws IOException {
         tableDataDownloadPage
                 .openTable(TABLE_DATA_DOWNLOAD, TableDataDownloadPage.class)
@@ -37,7 +37,7 @@ public class TableDataDownloadTest extends SettingsSeleniumEasy {
                 .compareDisplayedAndDownloadedData();
     }
 
-    @Test (enabled = false)
+    @Test (priority = 2)
     public void testClosePrintDialog() {
         tableDataDownloadPage
                 .openTable(TABLE_DATA_DOWNLOAD, TableDataDownloadPage.class)

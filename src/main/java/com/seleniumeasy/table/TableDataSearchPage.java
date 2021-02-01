@@ -14,7 +14,6 @@ public class TableDataSearchPage extends DemoHomePage {
             rows = $$(".filterable .table tbody tr");
 
     public TableDataSearchPage clickFilterButton() {
-        sleep(500);
         buttonFilter.click();
         return this;
     }
