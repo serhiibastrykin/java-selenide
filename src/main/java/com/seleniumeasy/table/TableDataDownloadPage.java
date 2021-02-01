@@ -30,31 +30,26 @@ public class TableDataDownloadPage extends DemoHomePage {
             pagination = $$("#example_paginate a");
 
     public TableDataDownloadPage clickColumn(int colIndex) {
-        sleep(200);
         headers.get(colIndex).click();
         return this;
     }
 
     public TableDataDownloadPage clickColumn(String colName) {
-        sleep(200);
         headers.find(exactText(colName)).click();
         return this;
     }
 
     public TableDataDownloadPage clickButton(String buttonName) {
-        sleep(200);
         buttons.find(exactText(buttonName)).click();
         return this;
     }
 
     public TableDataDownloadPage clickPage(int pageIndex) {
-        sleep(200);
         pagination.get(pageIndex).click();
         return this;
     }
 
     public TableDataDownloadPage enterSearchText(String text) {
-        sleep(200);
         inputSearch.setValue(text);
         return this;
     }
