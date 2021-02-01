@@ -11,11 +11,15 @@ public class DragAndDropTest extends SettingsSeleniumEasy {
 
     DragAndDropPage dragAndDropPage = new DragAndDropPage();
 
+    /*
+    There is a bug with drag and drop functionality on the website,
+    therefore, the result is always "false"
+     */
     @Test (enabled = false)
     public void dragAndDropTest() {
         dragAndDropPage
                 .openOthers(DRAG_AND_DROP, DragAndDropPage.class)
                 .performDragAndDrop();
-        Assert.assertTrue(dragAndDropPage.validateDroppedItemsSize(4));
+        Assert.assertTrue(dragAndDropPage.isDroppedSizeEquals(4));
     }
 }

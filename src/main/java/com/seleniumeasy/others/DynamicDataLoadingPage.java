@@ -5,7 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.DemoHomePage;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class DynamicDataLoadingPage extends DemoHomePage {
@@ -18,7 +18,7 @@ public class DynamicDataLoadingPage extends DemoHomePage {
     }
 
     public DynamicDataLoadingPage verifyImageIsDisplayed() {
-        displayedContent.$(By.tagName("img")).should(exist);
+        displayedContent.$(By.tagName("img")).shouldBe(visible);
         return this;
     }
 

@@ -4,7 +4,7 @@ import com.seleniumeasy.listbox.BootstrapListBoxPage;
 import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.exactText;
 import static com.seleniumeasy.enums.ListBox.BOOTSTRAP_LIST_BOX;
 
 public class BootstrapListBoxTest extends SettingsSeleniumEasy {
@@ -13,38 +13,42 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
 
     @Test
     public void testMoveElementRightByIndex() {
+        String[] items = {"bootstrap-duallist", "Morbi leo risus"};
         bootstrapListBoxPage
                 .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
-                .selectLeftItemByIndex(0)
+                .selectLeftItemsByIndex(0, 2)
                 .moveRight()
-                .validateItemIsDisplayedRight("list");
+                .validateItemsDisplayedRight(items);
     }
 
     @Test
     public void testMoveElementLeftByIndex() {
+        String[] items = {"Cras justo odio", "Dapibus ac facilisis in"};
         bootstrapListBoxPage
                 .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
-                .selectRightItemByIndex(2)
+                .selectRightItemsByIndex(1, 0)
                 .moveLeft()
-                .validateItemIsDisplayedLeft("risus");
+                .validateItemsDisplayedLeft(items);
     }
 
     @Test
     public void testMoveElementRightByName() {
+        String[] items = {"Morbi leo risus", "Vestibulum at eros", "Porta ac consectetur ac"};
         bootstrapListBoxPage
                 .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
-                .selectLeftItemByName("facilisis")
+                .selectLeftItemsByName("eros", "Morbi", "Porta")
                 .moveRight()
-                .validateItemIsDisplayedRight("Dapibus ac facilisis in");
+                .validateItemsDisplayedRight(items);
     }
 
     @Test
     public void testMoveElementLeftByName() {
+        String[] items = {"Cras justo odio", "Porta ac consectetur ac"};
         bootstrapListBoxPage
                 .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
-                .selectRightItemByName("Porta ac consectetur ac")
+                .selectRightItemsByName("as", "ac conse")
                 .moveLeft()
-                .validateItemIsDisplayedLeft("Porta");
+                .validateItemsDisplayedLeft(items);
     }
 
     @Test
@@ -69,15 +73,15 @@ public class BootstrapListBoxTest extends SettingsSeleniumEasy {
     public void testValidateItemsFoundRight() {
         bootstrapListBoxPage
                 .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
-                .searchInsideRightBox("leo")
-                .validateItemsFoundRight(text("leo"));
+                .searchInsideRightBox("in")
+                .validateItemsFoundRight(exactText("Dapibus ac facilisis in"));
     }
 
     @Test
     public void testValidateItemsFoundLeft() {
         bootstrapListBoxPage
                 .openListBox(BOOTSTRAP_LIST_BOX, BootstrapListBoxPage.class)
-                .searchInsideLeftBox("ac")
-                .validateItemsFoundLeft(text("ac"));
+                .searchInsideLeftBox("at")
+                .validateItemsFoundLeft(exactText("Vestibulum at eros"));
     }
 }

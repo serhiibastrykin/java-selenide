@@ -16,8 +16,8 @@ public class SimpleFormDemoPage extends DemoHomePage {
             totalDisplayed = $("#displayvalue"),
             messageDisplayed = $("#display");
 
-    public SimpleFormDemoPage enterYourMessage(String yourMessage) {
-        fieldEnterMessage.setValue(yourMessage);
+    public SimpleFormDemoPage enterYourMessage(String message) {
+        fieldEnterMessage.setValue(message);
         return this;
     }
 
@@ -30,19 +30,19 @@ public class SimpleFormDemoPage extends DemoHomePage {
         messageDisplayed.should(c);
     }
 
-    public SimpleFormDemoPage enterFirstNumber(String yourFirstNumber) {
-        firstNumberField.setValue(yourFirstNumber);
+    public SimpleFormDemoPage enterFirstNumber(String firstNumber) {
+        firstNumberField.setValue(firstNumber);
         return this;
     }
 
-    public SimpleFormDemoPage enterSecondNumber(String yourSecondNumber) {
-        secondNumberField.setValue(yourSecondNumber);
+    public SimpleFormDemoPage enterSecondNumber(String secondNumber) {
+        secondNumberField.setValue(secondNumber);
         return this;
     }
 
-    public static String addTwoNumbers(String firstNum, String secondNum) {
-        int num1 = Integer.parseInt(firstNum);
-        int num2 = Integer.parseInt(secondNum);
+    public static String addTwoNumbers(String firstNumber, String secondNumber) {
+        int num1 = Integer.parseInt(firstNumber);
+        int num2 = Integer.parseInt(secondNumber);
         int sum = num1 + num2;
         return String.valueOf(sum);
     }

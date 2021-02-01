@@ -21,6 +21,7 @@ public class AjaxFormSubmitTest extends SettingsSeleniumEasy {
                 .enterName(name)
                 .enterComment(comment)
                 .clickSubmitButton()
+                .verifyLoadingIconIsDisplayed()
                 .validateDisplayedMessage(exactText(message));
     }
 }

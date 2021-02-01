@@ -14,19 +14,18 @@ public class TableDataSearchPage extends DemoHomePage {
             rows = $$(".filterable .table tbody tr");
 
     public TableDataSearchPage clickFilterButton() {
-        sleep(500);
         buttonFilter.click();
         return this;
     }
 
     public TableDataSearchPage enterSearchText(int colIndex, String text) {
-        columns.get(colIndex).sendKeys(text);
+        columns.get(colIndex).setValue(text);
         return this;
     }
 
     public TableDataSearchPage enterSearchText(String colName, String text) {
         int colIndex = getColumnIndex(colName);
-        columns.get(colIndex).sendKeys(text);
+        columns.get(colIndex).setValue(text);
         return this;
     }
 
@@ -45,12 +44,12 @@ public class TableDataSearchPage extends DemoHomePage {
     }
 
     private void verifyColumnValue(int rowIndex, int colIndex, Condition c) {
-        getCellText(rowIndex, colIndex).shouldHave(c);
+        getCellText(rowIndex, colIndex).should(c);
     }
 
     private void verifyColumnValue(int rowIndex, String colName, Condition c) {
         int colIndex = getColumnIndex(colName);
-        getCellText(rowIndex, colIndex).shouldHave(c);
+        getCellText(rowIndex, colIndex).should(c);
     }
 
     private int getColumnIndex(String colName) {

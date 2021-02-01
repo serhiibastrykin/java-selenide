@@ -10,17 +10,17 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.clearBrowserCache;
 
 public class SettingsTusDemo {
-    private final String baseUrl = "https://tus.io/demo.html";
+    private final String baseURL = "https://tus.io/demo.html";
 
     @BeforeClass
-    public static void setUp() {
+    public void setUp() {
         Configuration.browser = "firefox";
         Configuration.startMaximized = true;
     }
 
     @BeforeMethod
     public void openWebsite() {
-        open(baseUrl);
+        open(baseURL);
     }
 
     @AfterMethod
@@ -31,7 +31,7 @@ public class SettingsTusDemo {
     }
 
     @AfterClass
-    public static void tearDown() {
+    public void tearDown() {
         closeWebDriver();
     }
 }

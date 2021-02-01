@@ -16,29 +16,33 @@ public class TableSortAndSearchPage extends DemoHomePage {
     private final ElementsCollection pagination = $$("#example_paginate a");
 
     public TableSortAndSearchPage clickColumn(int colIndex) {
-        sleep(200);
         tableHeader.$$("th").get(colIndex).click();
         return this;
     }
 
     public TableSortAndSearchPage clickColumn(String colName) {
-        sleep(200);
         tableHeader.$$("th").find(exactText(colName)).click();
+        return this;
+    }
+
+    // Valid size values: 10, 25, 50, 100
+    public TableSortAndSearchPage changeEntriesSize(int size) {
+        String entriesSize = String.format("select[name=example_length] option[value='%d']", size);
+        $(entriesSize).setSelected(true);
         return this;
     }
 
     public void verifyColumnValue(int rowIndex, String colName, Condition c) {
         int colIndex = getColumnIndex(colName);
-        getCellText(rowIndex, colIndex).shouldHave(c);
+        getCellText(rowIndex, colIndex).should(c);
     }
 
     public void verifyColumnValue(int rowIndex, int colIndex, Condition c) {
-        getCellText(rowIndex, colIndex).shouldHave(c);
+        getCellText(rowIndex, colIndex).should(c);
     }
 
     public TableSortAndSearchPage enterSearchText(String text) {
-        sleep(200);
-        inputSearch.sendKeys(text);
+        inputSearch.setValue(text);
         return this;
     }
 
@@ -50,12 +54,11 @@ public class TableSortAndSearchPage extends DemoHomePage {
     }
 
     public TableSortAndSearchPage clickPage(int pageIndex) {
-        sleep(200);
         pagination.get(pageIndex).click();
         return this;
     }
 
-    public void verifyClickedPageIsOpen(int colIndex, Condition c) {
+    public void verifyClickedPage(int colIndex, Condition c) {
         getTableRow(0).$$("td").get(colIndex).should(c);
     }
 

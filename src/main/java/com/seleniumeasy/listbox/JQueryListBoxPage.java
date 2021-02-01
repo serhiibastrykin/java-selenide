@@ -17,7 +17,7 @@ public class JQueryListBoxPage extends DemoHomePage {
     private final ElementsCollection pickList = $$(".pickData option"),
             resultList = $$(".pickListResult option");
 
-    public JQueryListBoxPage addItemsToResultList(String...names) {
+    public JQueryListBoxPage addItemsToResultList(String... names) {
         for (String name : names) {
             pickList.find(exactText(name)).click();
         }
@@ -25,7 +25,7 @@ public class JQueryListBoxPage extends DemoHomePage {
         return this;
     }
 
-    public JQueryListBoxPage removeItemsFromResultList(String...names) {
+    public JQueryListBoxPage removeItemsFromResultList(String... names) {
         for (String name : names) {
             resultList.find(exactText(name)).click();
         }
@@ -53,27 +53,27 @@ public class JQueryListBoxPage extends DemoHomePage {
         return this;
     }
 
-    public void validateItemsAreDisplayedInPickList(String...names) {
+    public void validateItemsAreDisplayedInPickList(String... names) {
         for (String name : names) {
             pickList.find(exactText(name)).shouldBe(visible);
         }
     }
 
-    public JQueryListBoxPage validateItemsAreNotDisplayedInPickList(String...names) {
+    public JQueryListBoxPage validateItemsAreNotDisplayedInPickList(String... names) {
         for (String name : names) {
             pickList.find(exactText(name)).shouldNotBe(visible);
         }
         return this;
     }
 
-    public JQueryListBoxPage validateItemsAreDisplayedInResultList(String...names) {
+    public JQueryListBoxPage validateItemsAreDisplayedInResultList(String... names) {
         for (String name : names) {
             resultList.find(exactText(name)).shouldBe(visible);
         }
         return this;
     }
 
-    public JQueryListBoxPage validateItemsAreNotDisplayedInResultList(String...names) {
+    public JQueryListBoxPage validateItemsAreNotDisplayedInResultList(String... names) {
         for (String name : names) {
             resultList.find(exactText(name)).shouldNotBe(visible);
         }

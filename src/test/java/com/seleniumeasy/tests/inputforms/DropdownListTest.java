@@ -8,15 +8,22 @@ import static com.codeborne.selenide.Condition.text;
 import static com.seleniumeasy.enums.InputForms.SELECT_DROPDOWN_LIST;
 
 public class DropdownListTest extends SettingsSeleniumEasy {
-    private final String day = "Saturday";
 
     SelectDropdownListPage selectDropdownListPage = new SelectDropdownListPage();
 
     @Test
-    public void selectValueFromDropdown() {
+    public void selectDayByName() {
         selectDropdownListPage
                 .openInputForms(SELECT_DROPDOWN_LIST, SelectDropdownListPage.class)
-                .selectDay(day)
-                .validateDisplayedDay(text(day));
+                .selectDayByName("Saturday")
+                .validateDisplayedDay(text("Saturday"));
+    }
+
+    @Test
+    public void selectDayByIndex() {
+        selectDropdownListPage
+                .openInputForms(SELECT_DROPDOWN_LIST, SelectDropdownListPage.class)
+                .selectDayByIndex(4)
+                .validateDisplayedDay(text("Wednesday"));
     }
 }

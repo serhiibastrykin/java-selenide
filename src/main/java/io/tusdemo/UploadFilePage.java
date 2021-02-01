@@ -33,6 +33,6 @@ public class UploadFilePage {
     public void validateDisplayedText(String content) {
         ArrayList<String> tabs = new ArrayList<>(getWebDriver().getWindowHandles());
         getWebDriver().switchTo().window(tabs.get(1));
-        displayedText.shouldHave(text(content));
+        displayedText.shouldHave(exactText(content));
     }
 }

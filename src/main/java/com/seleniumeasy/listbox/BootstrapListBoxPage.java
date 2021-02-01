@@ -21,12 +21,12 @@ public class BootstrapListBoxPage extends DemoHomePage {
             rightList = $$("div[class='well'] li");
 
     public BootstrapListBoxPage searchInsideRightBox(String searchText) {
-        rightInputSearch.sendKeys(searchText);
+        rightInputSearch.setValue(searchText);
         return this;
     }
 
     public BootstrapListBoxPage searchInsideLeftBox(String searchText) {
-        leftInputSearch.sendKeys(searchText);
+        leftInputSearch.setValue(searchText);
         return this;
     }
 
@@ -50,23 +50,31 @@ public class BootstrapListBoxPage extends DemoHomePage {
         return this;
     }
 
-    public BootstrapListBoxPage selectRightItemByIndex(int i) {
-        rightList.get(i).click();
+    public BootstrapListBoxPage selectRightItemsByIndex(int... indexes) {
+        for (int index : indexes) {
+            rightList.get(index).click();
+        }
         return this;
     }
 
-    public BootstrapListBoxPage selectLeftItemByIndex(int i) {
-        leftList.get(i).click();
+    public BootstrapListBoxPage selectLeftItemsByIndex(int... indexes) {
+        for (int index : indexes) {
+            leftList.get(index).click();
+        }
         return this;
     }
 
-    public BootstrapListBoxPage selectRightItemByName(String name) {
-        rightList.find(text(name)).click();
+    public BootstrapListBoxPage selectRightItemsByName(String... names) {
+        for (String name : names) {
+            rightList.find(text(name)).click();
+        }
         return this;
     }
 
-    public BootstrapListBoxPage selectLeftItemByName(String name) {
-        leftList.find(text(name)).click();
+    public BootstrapListBoxPage selectLeftItemsByName(String... names) {
+        for (String name : names) {
+            leftList.find(text(name)).click();
+        }
         return this;
     }
 
@@ -100,13 +108,15 @@ public class BootstrapListBoxPage extends DemoHomePage {
         leftList.shouldHave(size(s));
     }
 
-    public void validateItemIsDisplayedRight(String name) {
-        rightList.last().shouldHave(text(name), attribute("class",
-                "list-group-item active"));
+    public void validateItemsDisplayedRight(String... names) {
+        for (String name : names) {
+            rightList.find(exactText(name)).shouldBe(visible);
+        }
     }
 
-    public void validateItemIsDisplayedLeft(String name) {
-        leftList.last().shouldHave(text(name), attribute("class",
-                "list-group-item active"));
+    public void validateItemsDisplayedLeft(String... names) {
+        for (String name : names) {
+            leftList.find(exactText(name)).shouldBe(visible);
+        }
     }
 }
