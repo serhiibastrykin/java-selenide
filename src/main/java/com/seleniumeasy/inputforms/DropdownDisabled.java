@@ -34,7 +34,7 @@ public class DropdownDisabled extends DemoHomePage {
     }
 
     public void validateDisplayedTerritory(Condition c) {
-        selectedTerritory.shouldHave(c);
+        selectedTerritory.should(c);
     }
 
     public void validateDisplayedTerritory(int i) {

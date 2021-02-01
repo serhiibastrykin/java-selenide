@@ -11,8 +11,13 @@ public class SelectDropdownListPage extends DemoHomePage {
     private final SelenideElement selectedValue = $("#select-demo"),
             displayedValue = $(".selected-value");
 
-    public SelectDropdownListPage selectDay(String day) {
+    public SelectDropdownListPage selectDayByName(String day) {
         selectedValue.$$("option").find(value(day)).setSelected(true);
+        return this;
+    }
+
+    public SelectDropdownListPage selectDayByIndex(int day) {
+        selectedValue.$$("option").get(day).setSelected(true);
         return this;
     }
 

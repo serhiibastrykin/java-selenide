@@ -16,6 +16,6 @@ public class DragAndDropTest extends SettingsSeleniumEasy {
         dragAndDropPage
                 .openOthers(DRAG_AND_DROP, DragAndDropPage.class)
                 .performDragAndDrop();
-        Assert.assertTrue(dragAndDropPage.validateDroppedItemsSize(4));
+        Assert.assertTrue(dragAndDropPage.isDroppedSizeEquals(4));
     }
 }

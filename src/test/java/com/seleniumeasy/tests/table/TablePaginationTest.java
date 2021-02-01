@@ -16,6 +16,6 @@ public class TablePaginationTest extends SettingsSeleniumEasy {
         tablePaginationPage
                 .openTable(TABLE_PAGINATION, TablePaginationPage.class)
                 .clickPage(3)
-                .verifyClickedPageIsOpen(10, 0, exactText("11"));
+                .verifyClickedPage(10, 0, exactText("11"));
     }
 }

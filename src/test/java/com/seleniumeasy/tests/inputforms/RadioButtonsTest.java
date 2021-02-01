@@ -4,11 +4,12 @@ import com.seleniumeasy.inputforms.RadioButtonsDemoPage;
 import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.seleniumeasy.enums.InputForms.RADIO_BUTTONS_DEMO;
 
 public class RadioButtonsTest extends SettingsSeleniumEasy {
-    private final String selectedGender = "Male",
-            selectedAgeGroup = "15 - 50";
+    private final String gender = "Male",
+            ageGroup = "15 - 50";
 
     RadioButtonsDemoPage radioButtonsDemoPage = new RadioButtonsDemoPage();
 
@@ -16,9 +17,9 @@ public class RadioButtonsTest extends SettingsSeleniumEasy {
     public void testGroupRadioButtons() {
         radioButtonsDemoPage
                 .openInputForms(RADIO_BUTTONS_DEMO, RadioButtonsDemoPage.class)
-                .selectGender()
-                .selectAgeGroup()
+                .selectGender(gender)
+                .selectAgeGroup(ageGroup)
                 .clickGetValues()
-                .validateDisplayedInformation(selectedGender, selectedAgeGroup);
+                .validateDisplayedInformation(text(gender), text(ageGroup));
     }
 }

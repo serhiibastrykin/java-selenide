@@ -33,19 +33,11 @@ public class TableDataDownloadTest extends SettingsSeleniumEasy {
                 .clickPage(3)
                 .enterSearchText("Develop")
                 .clickColumn(4)
-                .clickButton(1)
+                .clickButton("CSV")
                 .compareDisplayedAndDownloadedData();
     }
 
-    @Test
-    public void testFileDownloading() throws IOException {
-        tableDataDownloadPage
-                .openTable(TABLE_DATA_DOWNLOAD, TableDataDownloadPage.class)
-                .clickButton(1)
-                .validateFileIsDownloaded();
-    }
-
-    @Test
+    @Test (enabled = false)
     public void testClosePrintDialog() {
         tableDataDownloadPage
                 .openTable(TABLE_DATA_DOWNLOAD, TableDataDownloadPage.class)

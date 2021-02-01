@@ -17,7 +17,7 @@ public class DragAndDropPage extends DemoHomePage {
         }
     }
 
-    public boolean validateDroppedItemsSize(int s) {
+    public boolean isDroppedSizeEquals(int s) {
         if (droppedItems.size() != s) {
             System.out.println("Expected size: " + s + "\nActual size: " + droppedItems.size());
             return false;

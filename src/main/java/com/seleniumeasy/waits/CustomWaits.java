@@ -13,9 +13,9 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class CustomWaits {
 
-    public static void waitForFile(File file) {
+    public static void waitForFile(File file, int duration) {
         Wait<WebDriver> wait = new FluentWait<>(getWebDriver())
-                .withTimeout(Duration.ofSeconds(5))
+                .withTimeout(Duration.ofSeconds(duration))
                 .pollingEvery(Duration.ofMillis(500));
         wait.until((f) -> file.exists());
     }
@@ -23,7 +23,7 @@ public class CustomWaits {
     public static void waitUntilAlertMessageDisappears(SelenideElement element, int duration) {
         Wait<WebDriver> wait = new FluentWait<>(getWebDriver())
                 .withTimeout(Duration.ofSeconds(duration))
-                .pollingEvery(Duration.ofSeconds(1));
+                .pollingEvery(Duration.ofMillis(500));
         wait.until(ExpectedConditions.attributeToBe(element, "style", "display: none;"));
     }
 }

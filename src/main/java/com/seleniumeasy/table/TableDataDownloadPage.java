@@ -41,13 +41,8 @@ public class TableDataDownloadPage extends DemoHomePage {
         return this;
     }
 
-    public TableDataDownloadPage clickButton(int buttonIndex) {
-        sleep(200);
-        buttons.get(buttonIndex).click();
-        return this;
-    }
-
     public TableDataDownloadPage clickButton(String buttonName) {
+        sleep(200);
         buttons.find(exactText(buttonName)).click();
         return this;
     }
@@ -60,21 +55,14 @@ public class TableDataDownloadPage extends DemoHomePage {
 
     public TableDataDownloadPage enterSearchText(String text) {
         sleep(200);
-        inputSearch.sendKeys(text);
+        inputSearch.setValue(text);
         return this;
-    }
-
-    public void validateFileIsDownloaded() throws IOException {
-        File downloadedFile = new File(DOWNLOAD_DIR + File.separator + FILE);
-        waitForFile(downloadedFile);
-        if (!downloadedFile.exists()) {
-            throw new IOException("The file" + FILE + "doesn't exist!");
-        }
     }
 
     public void closePrintDialog() {
         try {
             Robot r = new Robot();
+            r.delay(4000);
             r.keyPress(KeyEvent.VK_ESCAPE);
             r.keyRelease(KeyEvent.VK_ESCAPE);
         } catch (AWTException e) {
@@ -83,9 +71,18 @@ public class TableDataDownloadPage extends DemoHomePage {
     }
 
     public void compareDisplayedAndDownloadedData() throws IOException {
+        validateFileIsDownloaded();
         List<List<String>> entireContent = getEntireContent();
         List<String> joinedContent = joinContent(entireContent);
         Assert.assertEquals(joinedContent, readDownloadedFileContent());
+    }
+
+    private void validateFileIsDownloaded() throws IOException {
+        File downloadedFile = new File(DOWNLOAD_DIR + File.separator + FILE);
+        waitForFile(downloadedFile, 5);
+        if (!downloadedFile.exists()) {
+            throw new IOException("The file" + FILE + "doesn't exist!");
+        }
     }
 
     private List<String> joinContent(List<List<String>> collections) {

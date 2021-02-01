@@ -15,9 +15,9 @@ public class JQueryListBoxTest extends SettingsSeleniumEasy {
         String name = "Helena";
         jQueryListBoxPage
                 .openListBox(JQUERY_LIST_BOX, JQueryListBoxPage.class)
-                .addItemToResultList(name)
-                .validateItemIsNotDisplayedInPickList(name)
-                .validateItemIsDisplayedInResultList(name);
+                .addItemsToResultList(name)
+                .validateItemsAreNotDisplayedInPickList(name)
+                .validateItemsAreDisplayedInResultList(name);
     }
 
     @Test
@@ -25,16 +25,16 @@ public class JQueryListBoxTest extends SettingsSeleniumEasy {
         String name = "Alice";
         jQueryListBoxPage
                 .openListBox(JQUERY_LIST_BOX, JQueryListBoxPage.class)
-                .addItemToResultList(name)
-                .validateItemIsDisplayedInResultList(name)
-                .removeItemFromResultList(name)
-                .validateItemIsNotDisplayedInResultList(name)
-                .validateItemIsDisplayedInPickList(name);
+                .addItemsToResultList(name)
+                .validateItemsAreDisplayedInResultList(name)
+                .removeItemsFromResultList(name)
+                .validateItemsAreNotDisplayedInResultList(name)
+                .validateItemsAreDisplayedInPickList(name);
     }
 
     @Test
     public void testAddItems() {
-        String[] names = new String[] {"Luiza", "Laura", "Isis"};
+        String[] names = {"Luiza", "Laura", "Isis"};
         jQueryListBoxPage
                 .openListBox(JQUERY_LIST_BOX, JQueryListBoxPage.class)
                 .addItemsToResultList(names)
@@ -44,7 +44,7 @@ public class JQueryListBoxTest extends SettingsSeleniumEasy {
 
     @Test
     public void testRemoveItems() {
-        String[] names = new String[] {"Beatriz", "Giovanna", "Lara", "Julia"};
+        String[] names = {"Beatriz", "Giovanna", "Lara", "Julia"};
         jQueryListBoxPage
                 .openListBox(JQUERY_LIST_BOX, JQueryListBoxPage.class)
                 .addItemsToResultList(names)
