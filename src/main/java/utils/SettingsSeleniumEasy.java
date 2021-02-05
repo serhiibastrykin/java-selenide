@@ -1,6 +1,8 @@
 package utils;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
@@ -60,6 +62,7 @@ public class SettingsSeleniumEasy {
     public void openWebsite() {
         open(baseURL);
         BUTTON_CLOSE_POPUP.click();
+        SelenideLogger.addListener("allure", new AllureSelenide().screenshots(true).savePageSource(false));
     }
 
     @AfterMethod
