@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="One Test" parallel="methods" thread-count="2">
-    <test name="selenide-test">
+<suite name="Jenkins Demo Suite">
+    <listeners>
+        <listener class-name="utils.TestListener"/>
+    </listeners>
+    <test name="jenkins-demo-tests">
         <classes>
-            <class name="com.seleniumeasy.tests.table.TablePaginationTest"></class>
-            <class name="com.seleniumeasy.tests.table.TableFilterTest"></class>
+            <class name="com.seleniumeasy.tests.table.TablePaginationTest"/>
+            <class name="com.seleniumeasy.tests.table.TableFilterTest"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
