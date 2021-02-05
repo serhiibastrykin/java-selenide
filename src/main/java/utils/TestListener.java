@@ -33,13 +33,11 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        System.out.println("First test Started " + context.getName());
+        System.out.println("Started testing " + context.getName());
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        System.out.println("Last test Finished " + context.getName());
-        System.out.println("Success Tests " + context.getPassedTests());
-        System.out.println("Failed Tests " + context.getFailedTests());
+        System.out.println("Finished testing " + context.getName());
     }
 }
