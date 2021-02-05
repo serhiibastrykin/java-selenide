@@ -2,9 +2,12 @@ package utils;
 
 import com.codeborne.selenide.Configuration;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.xml.XmlSuite;
 import utils.selenoid.SelenoidChrome;
 import utils.selenoid.SelenoidFirefox;
 
@@ -13,11 +16,13 @@ import java.io.File;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static com.seleniumeasy.DemoHomePage.BUTTON_CLOSE_POPUP;
+import static org.testng.xml.XmlSuite.ParallelMode.NONE;
 
 public class SettingsSeleniumEasy {
-    public final static String DOWNLOAD_DIR = System.getProperty("user.dir") + File.separator + "target";
     private final String baseURL = "https://www.seleniumeasy.com/test/";
+    public final static String DOWNLOAD_DIR = System.getProperty("user.dir") + File.separator + "target";
     public static String browser = System.getProperty("Browser", "chrome");
+    public static String parallel = System.getProperty("parallel", NONE.toString());
 
     private static void setDriver(String browserTypeString) {
         if (browserTypeString == null)
@@ -29,6 +34,9 @@ public class SettingsSeleniumEasy {
             case "chrome":
                 Configuration.browser = ChromeDriverProvider.class.getName();
                 break;
+            case "firefox":
+                Configuration.browser = FirefoxDriverProvider.class.getName();
+                break;
             case "selenoid_chrome":
                 Configuration.browser = SelenoidChrome.class.getName();
                 break;
@@ -37,11 +45,14 @@ public class SettingsSeleniumEasy {
         }
     }
 
+    @BeforeSuite
+    protected void beforeSuite(ITestContext context) {
+        context.getSuite().getXmlSuite().setParallel(XmlSuite.ParallelMode.getValidParallel(parallel));
+    }
+
     @BeforeClass
     public void setUp() {
         setDriver(browser);
-        System.out.println(browser);
-//        setUpBaseConfig("chrome");
         Configuration.startMaximized = true;
     }
 
