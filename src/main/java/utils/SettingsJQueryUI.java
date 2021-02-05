@@ -23,11 +23,6 @@ public class SettingsJQueryUI {
     }
 
     @AfterMethod
-    public void cleanUp() {
-        closeWindow();
-    }
-
-    @AfterClass
     public void tearDown() {
         closeWebDriver();
     }
