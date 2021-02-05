@@ -20,6 +20,7 @@ public class DemoHomePage {
             buttonStartPractising = $("#btn_basic_example"),
             itemSimpleFormDemo = $x("//div[@class='list-group']/a[contains(text(), 'Simple Form Demo')]"),
             dropdownTable = $x("//li[@class='dropdown']/a[contains(text(), 'Table')]"),
+            dropdownProgressBars = $(byText("Progress Bars")),
             dropdownAlertAndModals = $(byText("Alerts & Modals")),
             dropdownListBox = $(byText("List Box")),
             dropdownOthers = $(byText("Others"));
@@ -63,6 +64,17 @@ public class DemoHomePage {
             (Table table, Class<PageObjectClass> pageObjectClass) {
         clickTableDropdown();
         openedMenu.$$("li").find(exactText(table.getVal())).click();
+        return Selenide.page(pageObjectClass);
+    }
+
+    private void clickProgressBars() {
+        dropdownProgressBars.click();
+    }
+
+    public <PageObjectClass> PageObjectClass openProgressBars
+            (ProgressBars progressBars, Class<PageObjectClass> pageObjectClass) {
+        clickProgressBars();
+        openedMenu.$$("li").find(exactText(progressBars.getVal())).click();
         return Selenide.page(pageObjectClass);
     }
 
