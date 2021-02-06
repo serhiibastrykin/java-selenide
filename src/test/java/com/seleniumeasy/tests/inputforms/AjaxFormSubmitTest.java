@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import utils.SettingsSeleniumEasy;
 
 import static com.codeborne.selenide.Condition.exactText;
+import static com.seleniumeasy.enums.InputForms.AJAX_FORM_SUBMIT;
 
 public class AjaxFormSubmitTest extends SettingsSeleniumEasy {
     private final String name = "Serhii",
@@ -16,8 +17,7 @@ public class AjaxFormSubmitTest extends SettingsSeleniumEasy {
     @Test
     public void testAjaxFormSubmit() {
         ajaxFormSubmitPage
-                .clickInputFormsDropdown()
-                .openAjaxFormSubmit()
+                .openInputForms(AJAX_FORM_SUBMIT, AjaxFormSubmitPage.class)
                 .enterName(name)
                 .enterComment(comment)
                 .clickSubmitButton()

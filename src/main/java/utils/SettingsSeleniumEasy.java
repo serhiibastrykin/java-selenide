@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.seleniumeasy.DemoHomePage.BUTTON_CLOSE_POPUP;
 import static org.testng.xml.XmlSuite.ParallelMode.NONE;
 
-public class SettingsSeleniumEasy {
+public abstract class SettingsSeleniumEasy {
     private final String baseURL = "https://www.seleniumeasy.com/test/";
     public final static String DOWNLOAD_DIR = System.getProperty("user.dir") + File.separator + "target";
     public static String browser = System.getProperty("browser", "chrome");

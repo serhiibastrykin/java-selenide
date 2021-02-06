@@ -9,11 +9,6 @@ import static com.codeborne.selenide.Condition.text;
 import static com.seleniumeasy.enums.Table.TABLE_SORT_AND_SEARCH;
 
 public class TableSortAndSearchTest extends SettingsSeleniumEasy {
-    private final String position = "Chief",
-            cellTextAsc = "Fri 9th Oct 09",
-            cellTextDesc = "Development Lead",
-            age = "22",
-            cellText = "D. Rios";
 
     TableSortAndSearchPage tableSortAndSearchPage = new TableSortAndSearchPage();
 
@@ -21,15 +16,15 @@ public class TableSortAndSearchTest extends SettingsSeleniumEasy {
     public void testSearchInTheTableByPosition() {
         tableSortAndSearchPage
                 .openTable(TABLE_SORT_AND_SEARCH, TableSortAndSearchPage.class)
-                .enterSearchText(position)
-                .verifyFoundValues("Position", text(position));
+                .enterSearchText("Chief")
+                .verifyFoundValues("Position", text("Chief"));
     }
 
     @Test
     public void testSortingOfTheTableAsc() {
         tableSortAndSearchPage
                 .openTable(TABLE_SORT_AND_SEARCH, TableSortAndSearchPage.class)
-                .verifyColumnValue(1, "Start date", exactText(cellTextAsc));
+                .verifyColumnValue(1, "Start date", exactText("Fri 9th Oct 09"));
     }
 
     @Test
@@ -37,16 +32,16 @@ public class TableSortAndSearchTest extends SettingsSeleniumEasy {
         tableSortAndSearchPage
                 .openTable(TABLE_SORT_AND_SEARCH, TableSortAndSearchPage.class)
                 .clickColumn(1)
-                .verifyColumnValue(8, 1, exactText(cellTextDesc));
+                .verifyColumnValue(8, 1, exactText("Development Lead"));
     }
 
     @Test
     public void testSearchAndSortContentByAge() {
         tableSortAndSearchPage
                 .openTable(TABLE_SORT_AND_SEARCH, TableSortAndSearchPage.class)
-                .enterSearchText(age)
+                .enterSearchText("22")
                 .clickColumn("Age")
-                .verifyColumnValue(1, "Age", exactText(age));
+                .verifyColumnValue(1, "Age", exactText("22"));
     }
 
     @Test
@@ -54,7 +49,7 @@ public class TableSortAndSearchTest extends SettingsSeleniumEasy {
         tableSortAndSearchPage
                 .openTable(TABLE_SORT_AND_SEARCH, TableSortAndSearchPage.class)
                 .clickPage(2)
-                .verifyClickedPage(0, exactText(cellText));
+                .verifyClickedPage(0, exactText("D. Rios"));
     }
 
     @Test

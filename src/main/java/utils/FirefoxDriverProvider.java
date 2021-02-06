@@ -1,7 +1,6 @@
 package utils;
 
 import com.codeborne.selenide.WebDriverProvider;
-import com.codeborne.selenide.WebDriverRunner;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
@@ -15,6 +14,7 @@ import javax.annotation.Nonnull;
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
 
 public class FirefoxDriverProvider implements WebDriverProvider {
+
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
@@ -32,8 +32,10 @@ public class FirefoxDriverProvider implements WebDriverProvider {
         profile.setPreference("security.mixed_content.block_display_content", false);
         FirefoxOptions options = new FirefoxOptions()
                 .setProfile(profile)
-                .setBinary(binary);
-        WebDriverRunner.getWebDriver().manage().window().maximize();
-        return new FirefoxDriver(options);
+                .setBinary(binary)
+                .setLegacy(false);
+        FirefoxDriver driver = new FirefoxDriver(options);
+        driver.manage().window().maximize();
+        return driver;
     }
 }
