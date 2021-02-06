@@ -3,30 +3,23 @@ package com.seleniumeasy;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.seleniumeasy.enums.*;
-import com.seleniumeasy.inputforms.AjaxFormSubmitPage;
-import com.seleniumeasy.inputforms.SimpleFormDemoPage;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
 
-public class DemoHomePage {
+public abstract class DemoHomePage {
     public static final SelenideElement BUTTON_CLOSE_POPUP = $("#at-cv-lightbox-close");
     private final SelenideElement openedMenu = $(".open .dropdown-menu"),
-            dropdownInputFormsMain = $x("//li[@class='dropdown']/a[contains(text(), 'Input Forms')]"),
-            menuListInputForms = $x("//li[@class='tree-branch']/a[contains(text(), 'Input Forms')]"),
-            itemAjaxFormSubmit = $x("//li[@class='tree-branch']/ul/li/a[contains(text(), 'Ajax Form Submit')]"),
-            buttonStartPractising = $("#btn_basic_example"),
-            itemSimpleFormDemo = $x("//div[@class='list-group']/a[contains(text(), 'Simple Form Demo')]"),
-            dropdownTable = $x("//li[@class='dropdown']/a[contains(text(), 'Table')]"),
+            dropdownInputForms = $(byText("Input Forms")),
+            dropdownTable = $(byText("Table")),
             dropdownProgressBars = $(byText("Progress Bars")),
             dropdownAlertAndModals = $(byText("Alerts & Modals")),
             dropdownListBox = $(byText("List Box")),
             dropdownOthers = $(byText("Others"));
 
     private void clickInputFormsDropdownMain() {
-        dropdownInputFormsMain.click();
+        dropdownInputForms.click();
     }
 
     public <PageObjectClass> PageObjectClass openInputForms
@@ -34,26 +27,6 @@ public class DemoHomePage {
         clickInputFormsDropdownMain();
         openedMenu.$$("li").find(exactText(inputForms.getVal())).click();
         return Selenide.page(pageObjectClass);
-    }
-
-    public DemoHomePage clickInputFormsDropdown() {
-        menuListInputForms.click();
-        return this;
-    }
-
-    public AjaxFormSubmitPage openAjaxFormSubmit() {
-        itemAjaxFormSubmit.click();
-        return new AjaxFormSubmitPage();
-    }
-
-    public DemoHomePage clickStartPractisingButton() {
-        buttonStartPractising.click();
-        return this;
-    }
-
-    public SimpleFormDemoPage openSimpleFormDemo() {
-        itemSimpleFormDemo.click();
-        return new SimpleFormDemoPage();
     }
 
     private void clickTableDropdown() {

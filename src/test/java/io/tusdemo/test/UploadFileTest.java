@@ -11,8 +11,7 @@ import static java.nio.file.Files.readAllLines;
 import static java.nio.file.Paths.get;
 
 public class UploadFileTest extends SettingsTusDemo {
-    private final String path = "C:/easyinfo.txt",
-            successMessage = "The upload is complete!";
+    private final String path = "C:/easyinfo.txt";
     private final File uploadedFile = new File(path);
 
     UploadFilePage uploadFileClass = new UploadFilePage();
@@ -21,7 +20,7 @@ public class UploadFileTest extends SettingsTusDemo {
     public void uploadFileTest() throws IOException {
         uploadFileClass
                 .uploadFile(uploadedFile)
-                .verifyUploadingIsSuccessful(successMessage)
+                .verifyUploadingIsSuccessful("The upload is complete!")
                 .clickDownloadButton()
                 .validateDisplayedText(readAllLines(get(path)).get(0));
     }

@@ -4,6 +4,7 @@ import com.seleniumeasy.inputforms.SimpleFormDemoPage;
 import utils.SettingsSeleniumEasy;
 import org.testng.annotations.Test;
 
+import static com.seleniumeasy.enums.InputForms.SIMPLE_FORM_DEMO;
 import static com.seleniumeasy.inputforms.SimpleFormDemoPage.addTwoNumbers;
 
 public class AdditionTest extends SettingsSeleniumEasy {
@@ -15,8 +16,7 @@ public class AdditionTest extends SettingsSeleniumEasy {
     @Test
     public void addTwoNumbersTest() {
         simpleFormDemoPage
-                .clickStartPractisingButton()
-                .openSimpleFormDemo()
+                .openInputForms(SIMPLE_FORM_DEMO, SimpleFormDemoPage.class)
                 .enterFirstNumber(firstNumber)
                 .enterSecondNumber(secondNumber)
                 .clickGetTotalButton()
