@@ -23,16 +23,13 @@ import static org.testng.xml.XmlSuite.ParallelMode.NONE;
 public class SettingsSeleniumEasy {
     private final String baseURL = "https://www.seleniumeasy.com/test/";
     public final static String DOWNLOAD_DIR = System.getProperty("user.dir") + File.separator + "target";
-    public static String browser = System.getProperty("Browser", "chrome");
+    public static String browser = System.getProperty("browser", "chrome");
     public static String parallel = System.getProperty("parallel", NONE.toString());
 
     private static void setDriver(String browserTypeString) {
         if (browserTypeString == null)
             Assert.fail("Browser is not specified!");
         switch (browserTypeString) {
-            case "selenoid_firefox":
-                Configuration.browser = SelenoidFirefox.class.getName();
-                break;
             case "chrome":
                 Configuration.browser = ChromeDriverProvider.class.getName();
                 break;
@@ -41,6 +38,9 @@ public class SettingsSeleniumEasy {
                 break;
             case "selenoid_chrome":
                 Configuration.browser = SelenoidChrome.class.getName();
+                break;
+            case "selenoid_firefox":
+                Configuration.browser = SelenoidFirefox.class.getName();
                 break;
             default:
                 Assert.fail("Cannot find browser " + browserTypeString);

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Table Tests" parallel="methods" thread-count="2">
+    <listeners>
+        <listener class-name="utils.TestListener"/>
+    </listeners>
     <test name="selenide-table-tests">
         <packages>
             <package name="com.seleniumeasy.tests.table"/>
