@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SettingsTusDemo {
-    private final String baseURL = "https://tus.io/demo.html";
+    private final String base_URL = "https://tus.io/demo.html";
 
     @BeforeClass
     public void setUp() {
@@ -19,7 +19,7 @@ public class SettingsTusDemo {
 
     @BeforeMethod
     public void openWebsite() {
-        open(baseURL);
+        open(base_URL);
     }
 
     @AfterMethod

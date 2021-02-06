@@ -14,6 +14,8 @@ import utils.selenoid.SelenoidChrome;
 import utils.selenoid.SelenoidFirefox;
 
 import java.io.File;
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
@@ -21,10 +23,21 @@ import static com.seleniumeasy.DemoHomePage.BUTTON_CLOSE_POPUP;
 import static org.testng.xml.XmlSuite.ParallelMode.NONE;
 
 public abstract class SettingsSeleniumEasy {
-    private final String baseURL = "https://www.seleniumeasy.com/test/";
+    private final String base_URL = "https://www.seleniumeasy.com/test/";
     public final static String DOWNLOAD_DIR = System.getProperty("user.dir") + File.separator + "target";
     public static String browser = System.getProperty("browser", "chrome");
     public static String parallel = System.getProperty("parallel", NONE.toString());
+    public static String selenoid_URL = System.getProperty("selenoid", getSelenoidURL());
+
+    private static String getSelenoidURL() {
+        try {
+            String IP = Inet4Address.getLocalHost().getHostAddress();
+            selenoid_URL = "http://" + IP + ":4444/wd/hub";
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        return selenoid_URL;
+    }
 
     private static void setDriver(String browserTypeString) {
         if (browserTypeString == null)
@@ -60,7 +73,7 @@ public abstract class SettingsSeleniumEasy {
 
     @BeforeMethod
     public void openWebsite() {
-        open(baseURL);
+        open(base_URL);
         BUTTON_CLOSE_POPUP.click();
         SelenideLogger.addListener("allure", new AllureSelenide().screenshots(true).savePageSource(false));
     }

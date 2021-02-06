@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SettingsJQueryUI {
-    private final String baseURL = "http://jqueryui.com/resources/demos/sortable/connect-lists.html";
+    private final String base_URL = "http://jqueryui.com/resources/demos/sortable/connect-lists.html";
 
     @BeforeClass
     public void setUp() {
@@ -19,7 +19,7 @@ public class SettingsJQueryUI {
 
     @BeforeMethod
     public void openWebsite() {
-        open(baseURL);
+        open(base_URL);
     }
 
     @AfterMethod

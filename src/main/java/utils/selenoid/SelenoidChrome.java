@@ -13,6 +13,7 @@ import java.net.URL;
 import java.util.Collections;
 
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
+import static utils.SettingsSeleniumEasy.selenoid_URL;
 
 public class SelenoidChrome implements WebDriverProvider {
 
@@ -41,7 +42,7 @@ public class SelenoidChrome implements WebDriverProvider {
 
         try {
             return new RemoteWebDriver(
-                    new URL("http://192.168.0.101:4444/wd/hub"),
+                    new URL(selenoid_URL),
                     browser
             );
         } catch (MalformedURLException e) {

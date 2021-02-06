@@ -12,6 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
+import static utils.SettingsSeleniumEasy.selenoid_URL;
 
 public class SelenoidFirefox implements WebDriverProvider {
 
@@ -43,7 +44,7 @@ public class SelenoidFirefox implements WebDriverProvider {
 
         try {
             return new RemoteWebDriver(
-                    new URL("http://192.168.0.101:4444/wd/hub"),
+                    new URL(selenoid_URL),
                     browser
             );
         } catch (MalformedURLException e) {
