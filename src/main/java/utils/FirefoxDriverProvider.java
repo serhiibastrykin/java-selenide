@@ -23,13 +23,21 @@ public class FirefoxDriverProvider implements WebDriverProvider {
         binary.setTimeout(90000);
         FirefoxProfile profile = new FirefoxProfile();
         profile.setAcceptUntrustedCertificates(true);
+        profile.setPreference("pdfjs.disabled", true);
         profile.setPreference("browser.download.folderList", 2);
         profile.setPreference("browser.download.manager.showWhenStarting", false);
         profile.setPreference("browser.download.dir", DOWNLOAD_DIR);
         profile.setPreference("browser.download.useDownloadDir", DOWNLOAD_DIR);
+        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/csv/xls/xlsx/json/pdf");
+        profile.setPreference("browser.helperApps.neverAsk.openFile", "text/csv/xls/xlsx/json/pdf");
+        profile.setPreference("browser.download.manager.focusWhenStarting", false);
+        profile.setPreference("browser.download.manager.alertOnEXEOpen", false);
+        profile.setPreference("browser.download.manager.useWindow", false);
+        profile.setPreference("browser.download.panel.shown", false);
         profile.setPreference("browser.helperApps.alwaysAsk.force", false);
         profile.setPreference("security.mixed_content.block_active_content", false);
         profile.setPreference("security.mixed_content.block_display_content", false);
+
         FirefoxOptions options = new FirefoxOptions()
                 .setProfile(profile)
                 .setBinary(binary)

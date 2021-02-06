@@ -40,7 +40,6 @@ public class ChromeDriverProvider implements WebDriverProvider {
         options.addArguments("--test-type");
         options.addArguments("--ignore-certificate-errors");
         options.addArguments("--allow-running-insecure-content");
-
         return new ChromeDriver(options);
     }
 }
