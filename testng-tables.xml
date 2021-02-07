@@ -8,5 +8,5 @@
         <packages>
             <package name="com.seleniumeasy.tests.table"/>
         </packages>
-    </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </test>
+</suite>

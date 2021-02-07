@@ -9,5 +9,5 @@
             <class name="com.seleniumeasy.tests.table.TablePaginationTest"/>
             <class name="com.seleniumeasy.tests.table.TableFilterTest"/>
         </classes>
-    </test> <!-- Test -->
-</suite> <!-- Suite -->
+    </test>
+</suite>

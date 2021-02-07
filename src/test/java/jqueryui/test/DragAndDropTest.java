@@ -1,5 +1,6 @@
-package jqueryui;
+package jqueryui.test;
 
+import jqueryui.DragAndDropPage;
 import org.testng.annotations.Test;
 import utils.SettingsJQueryUI;
 

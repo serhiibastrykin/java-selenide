@@ -66,20 +66,20 @@ public abstract class SettingsSeleniumEasy {
     }
 
     @BeforeClass
-    public void setUp() {
+    public static void setUp() {
         setDriver(browser);
         Configuration.startMaximized = true;
     }
 
     @BeforeMethod
-    public void openWebsite() {
+    protected void openWebsite() {
         open(base_URL);
         BUTTON_CLOSE_POPUP.click();
         SelenideLogger.addListener("allure", new AllureSelenide().screenshots(true).savePageSource(false));
     }
 
     @AfterMethod
-    public void tearDown() {
+    public static void tearDown() {
         closeWebDriver();
     }
 }

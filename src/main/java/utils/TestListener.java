@@ -4,13 +4,13 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import static com.seleniumeasy.enums.Colors.*;
+import static com.seleniumeasy.enums.statics.Colors.*;
 
 public class TestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println("Test " + result.getName() + " STARTED");
+        System.out.println("Test " + result.getName() + TEXT_CYAN.getColor() + " STARTED" + TEXT_RESET.getColor());
     }
 
     @Override
@@ -30,7 +30,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        System.out.println("Test " + result.getName() + " FAILED but within SUCCESS percentage");
+        System.out.println("Test " + result.getName() + TEXT_GRAY.getColor() + " FAILED but within SUCCESS percentage" + TEXT_RESET.getColor());
     }
 
     @Override
