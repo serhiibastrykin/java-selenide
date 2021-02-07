@@ -3,12 +3,12 @@ package com.seleniumeasy.table;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Selenide.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TableDataSearchPage extends DemoHomePage {
+public class TableDataSearchPage extends BasePage {
     private final SelenideElement buttonFilter = $(".btn-filter");
     private final ElementsCollection columns = $$(".filterable .table thead th input"),
             rows = $$(".filterable .table tbody tr");

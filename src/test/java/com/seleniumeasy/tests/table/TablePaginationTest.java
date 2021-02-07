@@ -2,12 +2,12 @@ package com.seleniumeasy.tests.table;
 
 import com.seleniumeasy.table.TablePaginationPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.seleniumeasy.enums.Table.TABLE_PAGINATION;
 
-public class TablePaginationTest extends SettingsSeleniumEasy {
+public class TablePaginationTest extends BaseTest {
 
     TablePaginationPage tablePaginationPage = new TablePaginationPage();
 

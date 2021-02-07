@@ -2,7 +2,7 @@ package com.seleniumeasy.table;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -19,9 +19,9 @@ import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.seleniumeasy.waits.CustomWaits.waitForFile;
 import static java.util.Objects.requireNonNull;
-import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
+import static utils.BaseTest.DOWNLOAD_DIR;
 
-public class TableDataDownloadPage extends DemoHomePage {
+public class TableDataDownloadPage extends BasePage {
     public static final String FILE = "Selenium Easy - Download Table Data to CSV, Excel, PDF and Print.csv";
     private final SelenideElement inputSearch = $("#example_filter input");
     private final ElementsCollection headers = $$("thead th"),

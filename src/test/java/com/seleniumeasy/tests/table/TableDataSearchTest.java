@@ -2,12 +2,12 @@ package com.seleniumeasy.tests.table;
 
 import com.seleniumeasy.table.TableDataSearchPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.seleniumeasy.enums.Table.TABLE_DATA_SEARCH;
 
-public class TableDataSearchTest extends SettingsSeleniumEasy {
+public class TableDataSearchTest extends BaseTest {
     private final String firstName = "Byron",
             rowNumber = "2";
 

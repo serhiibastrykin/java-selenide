@@ -3,7 +3,7 @@ package com.seleniumeasy.tests.table;
 import com.seleniumeasy.table.TableDataDownloadPage;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 import static com.seleniumeasy.enums.Table.TABLE_DATA_DOWNLOAD;
 import static com.seleniumeasy.table.TableDataDownloadPage.FILE;
 
-public class TableDataDownloadTest extends SettingsSeleniumEasy {
+public class TableDataDownloadTest extends BaseTest {
 
     TableDataDownloadPage tableDataDownloadPage = new TableDataDownloadPage();
 

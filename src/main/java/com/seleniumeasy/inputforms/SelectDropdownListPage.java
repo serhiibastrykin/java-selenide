@@ -2,12 +2,12 @@ package com.seleniumeasy.inputforms;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selenide.$;
 
-public class SelectDropdownListPage extends DemoHomePage {
+public class SelectDropdownListPage extends BasePage {
     private final SelenideElement selectedValue = $("#select-demo"),
             displayedValue = $(".selected-value");
 

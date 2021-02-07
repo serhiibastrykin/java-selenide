@@ -2,12 +2,12 @@ package com.seleniumeasy.alertsandmodals;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.switchTo;
 
-public class JavascriptAlertsPage extends DemoHomePage {
+public class JavascriptAlertsPage extends BasePage {
     private final SelenideElement buttonClickMe = $("button[onclick='myConfirmFunction()']"),
             displayedMessage = $("#confirm-demo"),
             buttonClickForPromptBox = $("button[onclick='myPromptFunction()']"),

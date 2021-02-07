@@ -3,13 +3,13 @@ package com.seleniumeasy.table;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class TableSortAndSearchPage extends DemoHomePage {
+public class TableSortAndSearchPage extends BasePage {
     private final SelenideElement tableHeader = $("thead"),
             tableBody = $("tbody"),
             inputSearch = $("#example_filter input");

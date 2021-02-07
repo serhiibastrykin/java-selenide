@@ -2,12 +2,12 @@ package com.seleniumeasy.inputforms;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
-public class AjaxFormSubmitPage extends DemoHomePage {
+public class AjaxFormSubmitPage extends BasePage {
     private final SelenideElement inputName = $("#title"),
             inputComment = $("#description"),
             buttonSubmit = $("#btn-submit"),

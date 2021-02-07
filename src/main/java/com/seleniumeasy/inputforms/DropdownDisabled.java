@@ -3,14 +3,14 @@ package com.seleniumeasy.inputforms;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class DropdownDisabled extends DemoHomePage {
+public class DropdownDisabled extends BasePage {
     private final SelenideElement selectedTerritory = $x("//span[@style='width: 50%;']" +
             "//span[@class='select2-selection__rendered']");
     private final ElementsCollection dropdownSelectTerritories = $$(".js-example-disabled-results option");

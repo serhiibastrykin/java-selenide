@@ -2,11 +2,11 @@ package com.seleniumeasy.tests.listbox;
 
 import com.seleniumeasy.listbox.JQueryListBoxPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.seleniumeasy.enums.ListBox.JQUERY_LIST_BOX;
 
-public class JQueryListBoxTest extends SettingsSeleniumEasy {
+public class JQueryListBoxTest extends BaseTest {
 
     JQueryListBoxPage jQueryListBoxPage = new JQueryListBoxPage();
 

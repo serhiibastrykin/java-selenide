@@ -2,11 +2,11 @@ package com.seleniumeasy.tests.inputforms.jquerydropdown;
 
 import com.seleniumeasy.inputforms.DropdownMultiple;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.seleniumeasy.enums.InputForms.JQUERY_SELECT_DROPDOWN;
 
-public class DropdownMultipleTest extends SettingsSeleniumEasy {
+public class DropdownMultipleTest extends BaseTest {
     private final String[] states = {"California", "New York", "Illinois", "Texas", "Arizona"};
 
     DropdownMultiple dropdownMultiple = new DropdownMultiple();

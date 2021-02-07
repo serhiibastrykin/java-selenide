@@ -2,12 +2,12 @@ package com.seleniumeasy.tests.progressbars;
 
 import com.seleniumeasy.progressbars.JQueryDownloadProgressBarsPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.seleniumeasy.enums.ProgressBars.JQUERY_DOWNLOAD_PROGRESS_BARS;
 
-public class JQueryDownloadProgressBarsTest extends SettingsSeleniumEasy {
+public class JQueryDownloadProgressBarsTest extends BaseTest {
 
     JQueryDownloadProgressBarsPage jQueryDownloadProgressBarsPage = new JQueryDownloadProgressBarsPage();
 

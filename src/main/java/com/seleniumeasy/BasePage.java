@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public abstract class DemoHomePage {
+public abstract class BasePage {
     public static final SelenideElement BUTTON_CLOSE_POPUP = $("#at-cv-lightbox-close");
     private final SelenideElement openedMenu = $(".open .dropdown-menu"),
             dropdownInputForms = $(byText("Input Forms")),

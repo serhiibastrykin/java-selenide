@@ -1,7 +1,7 @@
 package com.seleniumeasy.alertsandmodals;
 
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,9 +11,9 @@ import java.util.ArrayList;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.seleniumeasy.waits.CustomWaits.waitForFile;
-import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
+import static utils.BaseTest.DOWNLOAD_DIR;
 
-public class FileDownloadPage extends DemoHomePage {
+public class FileDownloadPage extends BasePage {
     private final SelenideElement fieldEnterData = $("#textbox"),
             buttonGenerateFile = $("#create"),
             buttonDownload = $("#link-to-download");

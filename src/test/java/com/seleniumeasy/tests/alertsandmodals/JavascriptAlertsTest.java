@@ -2,13 +2,13 @@ package com.seleniumeasy.tests.alertsandmodals;
 
 import com.seleniumeasy.alertsandmodals.JavascriptAlertsPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.text;
 import static com.seleniumeasy.enums.AlertsAndModals.JAVASCRIPT_ALERTS;
 
-public class JavascriptAlertsTest extends SettingsSeleniumEasy {
+public class JavascriptAlertsTest extends BaseTest {
     private final String confirmMessage = "You pressed OK!",
             dismissMessage = "You pressed Cancel!",
             name = "Serhii";

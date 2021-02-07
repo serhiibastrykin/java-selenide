@@ -2,12 +2,12 @@ package com.seleniumeasy.table;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Selenide.$$;
 import static org.openqa.selenium.By.tagName;
 
-public class TablePaginationPage extends DemoHomePage {
+public class TablePaginationPage extends BasePage {
     private final ElementsCollection pagination = $$(".pager li"),
             rows = $$("tbody tr");
 

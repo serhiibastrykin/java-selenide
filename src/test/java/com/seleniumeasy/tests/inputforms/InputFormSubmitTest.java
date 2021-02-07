@@ -2,7 +2,7 @@ package com.seleniumeasy.tests.inputforms;
 
 import com.seleniumeasy.inputforms.InputFormSubmitPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.seleniumeasy.enums.InputForms.INPUT_FORM_SUBMIT;
 
@@ -13,7 +13,7 @@ import static com.seleniumeasy.enums.InputForms.INPUT_FORM_SUBMIT;
  * @author Serhii Bastrykin
  */
 
-public class InputFormSubmitTest extends SettingsSeleniumEasy {
+public class InputFormSubmitTest extends BaseTest {
 
     InputFormSubmitPage inputFormSubmitPage = new InputFormSubmitPage();
 

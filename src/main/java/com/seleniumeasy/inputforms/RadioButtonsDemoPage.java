@@ -2,11 +2,11 @@ package com.seleniumeasy.inputforms;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class RadioButtonsDemoPage extends DemoHomePage {
+public class RadioButtonsDemoPage extends BasePage {
     private final SelenideElement buttonGetValues = $(".panel-body > .btn.btn-default"),
             result = $(".groupradiobutton");
 

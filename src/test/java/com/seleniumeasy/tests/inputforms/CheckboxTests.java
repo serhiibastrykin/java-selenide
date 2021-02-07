@@ -2,11 +2,11 @@ package com.seleniumeasy.tests.inputforms;
 
 import com.seleniumeasy.inputforms.CheckboxDemoPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.seleniumeasy.enums.InputForms.CHECKBOX_DEMO;
 
-public class CheckboxTests extends SettingsSeleniumEasy {
+public class CheckboxTests extends BaseTest {
     private final String nameBefore = "Check All",
             nameAfter = "Uncheck All",
             valueBefore = "false",

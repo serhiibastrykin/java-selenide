@@ -2,12 +2,12 @@ package com.seleniumeasy.tests.listbox;
 
 import com.seleniumeasy.listbox.BootstrapListBoxPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.seleniumeasy.enums.ListBox.BOOTSTRAP_LIST_BOX;
 
-public class BootstrapListBoxTest extends SettingsSeleniumEasy {
+public class BootstrapListBoxTest extends BaseTest {
 
     BootstrapListBoxPage bootstrapListBoxPage = new BootstrapListBoxPage();
 

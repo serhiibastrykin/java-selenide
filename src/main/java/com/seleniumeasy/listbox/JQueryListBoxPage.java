@@ -2,14 +2,14 @@ package com.seleniumeasy.listbox;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class JQueryListBoxPage extends DemoHomePage {
+public class JQueryListBoxPage extends BasePage {
     private final SelenideElement buttonAdd = $(".pAdd"),
             buttonAddAll = $(".pAddAll"),
             buttonRemove = $(".pRemove"),

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Tricky Tests" parallel="none">
+    <listeners>
+        <listener class-name="utils.TestListener"/>
+    </listeners>
+    <test name="tricky-tests">
+        <packages>
+            <package name="io.tusdemo.test"/>
+            <package name="jqueryui.test"/>
+        </packages>
+        <classes>
+            <class name="com.seleniumeasy.tests.alertsandmodals.WindowPopupModalTest"/>
+            <class name="com.seleniumeasy.tests.alertsandmodals.FileDownloadTest"/>
+        </classes>
+    </test>
+</suite>

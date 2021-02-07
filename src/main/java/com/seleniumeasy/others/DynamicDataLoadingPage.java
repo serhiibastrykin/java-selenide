@@ -2,13 +2,13 @@ package com.seleniumeasy.others;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-public class DynamicDataLoadingPage extends DemoHomePage {
+public class DynamicDataLoadingPage extends BasePage {
     private final SelenideElement buttonGetNewUser = $("#save"),
             displayedContent = $("#loading");
 

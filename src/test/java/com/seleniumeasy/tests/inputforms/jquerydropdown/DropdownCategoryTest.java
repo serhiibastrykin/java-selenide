@@ -2,11 +2,11 @@ package com.seleniumeasy.tests.inputforms.jquerydropdown;
 
 import com.seleniumeasy.inputforms.DropdownCategory;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.seleniumeasy.enums.InputForms.JQUERY_SELECT_DROPDOWN;
 
-public class DropdownCategoryTest extends SettingsSeleniumEasy {
+public class DropdownCategoryTest extends BaseTest {
 
     DropdownCategory dropdownCategory = new DropdownCategory();
 

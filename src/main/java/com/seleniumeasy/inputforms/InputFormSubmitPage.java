@@ -2,7 +2,7 @@ package com.seleniumeasy.inputforms;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class InputFormSubmitPage extends DemoHomePage {
+public class InputFormSubmitPage extends BasePage {
     private final SelenideElement inputFirstName = $("input[name=first_name]"),
             inputLastName = $("input[name=last_name]"),
             inputEmail = $("input[name=email]"),

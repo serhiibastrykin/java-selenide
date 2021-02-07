@@ -2,11 +2,11 @@ package com.seleniumeasy.tests.alertsandmodals;
 
 import com.seleniumeasy.alertsandmodals.WindowPopupModalPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.seleniumeasy.enums.AlertsAndModals.WINDOW_POPUP_MODAL;
 
-public class WindowPopupModalTest extends SettingsSeleniumEasy {
+public class WindowPopupModalTest extends BaseTest {
 
     WindowPopupModalPage windowPopupModalPage = new WindowPopupModalPage();
 

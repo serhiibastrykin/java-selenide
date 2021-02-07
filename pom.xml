@@ -70,9 +70,10 @@
                     <version>2.22.1</version>
                     <configuration>
                         <suiteXmlFiles>
-                            <suiteXmlFile>testng-regression.xml</suiteXmlFile>
-                            <suiteXmlFile>testng-tables.xml</suiteXmlFile>
+                            <suiteXmlFile>regression-suite.xml</suiteXmlFile>
+                            <suiteXmlFile>table-suite.xml</suiteXmlFile>
                             <suiteXmlFile>jenkins-demo.xml</suiteXmlFile>
+                            <suiteXmlFile>tricky-tests.xml</suiteXmlFile>
                         </suiteXmlFiles>
                         <systemProperties>
                             <property>

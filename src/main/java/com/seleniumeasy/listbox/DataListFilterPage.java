@@ -2,11 +2,11 @@ package com.seleniumeasy.listbox;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class DataListFilterPage extends DemoHomePage {
+public class DataListFilterPage extends BasePage {
     private final SelenideElement inputSearchAttendees = $("#input-search");
     private final ElementsCollection companies = $$(".info-block h5"),
             names = $$(".info-block h4"),

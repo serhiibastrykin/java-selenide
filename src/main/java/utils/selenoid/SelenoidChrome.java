@@ -12,8 +12,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
 
-import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
-import static utils.SettingsSeleniumEasy.selenoid_URL;
+import static utils.BaseTest.DOWNLOAD_DIR;
+import static utils.BaseTest.selenoid_URL;
 
 public class SelenoidChrome implements WebDriverProvider {
 
