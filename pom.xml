@@ -73,6 +73,7 @@
                             <suiteXmlFile>testng-regression.xml</suiteXmlFile>
                             <suiteXmlFile>testng-tables.xml</suiteXmlFile>
                             <suiteXmlFile>jenkins-demo.xml</suiteXmlFile>
+                            <suiteXmlFile>tricky-tests.xml</suiteXmlFile>
                         </suiteXmlFiles>
                         <systemProperties>
                             <property>
