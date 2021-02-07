@@ -11,6 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import javax.annotation.Nonnull;
 
+import static com.seleniumeasy.enums.FileTypes.*;
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
 
 public class FirefoxDriverProvider implements WebDriverProvider {
@@ -28,8 +29,12 @@ public class FirefoxDriverProvider implements WebDriverProvider {
         profile.setPreference("browser.download.manager.showWhenStarting", false);
         profile.setPreference("browser.download.dir", DOWNLOAD_DIR);
         profile.setPreference("browser.download.useDownloadDir", DOWNLOAD_DIR);
-        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/csv/xls/xlsx/json/pdf");
-        profile.setPreference("browser.helperApps.neverAsk.openFile", "text/csv/xls/xlsx/json/pdf");
+        String fileTypes = TXT.getType() + ", " + BINARY.getType() + ", "
+                + PDF.getType() + ", " + CSV.getType() + ", " + JPEG.getType() + ", "
+                + XML.getType() + ", " + EXCEL.getType() + ", " + PNG.getType() + ", "
+                + JSON.getType() + ", " + DOCX.getType();
+        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", fileTypes);
+        profile.setPreference("browser.helperApps.neverAsk.openFile", fileTypes);
         profile.setPreference("browser.download.manager.focusWhenStarting", false);
         profile.setPreference("browser.download.manager.alertOnEXEOpen", false);
         profile.setPreference("browser.download.manager.useWindow", false);
