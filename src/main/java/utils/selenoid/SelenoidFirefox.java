@@ -11,7 +11,7 @@ import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static com.seleniumeasy.enums.FileTypes.*;
+import static com.seleniumeasy.enums.statics.FileTypes.*;
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
 import static utils.SettingsSeleniumEasy.selenoid_URL;
 

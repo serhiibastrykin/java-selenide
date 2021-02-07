@@ -1,4 +1,4 @@
-package com.seleniumeasy.enums;
+package com.seleniumeasy.enums.statics;
 
 public enum Colors {
     TEXT_RESET("\u001B[0m"),

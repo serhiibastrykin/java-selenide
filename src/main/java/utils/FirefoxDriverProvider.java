@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import javax.annotation.Nonnull;
 
-import static com.seleniumeasy.enums.FileTypes.*;
+import static com.seleniumeasy.enums.statics.FileTypes.*;
 import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
 
 public class FirefoxDriverProvider implements WebDriverProvider {
