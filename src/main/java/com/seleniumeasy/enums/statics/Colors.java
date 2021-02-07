@@ -8,8 +8,9 @@ public enum Colors {
     TEXT_BLUE("\u001B[34m"),
     TEXT_PURPLE("\u001B[35m"),
     TEXT_CYAN("\u001B[36m"),
-    TEXT_BLACK("\u001B[30m"),
-    TEXT_WHITE("\u001B[37m");
+    TEXT_GRAY("\u001B[37m"),
+    TEXT_WHITE("\033[0;97m"),
+    TEXT_BLACK("\u001B[30m");
 
     private final String color;
 

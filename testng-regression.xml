@@ -4,7 +4,6 @@
     <test name="selenide-tests">
         <packages>
             <package name="com.seleniumeasy.tests.*"/>
-            <package name="io.tusdemo.test"/>
         </packages>
         <classes>
             <class name="com.seleniumeasy.tests.table.TableDataDownloadTest">
@@ -13,6 +12,11 @@
                 </methods>
             </class>
             <class name="com.seleniumeasy.tests.alertsandmodals.WindowPopupModalTest">
+                <methods>
+                    <exclude name=".*"/>
+                </methods>
+            </class>
+            <class name="com.seleniumeasy.tests.alertsandmodals.FileDownloadTest">
                 <methods>
                     <exclude name=".*"/>
                 </methods>
