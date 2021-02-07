@@ -4,7 +4,7 @@
     <listeners>
         <listener class-name="utils.TestListener"/>
     </listeners>
-    <test name="jenkins-demo-tests">
+    <test name="jenkins-demo">
         <classes>
             <class name="com.seleniumeasy.tests.table.TablePaginationTest"/>
             <class name="com.seleniumeasy.tests.table.TableFilterTest"/>

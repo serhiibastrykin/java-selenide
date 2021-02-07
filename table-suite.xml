@@ -4,7 +4,7 @@
     <listeners>
         <listener class-name="utils.TestListener"/>
     </listeners>
-    <test name="selenide-table-tests">
+    <test name="table-tests">
         <packages>
             <package name="com.seleniumeasy.tests.table"/>
         </packages>

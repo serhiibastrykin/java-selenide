@@ -6,3 +6,6 @@ target/
 build/
 allure-results/
 /.idea/
+tricky-tests.xml
+table-suite.xml
+regression-suite.xml
