@@ -5,7 +5,7 @@ Technologies used:
 - Selenide
 - Selenium
 - Maven
-- JUnit
+- TestNG
 - Allure
 - Docker
 - Selenoid
