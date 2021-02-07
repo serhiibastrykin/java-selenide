@@ -4,7 +4,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import static com.seleniumeasy.enums.Colors.*;
+import static com.seleniumeasy.enums.statics.Colors.*;
 
 public class TestListener implements ITestListener {
 
