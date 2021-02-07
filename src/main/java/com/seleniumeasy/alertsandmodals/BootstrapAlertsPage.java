@@ -2,7 +2,7 @@ package com.seleniumeasy.alertsandmodals;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.disappear;
@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.seleniumeasy.waits.CustomWaits.waitUntilAlertMessageDisappears;
 
-public class BootstrapAlertsPage extends DemoHomePage {
+public class BootstrapAlertsPage extends BasePage {
     private final ElementsCollection autocloseableAlerts = $$x("//button[contains(text()," +
             " 'Autocloseable')]"),
             normalAlerts = $$x("//button[contains(text(), 'Normal')]"),

@@ -2,13 +2,13 @@ package com.seleniumeasy.progressbars;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class JQueryDownloadProgressBarsPage extends DemoHomePage {
+public class JQueryDownloadProgressBarsPage extends BasePage {
     private final SelenideElement buttonStartDownload = $("#downloadButton"),
             buttonCancelDownload = $x("//button[contains(text(), 'Cancel Download')]"),
             buttonClose = $x("//button[contains(text(), 'Close')]"),

@@ -2,11 +2,11 @@ package com.seleniumeasy.tests.table;
 
 import com.seleniumeasy.table.TableFilterPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.seleniumeasy.enums.Table.TABLE_FILTER;
 
-public class TableFilterTest extends SettingsSeleniumEasy {
+public class TableFilterTest extends BaseTest {
 
     TableFilterPage tableFilterPage = new TableFilterPage();
 

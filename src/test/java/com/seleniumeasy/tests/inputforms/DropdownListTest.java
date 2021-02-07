@@ -2,12 +2,12 @@ package com.seleniumeasy.tests.inputforms;
 
 import com.seleniumeasy.inputforms.SelectDropdownListPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.seleniumeasy.enums.InputForms.SELECT_DROPDOWN_LIST;
 
-public class DropdownListTest extends SettingsSeleniumEasy {
+public class DropdownListTest extends BaseTest {
 
     SelectDropdownListPage selectDropdownListPage = new SelectDropdownListPage();
 

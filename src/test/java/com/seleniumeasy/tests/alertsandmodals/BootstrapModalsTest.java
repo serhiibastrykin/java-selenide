@@ -2,11 +2,11 @@ package com.seleniumeasy.tests.alertsandmodals;
 
 import com.seleniumeasy.alertsandmodals.BootstrapModalsPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.seleniumeasy.enums.AlertsAndModals.BOOTSTRAP_MODALS;
 
-public class BootstrapModalsTest extends SettingsSeleniumEasy {
+public class BootstrapModalsTest extends BaseTest {
 
     BootstrapModalsPage bootstrapModalsPage = new BootstrapModalsPage();
 

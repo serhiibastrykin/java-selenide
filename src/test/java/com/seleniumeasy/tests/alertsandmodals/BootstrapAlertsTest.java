@@ -2,12 +2,12 @@ package com.seleniumeasy.tests.alertsandmodals;
 
 import com.seleniumeasy.alertsandmodals.BootstrapAlertsPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.seleniumeasy.enums.AlertsAndModals.BOOTSTRAP_ALERTS;
 
-public class BootstrapAlertsTest extends SettingsSeleniumEasy {
+public class BootstrapAlertsTest extends BaseTest {
 
     BootstrapAlertsPage bootstrapAlertsPage = new BootstrapAlertsPage();
 

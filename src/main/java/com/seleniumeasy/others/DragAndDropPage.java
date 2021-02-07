@@ -2,11 +2,11 @@ package com.seleniumeasy.others;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class DragAndDropPage extends DemoHomePage {
+public class DragAndDropPage extends BasePage {
     private final ElementsCollection draggableElements = $$("#todrag span"),
             droppedItems = $$("#droppedlist span");
     private final SelenideElement dropHere = $("#mydropzone");

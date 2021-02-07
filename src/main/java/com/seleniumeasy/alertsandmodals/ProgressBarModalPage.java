@@ -2,11 +2,11 @@ package com.seleniumeasy.alertsandmodals;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class ProgressBarModalPage extends DemoHomePage {
+public class ProgressBarModalPage extends BasePage {
     private final SelenideElement buttonShowSimpleDialog = $(".btn-primary"),
             buttonDialogWithCustomMessage = $(".btn-success"),
             buttonDialogWithCustomSettings = $(".btn-warning"),

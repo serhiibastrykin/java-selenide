@@ -1,7 +1,7 @@
 package com.seleniumeasy.alertsandmodals;
 
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class WindowPopupModalPage extends DemoHomePage {
+public class WindowPopupModalPage extends BasePage {
     private final SelenideElement buttonFollowAll = $("#followall"),
             popupFacebook = $("#facebook"),
             popupTwitter = $("a[aria-label=Twitter]"),

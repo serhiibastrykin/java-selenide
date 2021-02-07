@@ -3,11 +3,11 @@ package com.seleniumeasy.tests.others;
 import com.seleniumeasy.others.DragAndDropPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.seleniumeasy.enums.Others.DRAG_AND_DROP;
 
-public class DragAndDropTest extends SettingsSeleniumEasy {
+public class DragAndDropTest extends BaseTest {
 
     DragAndDropPage dragAndDropPage = new DragAndDropPage();
 

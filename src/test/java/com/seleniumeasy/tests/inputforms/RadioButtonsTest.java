@@ -2,12 +2,12 @@ package com.seleniumeasy.tests.inputforms;
 
 import com.seleniumeasy.inputforms.RadioButtonsDemoPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.seleniumeasy.enums.InputForms.RADIO_BUTTONS_DEMO;
 
-public class RadioButtonsTest extends SettingsSeleniumEasy {
+public class RadioButtonsTest extends BaseTest {
     private final String gender = "Male",
             ageGroup = "15 - 50";
 

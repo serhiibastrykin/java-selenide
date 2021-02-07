@@ -3,14 +3,14 @@ package com.seleniumeasy.listbox;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class BootstrapListBoxPage extends DemoHomePage {
+public class BootstrapListBoxPage extends BasePage {
     private final SelenideElement rightInputSearch = $("div[class='well'] input[name='SearchDualList']"),
             leftInputSearch = $(".text-right input[name='SearchDualList']"),
             rightButtonSelectAll = $("div[class='well'] .selector"),

@@ -2,11 +2,11 @@ package com.seleniumeasy.tests.listbox;
 
 import com.seleniumeasy.listbox.DataListFilterPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.seleniumeasy.enums.ListBox.DATA_LIST_FILTER;
 
-public class DataListFilterTest extends SettingsSeleniumEasy {
+public class DataListFilterTest extends BaseTest {
 
     DataListFilterPage dataListFilterPage = new DataListFilterPage();
 

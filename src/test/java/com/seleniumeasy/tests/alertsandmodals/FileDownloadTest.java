@@ -3,7 +3,7 @@ package com.seleniumeasy.tests.alertsandmodals;
 import com.seleniumeasy.alertsandmodals.FileDownloadPage;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 import static com.seleniumeasy.enums.AlertsAndModals.FILE_DOWNLOAD;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FileDownloadTest extends SettingsSeleniumEasy {
+public class FileDownloadTest extends BaseTest {
     private final String file = "easyinfo.txt",
             inputMessage = "Hello\nWorld!";
 

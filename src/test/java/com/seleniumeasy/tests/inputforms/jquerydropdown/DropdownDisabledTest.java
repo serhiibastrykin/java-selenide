@@ -2,12 +2,12 @@ package com.seleniumeasy.tests.inputforms.jquerydropdown;
 
 import com.seleniumeasy.inputforms.DropdownDisabled;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.seleniumeasy.enums.InputForms.JQUERY_SELECT_DROPDOWN;
 
-public class DropdownDisabledTest extends SettingsSeleniumEasy {
+public class DropdownDisabledTest extends BaseTest {
 
     DropdownDisabled dropdownDisabled = new DropdownDisabled();
 

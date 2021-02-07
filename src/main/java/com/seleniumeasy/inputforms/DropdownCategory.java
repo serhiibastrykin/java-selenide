@@ -2,7 +2,7 @@ package com.seleniumeasy.inputforms;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.selected;
@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.$x;
 import static java.util.Objects.requireNonNull;
 
-public class DropdownCategory extends DemoHomePage {
+public class DropdownCategory extends BasePage {
     private final ElementsCollection categories = $$("#files optgroup"),
             files = $$("#files option");
 

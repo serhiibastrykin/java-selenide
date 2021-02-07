@@ -12,7 +12,7 @@ import javax.annotation.Nonnull;
 import java.util.Collections;
 import java.util.HashMap;
 
-import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
+import static utils.BaseTest.DOWNLOAD_DIR;
 
 public class ChromeDriverProvider implements WebDriverProvider {
 

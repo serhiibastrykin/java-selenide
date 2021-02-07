@@ -2,12 +2,12 @@ package com.seleniumeasy.inputforms;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class SimpleFormDemoPage extends DemoHomePage {
+public class SimpleFormDemoPage extends BasePage {
     private final SelenideElement fieldEnterMessage = $("#user-message"),
             buttonShowMessage = $("#get-input .btn-default"),
             firstNumberField = $("#sum1"),

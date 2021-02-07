@@ -2,11 +2,11 @@ package com.seleniumeasy.tests.progressbars;
 
 import com.seleniumeasy.progressbars.BootstrapProgressBarPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.seleniumeasy.enums.ProgressBars.BOOTSTRAP_PROGRESS_BAR;
 
-public class BootstrapProgressBarTest extends SettingsSeleniumEasy {
+public class BootstrapProgressBarTest extends BaseTest {
 
     BootstrapProgressBarPage bootstrapProgressBarPage = new BootstrapProgressBarPage();
 

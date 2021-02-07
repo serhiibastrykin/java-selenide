@@ -2,13 +2,13 @@ package com.seleniumeasy.tests.table;
 
 import com.seleniumeasy.table.TableSortAndSearchPage;
 import org.testng.annotations.Test;
-import utils.SettingsSeleniumEasy;
+import utils.BaseTest;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.text;
 import static com.seleniumeasy.enums.Table.TABLE_SORT_AND_SEARCH;
 
-public class TableSortAndSearchTest extends SettingsSeleniumEasy {
+public class TableSortAndSearchTest extends BaseTest {
 
     TableSortAndSearchPage tableSortAndSearchPage = new TableSortAndSearchPage();
 

@@ -1,12 +1,12 @@
 package com.seleniumeasy.inputforms;
 
 import com.codeborne.selenide.ElementsCollection;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class DropdownMultiple extends DemoHomePage {
+public class DropdownMultiple extends BasePage {
     private final ElementsCollection states = $$(".js-example-basic-multiple option"),
             selectedStates = $$(".select2-selection--multiple li[class=select2-selection__choice]");
 

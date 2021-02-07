@@ -1,13 +1,13 @@
 package com.seleniumeasy.alertsandmodals;
 
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class BootstrapModalsPage extends DemoHomePage {
+public class BootstrapModalsPage extends BasePage {
     private final SelenideElement buttonLaunchFirstModal = $x("//a[@href='#myModal']"),
             buttonLaunchSecondModal = $x("//div[@class='modal-content']//a[contains(text(), 'Launch modal')]"),
             buttonCloseFirstModal = $x("//div[@id='myModal']//a[contains(text(), 'Close')]"),

@@ -12,7 +12,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import javax.annotation.Nonnull;
 
 import static com.seleniumeasy.enums.statics.FileTypes.*;
-import static utils.SettingsSeleniumEasy.DOWNLOAD_DIR;
+import static utils.BaseTest.DOWNLOAD_DIR;
 
 public class FirefoxDriverProvider implements WebDriverProvider {
 

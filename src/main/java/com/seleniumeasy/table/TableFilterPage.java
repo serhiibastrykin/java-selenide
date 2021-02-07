@@ -3,13 +3,13 @@ package com.seleniumeasy.table;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.seleniumeasy.DemoHomePage;
+import com.seleniumeasy.BasePage;
 
 import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class TableFilterPage extends DemoHomePage {
+public class TableFilterPage extends BasePage {
     private final ElementsCollection filters = $$(".btn-group button"),
             rows = $$("tbody tr");
 
