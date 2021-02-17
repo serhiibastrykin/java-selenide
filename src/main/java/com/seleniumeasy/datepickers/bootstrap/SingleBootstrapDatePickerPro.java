@@ -1,4 +1,4 @@
-package com.seleniumeasy.datepickers;
+package com.seleniumeasy.datepickers.bootstrap;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class SingleBootstrapDatepickerPro extends BasePage {
+public class SingleBootstrapDatePickerPro extends BasePage {
     LocalDate currentDate = LocalDate.now();
     private final SelenideElement inputDatepicker = $("input[placeholder='dd/mm/yyyy']"),
             yearsTable = $("div[class=datepicker-years] table");
@@ -49,7 +49,7 @@ public class SingleBootstrapDatepickerPro extends BasePage {
         inputDatepicker.shouldBe(empty);
     }
 
-    public SingleBootstrapDatepickerPro clickDesiredDate(LocalDate enteredDate) {
+    public SingleBootstrapDatePickerPro clickDesiredDate(LocalDate enteredDate) {
         openDatepicker();
         clickHeaderWithMonthAndYear();
         clickHeaderWithYear();

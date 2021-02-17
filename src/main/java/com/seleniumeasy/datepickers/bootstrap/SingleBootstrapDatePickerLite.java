@@ -1,4 +1,4 @@
-package com.seleniumeasy.datepickers;
+package com.seleniumeasy.datepickers.bootstrap;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class SingleBootstrapDatepickerLite extends BasePage {
+public class SingleBootstrapDatePickerLite extends BasePage {
     LocalDate currentDate = LocalDate.now();
     private final SelenideElement inputDatePicker = $("input[placeholder='dd/mm/yyyy']"),
             daysTable = $("div[class=datepicker-days] table");
@@ -26,7 +26,7 @@ public class SingleBootstrapDatepickerLite extends BasePage {
         inputDatePicker.click();
     }
 
-    public SingleBootstrapDatepickerLite enterDate(String date) {
+    public SingleBootstrapDatePickerLite enterDate(String date) {
         String formattedDate = setDateFormat(date, "dd/MM/yyyy");
         inputDatePicker.setValue(formattedDate).pressEnter();
         return this;
@@ -40,12 +40,12 @@ public class SingleBootstrapDatepickerLite extends BasePage {
         buttonsNext.get(0).click();
     }
 
-    public SingleBootstrapDatepickerLite clickToday() {
+    public SingleBootstrapDatePickerLite clickToday() {
         buttonsToday.get(0).click();
         return this;
     }
 
-    public SingleBootstrapDatepickerLite clickClear() {
+    public SingleBootstrapDatePickerLite clickClear() {
         buttonsClear.get(0).click();
         return this;
     }
@@ -59,7 +59,7 @@ public class SingleBootstrapDatepickerLite extends BasePage {
         inputDatePicker.shouldBe(empty);
     }
 
-    public SingleBootstrapDatepickerLite clickDate(String date) {
+    public SingleBootstrapDatePickerLite clickDate(String date) {
         openDatePicker();
         LocalDate enteredDate = LocalDate.parse(date);
 

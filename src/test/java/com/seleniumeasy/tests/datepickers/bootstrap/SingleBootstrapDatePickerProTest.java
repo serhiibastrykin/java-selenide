@@ -1,6 +1,6 @@
-package com.seleniumeasy.tests.datepickers;
+package com.seleniumeasy.tests.datepickers.bootstrap;
 
-import com.seleniumeasy.datepickers.SingleBootstrapDatepickerPro;
+import com.seleniumeasy.datepickers.bootstrap.SingleBootstrapDatePickerPro;
 import org.testng.annotations.Test;
 import utils.BaseTest;
 
@@ -8,39 +8,39 @@ import java.time.LocalDate;
 
 import static com.seleniumeasy.enums.DatePickers.BOOTSTRAP_DATE_PICKER;
 
-public class SingleBootstrapDatepickerProTest extends BaseTest {
+public class SingleBootstrapDatePickerProTest extends BaseTest {
     LocalDate currentDate = LocalDate.now();
 
-    SingleBootstrapDatepickerPro singleBootstrapDatepickerPro = new SingleBootstrapDatepickerPro();
+    SingleBootstrapDatePickerPro singleBootstrapDatePickerPro = new SingleBootstrapDatePickerPro();
 
     @Test
     public void testClickPastDate() {
-        singleBootstrapDatepickerPro
-                .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatepickerPro.class)
+        singleBootstrapDatePickerPro
+                .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerPro.class)
                 .clickDesiredDate(LocalDate.of(1976, 5, 12))
                 .validateDisplayedDate(LocalDate.of(1976, 5, 12));
     }
 
     @Test
     public void testClickCurrentDate() {
-        singleBootstrapDatepickerPro
-                .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatepickerPro.class)
+        singleBootstrapDatePickerPro
+                .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerPro.class)
                 .clickDesiredDate(LocalDate.now())
                 .validateDisplayedDate(LocalDate.now());
     }
 
     @Test
     public void testClickFutureDate() {
-        singleBootstrapDatepickerPro
-                .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatepickerPro.class)
+        singleBootstrapDatePickerPro
+                .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerPro.class)
                 .clickDesiredDate(currentDate.plusMonths(3).plusDays(15))
                 .verifyDateIsNotDisplayed();
     }
 
     @Test
     public void testTryClickSunday() {
-        singleBootstrapDatepickerPro
-                .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatepickerPro.class)
+        singleBootstrapDatePickerPro
+                .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerPro.class)
                 .clickDesiredDate(LocalDate.of(1997, 4, 27))
                 .verifyDateIsNotDisplayed();
     }
