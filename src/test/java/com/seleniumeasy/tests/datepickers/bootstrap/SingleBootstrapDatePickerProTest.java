@@ -38,7 +38,7 @@ public class SingleBootstrapDatePickerProTest extends BaseTest {
     }
 
     @Test
-    public void testTryClickSunday() {
+    public void testClickSunday() {
         singleBootstrapDatePickerPro
                 .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerPro.class)
                 .clickDesiredDate(LocalDate.of(1997, 4, 27))

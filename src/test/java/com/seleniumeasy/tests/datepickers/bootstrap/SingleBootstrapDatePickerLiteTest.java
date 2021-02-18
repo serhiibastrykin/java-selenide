@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 import static com.seleniumeasy.enums.DatePickers.BOOTSTRAP_DATE_PICKER;
 
-public class SingleBootstrapDatePickerTest extends BaseTest {
+public class SingleBootstrapDatePickerLiteTest extends BaseTest {
     LocalDate currentDate = LocalDate.now();
     String futureDate = currentDate.plusMonths(3).plusDays(15).toString();
     String pastDate = LocalDate.of(2018, 7, 4).toString();
@@ -17,7 +17,7 @@ public class SingleBootstrapDatePickerTest extends BaseTest {
     SingleBootstrapDatePickerLite singleBootstrapDatePickerLite = new SingleBootstrapDatePickerLite();
 
     @Test
-    public void testClickingFutureDate() {
+    public void testClickFutureDate() {
         singleBootstrapDatePickerLite
                 .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerLite.class)
                 .clickDate(futureDate)
@@ -25,7 +25,7 @@ public class SingleBootstrapDatePickerTest extends BaseTest {
     }
 
     @Test
-    public void testEnteringFutureDate() {
+    public void testEnterFutureDate() {
         singleBootstrapDatePickerLite
                 .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerLite.class)
                 .enterDate(futureDate)
@@ -33,7 +33,7 @@ public class SingleBootstrapDatePickerTest extends BaseTest {
     }
 
     @Test
-    public void testClickingCurrentDate() {
+    public void testClickCurrentDate() {
         singleBootstrapDatePickerLite
                 .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerLite.class)
                 .clickDate(currentDate.toString())
@@ -41,7 +41,7 @@ public class SingleBootstrapDatePickerTest extends BaseTest {
     }
 
     @Test
-    public void testEnteringCurrentDate() {
+    public void testEnterCurrentDate() {
         singleBootstrapDatePickerLite
                 .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerLite.class)
                 .enterDate(currentDate.toString())
@@ -49,7 +49,7 @@ public class SingleBootstrapDatePickerTest extends BaseTest {
     }
 
     @Test
-    public void testClickingPastDate() {
+    public void testClickPastDate() {
         singleBootstrapDatePickerLite
                 .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerLite.class)
                 .clickDate(pastDate)
@@ -57,7 +57,7 @@ public class SingleBootstrapDatePickerTest extends BaseTest {
     }
 
     @Test
-    public void testEnteringPastDate() {
+    public void testEnterPastDate() {
         singleBootstrapDatePickerLite
                 .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerLite.class)
                 .enterDate(pastDate)
@@ -65,7 +65,7 @@ public class SingleBootstrapDatePickerTest extends BaseTest {
     }
 
     @Test
-    public void testClickingSunday() {
+    public void testClickSunday() {
         singleBootstrapDatePickerLite
                 .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerLite.class)
                 .clickDate(sundayDate)
@@ -73,7 +73,7 @@ public class SingleBootstrapDatePickerTest extends BaseTest {
     }
 
     @Test
-    public void testEnteringSunday() {
+    public void testEnterSunday() {
         singleBootstrapDatePickerLite
                 .openDatePickers(BOOTSTRAP_DATE_PICKER, SingleBootstrapDatePickerLite.class)
                 .enterDate(sundayDate)
