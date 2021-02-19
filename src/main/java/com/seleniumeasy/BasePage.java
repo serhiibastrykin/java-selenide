@@ -12,6 +12,7 @@ public abstract class BasePage {
     public static final SelenideElement BUTTON_CLOSE_POPUP = $("#at-cv-lightbox-close");
     private final SelenideElement openedMenu = $(".open .dropdown-menu"),
             dropdownInputForms = $(byText("Input Forms")),
+            dropdownDatePickers = $(byText("Date pickers")),
             dropdownTable = $(byText("Table")),
             dropdownProgressBars = $(byText("Progress Bars")),
             dropdownAlertAndModals = $(byText("Alerts & Modals")),
@@ -26,6 +27,17 @@ public abstract class BasePage {
             (InputForms inputForms, Class<PageObjectClass> pageObjectClass) {
         clickInputFormsDropdownMain();
         openedMenu.$$("li").find(exactText(inputForms.getVal())).click();
+        return Selenide.page(pageObjectClass);
+    }
+
+    private void clickDatePickers() {
+        dropdownDatePickers.click();
+    }
+
+    public <PageObjectClass> PageObjectClass openDatePickers
+            (DatePickers datePickers, Class<PageObjectClass> pageObjectClass) {
+        clickDatePickers();
+        openedMenu.$$("li").find(exactText(datePickers.getVal())).click();
         return Selenide.page(pageObjectClass);
     }
 
