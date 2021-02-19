@@ -8,6 +8,8 @@
         <classes>
             <class name="com.seleniumeasy.tests.table.TablePaginationTest"/>
             <class name="com.seleniumeasy.tests.table.TableFilterTest"/>
+            <class name="com.seleniumeasy.tests.datepickers.bootstrap.DoubleBootstrapDatePickerTest"/>
+            <class name="com.seleniumeasy.tests.datepickers.jquery.JQueryDatePickerProTest"/>
         </classes>
     </test>
 </suite>
