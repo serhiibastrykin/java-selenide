@@ -42,6 +42,7 @@ public abstract class BaseTest {
     private static void setDriver(String browserTypeString) {
         if (browserTypeString == null)
             Assert.fail("Browser is not specified!");
+
         switch (browserTypeString) {
             case "chrome":
                 Configuration.browser = ChromeDriverProvider.class.getName();
