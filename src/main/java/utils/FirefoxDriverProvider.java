@@ -47,8 +47,10 @@ public class FirefoxDriverProvider implements WebDriverProvider {
                 .setProfile(profile)
                 .setBinary(binary)
                 .setLegacy(false);
+
         FirefoxDriver driver = new FirefoxDriver(options);
         driver.manage().window().maximize();
+
         return driver;
     }
 }

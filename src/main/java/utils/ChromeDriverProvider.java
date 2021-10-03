@@ -1,7 +1,8 @@
 package utils;
 
 import com.codeborne.selenide.WebDriverProvider;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.config.DriverManagerType;
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,7 +20,7 @@ public class ChromeDriverProvider implements WebDriverProvider {
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
-        WebDriverManager.chromedriver().browserVersion("88").setup();
+        ChromeDriverManager.getInstance(DriverManagerType.CHROME).setup();
         HashMap<String, Object> chromePrefs = new HashMap<>();
         chromePrefs.put("profile.default_content_settings.popups", 0);
         chromePrefs.put("download.default_directory", DOWNLOAD_DIR);
@@ -40,6 +41,7 @@ public class ChromeDriverProvider implements WebDriverProvider {
         options.addArguments("--test-type");
         options.addArguments("--ignore-certificate-errors");
         options.addArguments("--allow-running-insecure-content");
+
         return new ChromeDriver(options);
     }
 }
